@@ -119,6 +119,11 @@ const libraries = [
   'unocss.config.*',
   'webpack.config.*',
   'windi.config.*',
+  'htmlnanorc.*',
+  '.htmlnanorc*',
+  'cssnano.config.*',
+  '.cssnanorc*'.
+  '.terserrc*',
   ...env,
   ...testingTools,
   ...tsconfig,
