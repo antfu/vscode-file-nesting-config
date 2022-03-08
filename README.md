@@ -13,7 +13,7 @@ With some scripts to avoid duplication of works. And it's very opinionated by An
 
 Open your VS Code, bring up your `settings.json`, copy-paste the snippet below, and you are good to go :)
 
-```json
+```jsonc
 {
   // updated 2022-03-08
   // https://github.com/antfu/vscode-file-nesting-config
@@ -30,14 +30,15 @@ Open your VS Code, bring up your `settings.json`, copy-paste the snippet below, 
     ".env": "*.env, .env-*",
     "tsconfig.json": "tsconfig.*.json",
     "webpack.config.js": "webpack.config.*",
-    "package.json": ".editorconfig, .eslint*, .gitpod*, .markdownlint*, .npmrc, .stackblitz, .tazerc*, .yarnrc*, .prettierrc*, .node-version, babel.config.*, build.config.*, lerna.json, netlify.toml, package-lock.json, pnpm-*, renovate.json, tsconfig.json, tsconfig.*.json, vercel.*, yarn.lock",
-    "readme.md": "license, codeowners, authors, code_of_conduct.md, contributing.md, changelog.md",
-    "vite.config.*": ".env*, vitest.config.*, unocss.config.*, windi.config.*, babel.config.*, postcss.config.*, tailwind.config.*",
-    "vue.config.*": ".env*, vitest.config.*, unocss.config.*, windi.config.*, babel.config.*, postcss.config.*, tailwind.config.*",
-    "nuxt.config.*": ".env*, vitest.config.*, unocss.config.*, windi.config.*, babel.config.*, postcss.config.*, tailwind.config.*",
-    "next.config.*": ".env*, vitest.config.*, unocss.config.*, windi.config.*, babel.config.*, postcss.config.*, tailwind.config.*",
-    "svelte.config.*": ".env*, vitest.config.*, unocss.config.*, windi.config.*, babel.config.*, postcss.config.*, tailwind.config.*",
-    "remix.config.*": "remix.*, .env*, vitest.config.*, unocss.config.*, windi.config.*, babel.config.*, postcss.config.*, tailwind.config.*"
+    "rollup.config.*": "api-extractor.json",
+    "package.json": ".editorconfig, .eslint*, .gitpod*, .markdownlint*, .npm*, .vscode*, .stackblitz, .tazerc*, .yarnrc*, .prettier*, .watchman*, .nodemon*, .travis.yml, .circleci*, .node-version, babel.config.*, build.config.*, lerna.json, netlify.toml, package-lock.json, pnpm-*, renovate.*, tsconfig.*, vercel.*, yarn.lock",
+    "readme.md": "license, codeowners, authors, code_of_conduct.md, contributing.md, changelog.md, backers.md, sponsors.md, security.md",
+    "vite.config.*": ".env*, vitest.config.*, unocss.config.*, windi.config.*, babel.config.*, postcss.config.*, jest.config.*, tailwind.config.*",
+    "vue.config.*": ".env*, vitest.config.*, unocss.config.*, windi.config.*, babel.config.*, postcss.config.*, jest.config.*, tailwind.config.*",
+    "nuxt.config.*": ".env*, vitest.config.*, unocss.config.*, windi.config.*, babel.config.*, postcss.config.*, jest.config.*, tailwind.config.*",
+    "next.config.*": ".env*, vitest.config.*, unocss.config.*, windi.config.*, babel.config.*, postcss.config.*, jest.config.*, tailwind.config.*",
+    "svelte.config.*": ".env*, vitest.config.*, unocss.config.*, windi.config.*, babel.config.*, postcss.config.*, jest.config.*, tailwind.config.*",
+    "remix.config.*": "remix.*, .env*, vitest.config.*, unocss.config.*, windi.config.*, babel.config.*, postcss.config.*, jest.config.*, tailwind.config.*"
   }
 }
 ```

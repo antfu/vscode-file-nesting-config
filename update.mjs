@@ -20,6 +20,7 @@ const libraries = [
   'windi.config.*',
   'babel.config.*',
   'postcss.config.*',
+  'jest.config.*',
   'tailwind.config.*',
 ]
 
@@ -28,11 +29,16 @@ const packageJSON = [
   '.eslint*',
   '.gitpod*',
   '.markdownlint*',
-  '.npmrc',
+  '.npm*',
+  '.vscode*',
   '.stackblitz',
   '.tazerc*',
   '.yarnrc*',
-  '.prettierrc*',
+  '.prettier*',
+  '.watchman*',
+  '.nodemon*',
+  '.travis.yml',
+  '.circleci*',
   '.node-version',
   'babel.config.*',
   'build.config.*',
@@ -40,9 +46,8 @@ const packageJSON = [
   'netlify.toml',
   'package-lock.json',
   'pnpm-*',
-  'renovate.json',
-  'tsconfig.json',
-  'tsconfig.*.json',
+  'renovate.*',
+  'tsconfig.*',
   'vercel.*',
   'yarn.lock',
 ]
@@ -54,6 +59,9 @@ const readme = [
   'code_of_conduct.md',
   'contributing.md',
   'changelog.md',
+  'backers.md',
+  'sponsors.md',
+  'security.md',
 ]
 
 const base = {
@@ -67,6 +75,7 @@ const base = {
   '.env': '*.env, .env-*',
   'tsconfig.json': 'tsconfig.*.json',
   'webpack.config.js': 'webpack.config.*',
+  'rollup.config.*': 'api-extractor.json',
 }
 
 const full = {
@@ -83,7 +92,7 @@ fs.writeFileSync('README.md',
     .replace(/```json([\s\S]*?)```/m, () => {
       const body = JSON.stringify(full, null, 2).split('\n').map(l => `  ${l}`).join('\n')
       return `
-\`\`\`json
+\`\`\`jsonc
 {
   // updated ${todayDate}
   // https://github.com/antfu/vscode-file-nesting-config
