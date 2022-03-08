@@ -16,7 +16,7 @@ const testingTools = [
   'jasmine.*',
   'jest.config.*',
   'vitest.config.*',
-  'karma.conf*',
+  'karma*',
   'playwright.config.*',
   'puppeteer.config.*',
 ]
@@ -33,26 +33,32 @@ const services = [
   '.gitlab*',
   '.gitpod*',
   '.sentry*',
-  '.stackblitz',
-  '.travis.*',
-  'vercel.*',
-  'netlify.*',
-  'renovate.*',
-  'appveyor.*',
-  'crowdin.*',
-  'azure-pipelines.*',
+  '.stackblitz*',
+  '.travis*',
+  'vercel*',
+  'netlify*',
+  'renovate*',
+  'appveyor*',
+  'crowdin*',
+  'azure-pipelines*',
   'jenkins*',
+  'pullapprove*',
 ]
 
 const linters = [
+  '.commitlintrc*',
   '.editorconfig',
   '.eslint*',
+  '.flowconfig',
   '.markdownlint*',
   '.prettier*',
   '.stylelint*',
+  '.textlintrc*',
   '.yamllint*',
   'commitlint*',
+  'dangerfile.*',
   'lint-staged*',
+  'prettier*',
   'stylelint*',
   'tslint.*',
   'dangerfile.*',
@@ -76,9 +82,11 @@ const workspaces = [
   '.yarnrc*',
   'lerna*',
   'nx.*',
+  'workspace.json',
   'package-lock.json',
-  'pnpm-*',
-  'turbo.json',
+  'pnpm*',
+  '.pnpm*',
+  'turbo*',
   'yarn*',
 ]
 
@@ -89,7 +97,7 @@ const docker = [
 
 // frameworks and their specific files
 const frameworks = {
-  'vite.config.*': [],
+  'vite.config.*': ['index.html'],
   'vue.config.*': [],
   'nuxt.config.*': [],
   'next.config.*': [],
@@ -102,6 +110,7 @@ const libraries = [
   '.babelrc',
   'babel.config.*',
   'postcss.config.*',
+  '.postcssrc.*',
   'svgo.config.*',
   'tailwind.config.*',
   'unocss.config.*',
@@ -116,13 +125,18 @@ const packageJSON = [
   '.browserslist*',
   '.vscode*',
   '.nodemon*',
+  'nodemon*',
   '.watchman*',
+  '.pm2*',
+  'pm2.*',
   'vetur.config.*',
+  'nest-cli.*',
   ...workspaces,
   ...buildTools,
   ...services,
   ...linters,
   ...tsconfig,
+  ...testingTools,
 ].sort()
 
 const readme = [
@@ -138,6 +152,10 @@ const readme = [
   'security.md',
   'governance.md',
   'history.md',
+  'copying',
+  'contributors',
+  'maintainers',
+  'credits',
 ].sort()
 
 const cargo = [
@@ -146,8 +164,18 @@ const cargo = [
   'rustfmt.toml',
 ]
 
+const gofile = [
+  'go.sum',
+  '.air*'
+]
+
+const gemfile = [
+  'gemfile.lock',
+  '.ruby-version',
+]
+
 const base = {
-  '.gitignore': '.gitattributes, .gitmodules, .mailmap, .git-blame*',
+  '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*',
   '*.js': '$(capture).js.map, $(capture).min.js, $(capture).d.ts',
   '*.jsx': '$(capture).js',
   '*.ts': '$(capture).js, $(capture).*.ts',
@@ -164,6 +192,8 @@ const full = {
   'package.json': packageJSON.join(', '),
   'readme.md': readme.join(', '),
   'cargo.toml': cargo.join(', '),
+  'gemfile': gemfile.join(', '),
+  'go.mod': gofile.join(', '),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, [...i, ...libraries].join(', ')])),
 }
 
