@@ -54,7 +54,9 @@ const packageJSON = [
   'vercel.*',
   'yarn.lock',
   'turbo.json',
-  '.nvmrc'
+  '.nvmrc',
+  'vetur.config.*',
+  '.sentryclirc'
 ].sort()
 
 const readme = [
