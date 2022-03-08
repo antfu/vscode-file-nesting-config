@@ -50,6 +50,8 @@ const packageJSON = [
   'tsconfig.*',
   'vercel.*',
   'yarn.lock',
+  'turbo.json',
+  '.nvmrc'
 ].sort()
 
 const readme = [
