@@ -61,6 +61,9 @@ const linters = [
   'prettier*',
   'stylelint*',
   'tslint.*',
+  'dangerfile.*',
+  '.flowconfig',
+  '.jshintrc',
 ]
 
 const env = [
