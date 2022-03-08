@@ -56,6 +56,8 @@ const packageJSON = [
   'yarn-*',
   'turbo.json',
   '.nvmrc',
+  '.releaserc.*',
+  '.gitlab-*'
   'vetur.config.*',
   '.sentryclirc'
 ].sort()
