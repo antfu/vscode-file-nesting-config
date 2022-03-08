@@ -87,6 +87,7 @@ const workspaces = [
   '.pnpm*',
   'turbo*',
   'yarn*',
+  '.pnp.*',
 ]
 
 const docker = [
