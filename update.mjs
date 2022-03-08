@@ -47,20 +47,21 @@ const services = [
 ]
 
 const linters = [
-  'tslint.*',
-  'stylelint*',
-  'lint-staged*',
-  'dangerfile.*',
-  'commitlint*',
-  '.yamllint*',
-  '.textlintrc*',
-  '.stylelint*',
-  '.prettier*',
-  '.markdownlint*',
-  '.flowconfig',
-  '.eslint*',
-  '.editorconfig',
   '.commitlintrc*',
+  '.editorconfig',
+  '.eslint*',
+  '.flowconfig',
+  '.markdownlint*',
+  '.prettier*',
+  '.stylelint*',
+  '.textlintrc*',
+  '.yamllint*',
+  'commitlint*',
+  'dangerfile.*',
+  'lint-staged*',
+  'prettier*',
+  'stylelint*',
+  'tslint.*',
 ]
 
 const env = [
@@ -130,6 +131,7 @@ const packageJSON = [
   ...services,
   ...linters,
   ...tsconfig,
+  ...testingTools,
 ].sort()
 
 const readme = [
