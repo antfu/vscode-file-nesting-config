@@ -5,10 +5,11 @@ const buildTools = [
   'tsup.config.*',
   'rollup.config.*',
   'webpack.config.*',
-  'gulp.*',
+  'gulp*',
 ]
 
 const testingTools = [
+  '.codecov',
   '.mocha*',
   'ava.config.*',
   'cypress.json',
@@ -37,6 +38,10 @@ const services = [
   'vercel.*',
   'netlify.*',
   'renovate.*',
+  'appveyor.*',
+  'crowdin.*',
+  'azure-pipelines.*',
+  'jenkins*',
 ]
 
 const linters = [
@@ -50,6 +55,8 @@ const linters = [
   'lint-staged*',
   'stylelint*',
   'tslint.*',
+  'dangerfile.*',
+  '.flowconfig',
 ]
 
 const env = [
@@ -72,6 +79,11 @@ const workspaces = [
   'pnpm-*',
   'turbo.json',
   'yarn*',
+]
+
+const docker = [
+  'dockerfile*',
+  '.dockerignore',
 ]
 
 const packageJSON = [
@@ -97,6 +109,8 @@ const readme = [
   'backers.md',
   'sponsors.md',
   'security.md',
+  'governance.md',
+  'history.md',
 ].sort()
 
 // frameworks and their specific files
@@ -111,6 +125,7 @@ const frameworks = {
 
 // library configs, will be appended to all the frameworks
 const libraries = [
+  '.babelrc',
   'babel.config.*',
   'postcss.config.*',
   'svgo.config.*',
@@ -124,7 +139,7 @@ const libraries = [
 ].sort()
 
 const base = {
-  '.gitignore': '.gitattributes, .gitmodules',
+  '.gitignore': '.gitattributes, .gitmodules, .mailmap',
   '*.js': '$(capture).js.map, $(capture).min.js, $(capture).d.ts',
   '*.jsx': '$(capture).js',
   '*.ts': '$(capture).js, $(capture).*.ts',
@@ -136,6 +151,7 @@ const base = {
 const full = {
   ...base,
   '.env': env.join(', '),
+  'dockerfile': docker.join(', '),
   'package.json': packageJSON.join(', '),
   'readme.md': readme.join(', '),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, [...i, ...libraries].join(', ')])),
