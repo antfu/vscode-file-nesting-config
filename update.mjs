@@ -158,6 +158,11 @@ const cargo = [
   'rustfmt.toml',
 ]
 
+const gofile = [
+  'go.sum',
+  '.air.toml'
+]
+
 const gemfile = [
   'gemfile.lock',
   '.ruby-version',
@@ -182,6 +187,7 @@ const full = {
   'readme.md': readme.join(', '),
   'cargo.toml': cargo.join(', '),
   'gemfile': gemfile.join(', '),
+  'go.mod': gofile.join(', '),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, [...i, ...libraries].join(', ')])),
 }
 
