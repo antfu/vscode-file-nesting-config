@@ -1,6 +1,10 @@
 on:
   push:
-    paths: update.mjs
+    branches:
+      - main
+    paths:
+      - update.mjs
+
 jobs:
   update:
     runs-on: ubuntu-latest
