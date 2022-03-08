@@ -91,7 +91,7 @@ const docker = [
 
 // frameworks and their specific files
 const frameworks = {
-  'vite.config.*': [],
+  'vite.config.*': ['index.html'],
   'vue.config.*': [],
   'nuxt.config.*': [],
   'next.config.*': [],
