@@ -160,7 +160,7 @@ const cargo = [
 
 const gofile = [
   'go.sum',
-  '.air.toml'
+  '.air*'
 ]
 
 const gemfile = [
