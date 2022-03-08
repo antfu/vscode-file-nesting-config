@@ -94,6 +94,7 @@ const packageJSON = [
   'turbo.json',
   'vetur.config.*',
   'yarn-*',
+  '.huskyrc.*'
   ...buildTools,
   ...services,
   ...linters,
