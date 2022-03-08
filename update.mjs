@@ -58,6 +58,7 @@ const packageJSON = [
   'lerna*',
   'lint-staged.config',
   'netlify.toml',
+  'nx.json',
   'package-lock.json',
   'pnpm-*',
   'renovate.*',
