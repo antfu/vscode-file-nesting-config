@@ -44,7 +44,8 @@ const packageJSON = [
   'build.config.*',
   'commitlint.config',
   'lint-staged.config',
-  'lerna.json',
+  'lerna*',
+  'api-extractor*',
   'netlify.toml',
   'package-lock.json',
   'pnpm-*',
@@ -52,15 +53,21 @@ const packageJSON = [
   'jsconfig.*',
   'tsconfig.*',
   'vercel.*',
-  'yarn.lock',
+  'yarn-*',
   'turbo.json',
   '.nvmrc',
+  '.releaserc.*',
+  '.gitlab-*'
   'vetur.config.*',
   '.sentryclirc',
   '.stylelintrc',
   '.yamllint',
   'cypress.json',
   '.gitlab-*.yml',
+  'gulp.*',
+  'stylelint.config.*',
+  'svgo.config.*',
+  '.browserslistrc'
 ].sort()
 
 const readme = [
@@ -83,7 +90,7 @@ const base = {
   '*.tsx': '$(capture).ts',
   'index.d.ts': '*.d.ts',
   'shims.d.ts': '*.d.ts',
-  '.env': '*.env, .env-*',
+  '.env': '*.env, .env-*, env.d.ts',
   'tsconfig.json': 'tsconfig.*.json',
   'webpack.config.js': 'webpack.config.*',
   'rollup.config.*': 'api-extractor.json',
