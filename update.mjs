@@ -59,7 +59,11 @@ const packageJSON = [
   '.releaserc.*',
   '.gitlab-*'
   'vetur.config.*',
-  '.sentryclirc'
+  '.sentryclirc',
+  'gulp.*',
+  'stylelint.config.*',
+  'svgo.config.*',
+  '.browserslistrc'
 ].sort()
 
 const readme = [
