@@ -14,7 +14,7 @@ With some scripts to avoid duplication of works. And it's very opinionated.
 Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below, and you are good to go :)
 
 ```jsonc
-  // updated 2022-03-08 04:30
+  // updated 2022-03-08 04:35
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.experimental.fileNesting.enabled": true,
   "explorer.experimental.fileNesting.expand": false,
@@ -29,7 +29,7 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
     "go.mod": "go.sum",
     ".env": "*.env, .env*, env.d.ts",
     "dockerfile": "dockerfile*, .dockerignore",
-    "package.json": ".browserslist*, .circleci*, .commitlintrc*, .editorconfig, .eslint*, .flowconfig, .gitlab*, .gitpod*, .huskyrc*, .markdownlint*, .node-version, .nodemon*, .npm*, .nvmrc, .pnpm*, .prettier*, .releaserc*, .sentry*, .stackblitz*, .stylelint*, .tazerc*, .textlintrc*, .travis*, .vscode*, .watchman*, .yamllint*, .yarnrc*, api-extractor.json, appveyor*, azure-pipelines*, build.config.*, commitlint*, crowdin*, dangerfile.*, gulp*, jenkins*, jsconfig.*, lerna*, lint-staged*, netlify*, nx.*, package-lock.json, pnpm*, pullapprove*, renovate*, rollup.config.*, stylelint*, tsconfig.*, tsdoc.*, tslint.*, tsup.config.*, turbo*, vercel*, vetur.config.*, webpack.config.*, yarn*",
+    "package.json": ".browserslist*, .circleci*, .codecov, .commitlintrc*, .editorconfig, .eslint*, .flowconfig, .gitlab*, .gitpod*, .huskyrc*, .markdownlint*, .mocha*, .node-version, .nodemon*, .npm*, .nvmrc, .pnpm*, .prettier*, .releaserc*, .sentry*, .stackblitz*, .stylelint*, .tazerc*, .textlintrc*, .travis*, .vscode*, .watchman*, .yamllint*, .yarnrc*, api-extractor.json, appveyor*, ava.config.*, azure-pipelines*, build.config.*, commitlint*, crowdin*, cypress.json, dangerfile.*, gulp*, jasmine.*, jenkins*, jest.config.*, jsconfig.*, karma*, lerna*, lint-staged*, netlify*, nx.*, package-lock.json, playwright.config.*, pnpm*, prettier*, pullapprove*, puppeteer.config.*, renovate*, rollup.config.*, stylelint*, tsconfig.*, tsdoc.*, tslint.*, tsup.config.*, turbo*, vercel*, vetur.config.*, vitest.config.*, webpack.config.*, yarn*",
     "readme.md": "authors, backers.md, changelog*.md, code_of_conduct.md, codeowners, contributing.md, contributors, copying, credits, governance.md, history.md, license*, maintainers, readme*, security.md, sponsors.md",
     "cargo.toml": "cargo.lock, rust-toolchain.toml, rustfmt.toml",
     "gemfile": "gemfile.lock, .ruby-version",
