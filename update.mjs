@@ -145,7 +145,7 @@ const readme = [
   'authors',
   'code_of_conduct.md',
   'contributing.md',
-  'changelog*.md',
+  'changelog*',
   'backers.md',
   'sponsors.md',
   'security.md',
@@ -155,6 +155,7 @@ const readme = [
   'contributors',
   'maintainers',
   'credits',
+  'citation*'
 ]
 
 const cargo = [
@@ -194,7 +195,7 @@ const full = {
   'dockerfile': stringify(docker),
   'package.json': stringify(packageJSON),
   'rush.json': stringify(packageJSON),
-  'readme.md': stringify(readme),
+  'readme.*': stringify(readme),
   'cargo.toml': stringify(cargo),
   'gemfile': stringify(gemfile),
   'go.mod': stringify(gofile),
