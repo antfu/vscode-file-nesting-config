@@ -6,6 +6,7 @@ const buildTools = [
   'rollup.config.*',
   'webpack.config.*',
   'gulp*',
+  'grunt*',
 ]
 
 const testingTools = [
@@ -62,7 +63,9 @@ const linters = [
   'prettier*',
   'stylelint*',
   'tslint*',
-  'dprint.json'
+  '.xo-config*',
+  'xo.config.*',
+  'dprint.json',
 ]
 
 const env = [
@@ -87,6 +90,8 @@ const workspaces = [
   '.pnpm*',
   'turbo*',
   'yarn*',
+  '.pnp.*',
+  'bower.json',
 ]
 
 const docker = [
@@ -115,6 +120,11 @@ const libraries = [
   'unocss.config.*',
   'webpack.config.*',
   'windi.config.*',
+  'htmlnanorc.*',
+  '.htmlnanorc*',
+  'cssnano.config.*',
+  '.cssnanorc*'.
+  '.terserrc*',
   ...env,
   ...testingTools,
   ...tsconfig,
