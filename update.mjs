@@ -123,6 +123,7 @@ const packageJSON = [
   '.nodemon*',
   '.watchman*',
   'vetur.config.*',
+  'nest-cli.*',
   ...workspaces,
   ...buildTools,
   ...services,
