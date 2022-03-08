@@ -42,18 +42,24 @@ const packageJSON = [
   '.node-version',
   'babel.config.*',
   'build.config.*',
-  'lerna.json',
+  'commitlint.config',
+  'lint-staged.config',
+  'lerna*',
+  'api-extractor*',
   'netlify.toml',
   'package-lock.json',
   'pnpm-*',
   'renovate.*',
+  'jsconfig.*',
   'tsconfig.*',
   'vercel.*',
-  'yarn.lock',
+  'yarn-*',
   'turbo.json',
   '.nvmrc',
   '.releaserc.*',
   '.gitlab-*'
+  'vetur.config.*',
+  '.sentryclirc'
 ].sort()
 
 const readme = [
