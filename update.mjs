@@ -63,6 +63,8 @@ const linters = [
   'prettier*',
   'stylelint*',
   'tslint*',
+  '.xo-config*',
+  'xo.config.*',
 ]
 
 const env = [
