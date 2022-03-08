@@ -6,6 +6,7 @@ const buildTools = [
   'rollup.config.*',
   'webpack.config.*',
   'gulp.*',
+  'crowdin.yml',
 ]
 
 const testingTools = [
