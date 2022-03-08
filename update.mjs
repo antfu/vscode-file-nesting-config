@@ -35,7 +35,7 @@ const services = [
   '.gitlab*',
   '.gitpod*',
   '.sentry*',
-  '.stackblitz',
+  '.stackblitz*',
   '.travis*',
   'vercel*',
   'netlify*',
@@ -81,8 +81,9 @@ const workspaces = [
   'lerna*',
   'nx.*',
   'package-lock.json',
-  'pnpm-*',
-  'turbo.json',
+  'pnpm*',
+  '.pnpm*',
+  'turbo*',
   'yarn*',
 ]
 
@@ -93,7 +94,7 @@ const docker = [
 
 // frameworks and their specific files
 const frameworks = {
-  'vite.config.*': [],
+  'vite.config.*': ['index.html'],
   'vue.config.*': [],
   'nuxt.config.*': [],
   'next.config.*': [],
