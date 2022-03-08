@@ -65,6 +65,7 @@ const linters = [
   'tslint*',
   '.xo-config*',
   'xo.config.*',
+  'dprint.json',
 ]
 
 const env = [
@@ -155,7 +156,7 @@ const readme = [
   'authors',
   'code_of_conduct.md',
   'contributing.md',
-  'changelog*.md',
+  'changelog*',
   'backers.md',
   'sponsors.md',
   'security.md',
@@ -165,6 +166,7 @@ const readme = [
   'contributors',
   'maintainers',
   'credits',
+  'citation*'
 ]
 
 const cargo = [
@@ -192,6 +194,8 @@ const base = {
   'index.d.ts': '*.d.ts',
   'shims.d.ts': '*.d.ts',
   'go.mod': 'go.sum',
+  'default.nix': 'shell.nix',
+  'flake.nix': 'flake.lock',
 }
 
 function stringify(items) {
@@ -204,7 +208,7 @@ const full = {
   'dockerfile': stringify(docker),
   'package.json': stringify(packageJSON),
   'rush.json': stringify(packageJSON),
-  'readme.md': stringify(readme),
+  'readme.*': stringify(readme),
   'cargo.toml': stringify(cargo),
   'gemfile': stringify(gemfile),
   'go.mod': stringify(gofile),
@@ -223,7 +227,7 @@ fs.writeFileSync('README.md',
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.experimental.fileNesting.enabled": true,
   "explorer.experimental.fileNesting.expand": false,
-  "explorer.experimental.fileNesting.patterns": ${body.trimStart()}
+  "explorer.experimental.fileNesting.patterns": ${body.trimStart()},
 \`\`\``.trim()
     })
   ,
