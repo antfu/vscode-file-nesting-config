@@ -9,12 +9,15 @@ const buildTools = [
 ]
 
 const testingTools = [
-  'jest.config.*',
-  'ava.config.*',
-  'jasmine.*',
-  'vitest.config.*',
-  'cypress.json',
   '.mocha*',
+  'ava.config.*',
+  'cypress.json',
+  'jasmine.*',
+  'jest.config.*',
+  'vitest.config.*',
+  'karma.conf*',
+  'playwright.config.*',
+  'puppeteer.config.*',
 ]
 
 const tsconfig = [
@@ -29,9 +32,9 @@ const services = [
   '.gitpod*',
   '.sentry*',
   '.stackblitz',
-  '.travis.yml',
+  '.travis.*',
   'vercel.*',
-  'netlify.toml',
+  'netlify.*',
   'renovate.*',
 ]
 
@@ -42,19 +45,19 @@ const linters = [
   '.prettier*',
   '.stylelint*',
   '.yamllint*',
-  'commitlint.config*',
-  'lint-staged.config*',
-  'stylelint.config.*',
+  'commitlint*',
+  'lint-staged*',
+  'stylelint*',
 ]
 
 const env = [
   '*.env',
-  '.env-*',
+  '.env*',
   'env.d.ts',
 ]
 
 const workspaces = [
-  '.huskyrc.*',
+  '.huskyrc*',
   '.node-version',
   '.npm*',
   '.nvmrc',
@@ -62,7 +65,7 @@ const workspaces = [
   '.tazerc*',
   '.yarnrc*',
   'lerna*',
-  'nx.json',
+  'nx.*',
   'package-lock.json',
   'pnpm-*',
   'turbo.json',
@@ -119,7 +122,7 @@ const libraries = [
 ].sort()
 
 const base = {
-  '.gitignore': '.git*',
+  '.gitignore': '.gitattributes, .gitmodules',
   '*.js': '$(capture).js.map, $(capture).min.js, $(capture).d.ts',
   '*.jsx': '$(capture).js',
   '*.ts': '$(capture).js, $(capture).*.ts',
