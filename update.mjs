@@ -6,7 +6,6 @@ const buildTools = [
   'rollup.config.*',
   'webpack.config.*',
   'gulp*',
-  'nodemon.*',
   'pm2.*'
 ]
 
@@ -121,7 +120,10 @@ const packageJSON = [
   '.browserslist*',
   '.vscode*',
   '.nodemon*',
+  'nodemon*',
   '.watchman*',
+  '.pm2*',
+  'pm2.*',
   'vetur.config.*',
   ...workspaces,
   ...buildTools,
