@@ -56,7 +56,11 @@ const packageJSON = [
   'turbo.json',
   '.nvmrc',
   'vetur.config.*',
-  '.sentryclirc'
+  '.sentryclirc',
+  '.stylelintrc',
+  '.yamllint',
+  'cypress.json',
+  '.gitlab-*.yml',
 ].sort()
 
 const readme = [
