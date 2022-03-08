@@ -1,7 +1,5 @@
 import fs from 'fs'
 
-const date = new Date().toDateString()
-
 // frameworks and their specific files
 const frameworks = {
   'vite.config.*': [],
@@ -15,13 +13,15 @@ const frameworks = {
 // library configs, will be appended to all the frameworks
 const libraries = [
   '.env*',
-  'vitest.config.*',
-  'unocss.config.*',
-  'windi.config.*',
   'babel.config.*',
-  'postcss.config.*',
   'jest.config.*',
+  'postcss.config.*',
+  'svgo.config.*',
   'tailwind.config.*',
+  'unocss.config.*',
+  'vitest.config.*',
+  'webpack.config.*',
+  'windi.config.*',
 ].sort()
 
 const packageJSON = [
@@ -105,7 +105,7 @@ const full = {
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, [...i, ...libraries].join(', ')])),
 }
 
-const todayDate = new Date().toISOString().slice(0, 10)
+const today = new Date().toISOString().slice(0, 10)
 
 fs.writeFileSync('README.md',
   fs.readFileSync('README.md', 'utf-8')
@@ -113,7 +113,7 @@ fs.writeFileSync('README.md',
       const body = JSON.stringify(full, null, 2).split('\n').map(l => `  ${l}`).join('\n')
       return `
 \`\`\`jsonc
-  // updated ${todayDate}
+  // updated ${today}
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.experimental.fileNesting.enabled": true,
   "explorer.experimental.fileNesting.expand": false,

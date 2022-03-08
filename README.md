@@ -32,12 +32,12 @@ Open your VS Code, bring up your `settings.json`, copy-paste the snippet below, 
     "rollup.config.*": "api-extractor.json",
     "package.json": ".browserslist*, .circleci*, .editorconfig, .eslint*, .gitlab-*, .gitlab-*.yml, .gitpod*, .markdownlint*, .node-version, .nodemon*, .npm*, .nvmrc, .prettier*, .releaserc*, .sentry*, .stackblitz, .stylelint*, .tazerc*, .travis.yml, .vscode*, .watchman*, .yamllint*, .yarnrc*, api-extractor*, babel.config.*, build.config.*, commitlint.config, cypress.json, gulp.*, jsconfig.*, lerna*, lint-staged.config, netlify.toml, package-lock.json, pnpm-*, renovate.*, rollup.config.*, stylelint.config.*, svgo.config.*, tsconfig.*, tsup.config.*, turbo.json, vercel.*, vetur.config.*, yarn-*",
     "readme.md": "authors, backers.md, changelog.md, code_of_conduct.md, codeowners, contributing.md, license, security.md, sponsors.md",
-    "vite.config.*": ".env*, babel.config.*, jest.config.*, postcss.config.*, tailwind.config.*, unocss.config.*, vitest.config.*, windi.config.*",
-    "vue.config.*": ".env*, babel.config.*, jest.config.*, postcss.config.*, tailwind.config.*, unocss.config.*, vitest.config.*, windi.config.*",
-    "nuxt.config.*": ".env*, babel.config.*, jest.config.*, postcss.config.*, tailwind.config.*, unocss.config.*, vitest.config.*, windi.config.*",
-    "next.config.*": ".env*, babel.config.*, jest.config.*, postcss.config.*, tailwind.config.*, unocss.config.*, vitest.config.*, windi.config.*",
-    "svelte.config.*": ".env*, babel.config.*, jest.config.*, postcss.config.*, tailwind.config.*, unocss.config.*, vitest.config.*, windi.config.*",
-    "remix.config.*": "remix.*, .env*, babel.config.*, jest.config.*, postcss.config.*, tailwind.config.*, unocss.config.*, vitest.config.*, windi.config.*"
+    "vite.config.*": ".env*, babel.config.*, babel.config.*, jest.config.*, postcss.config.*, svgo.config.*, tailwind.config.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
+    "vue.config.*": ".env*, babel.config.*, babel.config.*, jest.config.*, postcss.config.*, svgo.config.*, tailwind.config.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
+    "nuxt.config.*": ".env*, babel.config.*, babel.config.*, jest.config.*, postcss.config.*, svgo.config.*, tailwind.config.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
+    "next.config.*": ".env*, babel.config.*, babel.config.*, jest.config.*, postcss.config.*, svgo.config.*, tailwind.config.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
+    "svelte.config.*": ".env*, babel.config.*, babel.config.*, jest.config.*, postcss.config.*, svgo.config.*, tailwind.config.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
+    "remix.config.*": "remix.*, .env*, babel.config.*, babel.config.*, jest.config.*, postcss.config.*, svgo.config.*, tailwind.config.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*"
   }
 ```
 
