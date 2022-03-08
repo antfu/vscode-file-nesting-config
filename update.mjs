@@ -70,6 +70,7 @@ const packageJSON = [
   'vercel.*',
   'vetur.config.*',
   'yarn-*',
+  '.huskyrc.*'
 ].sort()
 
 const readme = [
