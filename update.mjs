@@ -125,7 +125,8 @@ const packageJSON = [
 ].sort()
 
 const readme = [
-  'license',
+  'readme*',
+  'license*',
   'codeowners',
   'authors',
   'code_of_conduct.md',
