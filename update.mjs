@@ -16,7 +16,7 @@ const testingTools = [
   'jasmine.*',
   'jest.config.*',
   'vitest.config.*',
-  'karma.conf*',
+  'karma*',
   'playwright.config.*',
   'puppeteer.config.*',
 ]
@@ -34,30 +34,32 @@ const services = [
   '.gitpod*',
   '.sentry*',
   '.stackblitz',
-  '.travis.*',
-  'vercel.*',
-  'netlify.*',
-  'renovate.*',
-  'appveyor.*',
-  'crowdin.*',
-  'azure-pipelines.*',
+  '.travis*',
+  'vercel*',
+  'netlify*',
+  'renovate*',
+  'appveyor*',
+  'crowdin*',
+  'azure-pipelines*',
   'jenkins*',
+  'pullapprove*',
 ]
 
 const linters = [
-  '.editorconfig',
-  '.eslint*',
-  '.markdownlint*',
-  '.prettier*',
-  '.stylelint*',
-  '.yamllint*',
-  '.commitlintrc*',
-  'commitlint*',
-  'lint-staged*',
-  'stylelint*',
   'tslint.*',
+  'stylelint*',
+  'lint-staged*',
   'dangerfile.*',
+  'commitlint*',
+  '.yamllint*',
+  '.textlintrc*',
+  '.stylelint*',
+  '.prettier*',
+  '.markdownlint*',
   '.flowconfig',
+  '.eslint*',
+  '.editorconfig',
+  '.commitlintrc*',
 ]
 
 const env = [
@@ -138,6 +140,10 @@ const readme = [
   'security.md',
   'governance.md',
   'history.md',
+  'copying',
+  'contributors',
+  'maintainers',
+  'credits',
 ].sort()
 
 const cargo = [
@@ -152,7 +158,7 @@ const gemfile = [
 ]
 
 const base = {
-  '.gitignore': '.gitattributes, .gitmodules, .mailmap, .git-blame*',
+  '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*',
   '*.js': '$(capture).js.map, $(capture).min.js, $(capture).d.ts',
   '*.jsx': '$(capture).js',
   '*.ts': '$(capture).js, $(capture).*.ts',
