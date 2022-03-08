@@ -22,7 +22,7 @@ const libraries = [
   'postcss.config.*',
   'jest.config.*',
   'tailwind.config.*',
-]
+].sort()
 
 const packageJSON = [
   '.editorconfig',
@@ -50,7 +50,7 @@ const packageJSON = [
   'tsconfig.*',
   'vercel.*',
   'yarn.lock',
-]
+].sort()
 
 const readme = [
   'license',
@@ -62,7 +62,7 @@ const readme = [
   'backers.md',
   'sponsors.md',
   'security.md',
-]
+].sort()
 
 const base = {
   '.gitignore': '.gitattributes',
