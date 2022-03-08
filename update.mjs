@@ -6,6 +6,8 @@ const buildTools = [
   'rollup.config.*',
   'webpack.config.*',
   'gulp.*',
+  'nodemon.*',
+  'pm2.*'
 ]
 
 const testingTools = [
