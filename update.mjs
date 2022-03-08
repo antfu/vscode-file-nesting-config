@@ -2,11 +2,11 @@ import fs from 'fs'
 
 const buildTools = [
   'build.config.*',
-  'tsup.config.*',
-  'rollup.config.*',
-  'webpack.config.*',
-  'gulp*',
   'grunt*',
+  'gulp*',
+  'rollup.config.*',
+  'tsup.config.*',
+  'webpack.config.*',
 ]
 
 const testingTools = [
@@ -16,10 +16,10 @@ const testingTools = [
   'cypress.json',
   'jasmine.*',
   'jest.config.*',
-  'vitest.config.*',
   'karma*',
   'playwright.config.*',
   'puppeteer.config.*',
+  'vitest.config.*',
 ]
 
 const tsconfig = [
@@ -36,14 +36,14 @@ const services = [
   '.sentry*',
   '.stackblitz*',
   '.travis*',
-  'vercel*',
-  'netlify*',
-  'renovate*',
   'appveyor*',
-  'crowdin*',
   'azure-pipelines*',
+  'crowdin*',
   'jenkins*',
+  'netlify*',
   'pullapprove*',
+  'renovate*',
+  'vercel*',
 ]
 
 const linters = [
@@ -51,21 +51,21 @@ const linters = [
   '.editorconfig',
   '.eslint*',
   '.flowconfig',
-  '.jshintrc',
+  '.jslint*',
   '.markdownlint*',
   '.prettier*',
   '.stylelint*',
   '.textlint*',
+  '.xo-config*',
   '.yamllint*',
   'commitlint*',
   'dangerfile*',
+  'dprint.json',
   'lint-staged*',
   'prettier*',
   'stylelint*',
   'tslint*',
-  '.xo-config*',
   'xo.config.*',
-  'dprint.json',
 ]
 
 const env = [
@@ -79,19 +79,19 @@ const workspaces = [
   '.node-version',
   '.npm*',
   '.nvmrc',
+  '.pnp.*',
+  '.pnpm*',
   '.releaserc*',
   '.tazerc*',
   '.yarnrc*',
+  'bower.json',
   'lerna*',
   'nx.*',
-  'workspace.json',
   'package-lock.json',
   'pnpm*',
-  '.pnpm*',
   'turbo*',
+  'workspace.json',
   'yarn*',
-  '.pnp.*',
-  'bower.json',
 ]
 
 const docker = [
@@ -111,20 +111,20 @@ const frameworks = {
 
 // library configs, will be appended to all the frameworks
 const libraries = [
-  '.babelrc',
+  '.babelrc*',
+  '.cssnanorc*',
+  '.htmlnanorc*',
+  '.postcssrc*',
+  '.terserrc*',
   'babel.config.*',
+  'cssnano.config.*',
+  'htmlnanorc.*',
   'postcss.config.*',
-  '.postcssrc.*',
   'svgo.config.*',
   'tailwind.config.*',
   'unocss.config.*',
   'webpack.config.*',
   'windi.config.*',
-  'htmlnanorc.*',
-  '.htmlnanorc*',
-  'cssnano.config.*',
-  '.cssnanorc*'.
-  '.terserrc*',
   ...env,
   ...testingTools,
   ...tsconfig,
@@ -132,15 +132,15 @@ const libraries = [
 
 const packageJSON = [
   '.browserslist*',
-  '.vscode*',
   '.nodemon*',
-  'nodemon*',
-  '.watchman*',
   '.pm2*',
-  'pm2.*',
-  'vetur.config.*',
+  '.vscode*',
+  '.watchman*',
   'nest-cli.*',
+  'nodemon*',
+  'pm2.*',
   'typedoc*',
+  'vetur.config.*',
   ...workspaces,
   ...buildTools,
   ...services,
@@ -150,23 +150,23 @@ const packageJSON = [
 ]
 
 const readme = [
-  'readme*',
-  'license*',
-  'codeowners',
   'authors',
-  'code_of_conduct.md',
-  'contributing.md',
-  'changelog*',
   'backers.md',
-  'sponsors.md',
-  'security.md',
+  'changelog*',
+  'citation*',
+  'code_of_conduct.md',
+  'codeowners',
+  'contributing.md',
+  'contributors',
+  'copying',
+  'credits',
   'governance.md',
   'history.md',
-  'copying',
-  'contributors',
+  'license*',
   'maintainers',
-  'credits',
-  'citation*'
+  'readme*',
+  'security.md',
+  'sponsors.md',
 ]
 
 const cargo = [
@@ -177,7 +177,7 @@ const cargo = [
 
 const gofile = [
   'go.sum',
-  '.air*'
+  '.air*',
 ]
 
 const gemfile = [
