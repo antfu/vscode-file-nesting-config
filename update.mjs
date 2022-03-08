@@ -5,10 +5,11 @@ const buildTools = [
   'tsup.config.*',
   'rollup.config.*',
   'webpack.config.*',
-  'gulp.*',
+  'gulp*',
 ]
 
 const testingTools = [
+  '.codecov',
   '.mocha*',
   'ava.config.*',
   'cypress.json',
@@ -22,6 +23,7 @@ const testingTools = [
 
 const tsconfig = [
   'tsconfig.*',
+  'tsdoc.*',
   'jsconfig.*',
   'api-extractor.json',
 ]
@@ -36,6 +38,10 @@ const services = [
   'vercel.*',
   'netlify.*',
   'renovate.*',
+  'appveyor.*',
+  'crowdin.*',
+  'azure-pipelines.*',
+  'jenkins*',
 ]
 
 const linters = [
@@ -49,6 +55,8 @@ const linters = [
   'lint-staged*',
   'stylelint*',
   'tslint.*',
+  'dangerfile.*',
+  '.flowconfig',
 ]
 
 const env = [
@@ -73,6 +81,36 @@ const workspaces = [
   'yarn*',
 ]
 
+const docker = [
+  'dockerfile*',
+  '.dockerignore',
+]
+
+// frameworks and their specific files
+const frameworks = {
+  'vite.config.*': [],
+  'vue.config.*': [],
+  'nuxt.config.*': [],
+  'next.config.*': [],
+  'svelte.config.*': [],
+  'remix.config.*': ['remix.*'],
+}
+
+// library configs, will be appended to all the frameworks
+const libraries = [
+  '.babelrc',
+  'babel.config.*',
+  'postcss.config.*',
+  'svgo.config.*',
+  'tailwind.config.*',
+  'unocss.config.*',
+  'webpack.config.*',
+  'windi.config.*',
+  ...env,
+  ...testingTools,
+  ...tsconfig,
+].sort()
+
 const packageJSON = [
   '.browserslist*',
   '.vscode*',
@@ -96,47 +134,34 @@ const readme = [
   'backers.md',
   'sponsors.md',
   'security.md',
+  'governance.md',
+  'history.md',
 ].sort()
 
-// frameworks and their specific files
-const frameworks = {
-  'vite.config.*': [],
-  'vue.config.*': [],
-  'nuxt.config.*': [],
-  'next.config.*': [],
-  'svelte.config.*': [],
-  'remix.config.*': ['remix.*'],
-}
-
-// library configs, will be appended to all the frameworks
-const libraries = [
-  'babel.config.*',
-  'postcss.config.*',
-  'svgo.config.*',
-  'tailwind.config.*',
-  'unocss.config.*',
-  'webpack.config.*',
-  'windi.config.*',
-  ...env,
-  ...testingTools,
-  ...tsconfig,
-].sort()
+const cargo = [
+  'cargo.lock',
+  'rust-toolchain.toml',
+  'rustfmt.toml',
+]
 
 const base = {
-  '.gitignore': '.gitattributes, .gitmodules',
+  '.gitignore': '.gitattributes, .gitmodules, .mailmap, .git-blame*',
   '*.js': '$(capture).js.map, $(capture).min.js, $(capture).d.ts',
   '*.jsx': '$(capture).js',
   '*.ts': '$(capture).js, $(capture).*.ts',
   '*.tsx': '$(capture).ts',
   'index.d.ts': '*.d.ts',
   'shims.d.ts': '*.d.ts',
+  'go.mod': 'go.sum',
 }
 
 const full = {
   ...base,
   '.env': env.join(', '),
+  'dockerfile': docker.join(', '),
   'package.json': packageJSON.join(', '),
   'readme.md': readme.join(', '),
+  'cargo.toml': cargo.join(', '),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, [...i, ...libraries].join(', ')])),
 }
 
