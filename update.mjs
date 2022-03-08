@@ -129,6 +129,7 @@ const packageJSON = [
   'pm2.*',
   'vetur.config.*',
   'nest-cli.*',
+  'typedoc*',
   ...workspaces,
   ...buildTools,
   ...services,
