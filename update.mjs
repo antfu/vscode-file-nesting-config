@@ -121,7 +121,10 @@ const packageJSON = [
   '.browserslist*',
   '.vscode*',
   '.nodemon*',
+  'nodemon*',
   '.watchman*',
+  '.pm2*',
+  'pm2.*',
   'vetur.config.*',
   'nest-cli.*',
   ...workspaces,
@@ -157,6 +160,11 @@ const cargo = [
   'rustfmt.toml',
 ]
 
+const gofile = [
+  'go.sum',
+  '.air*'
+]
+
 const gemfile = [
   'gemfile.lock',
   '.ruby-version',
@@ -181,6 +189,7 @@ const full = {
   'readme.md': readme.join(', '),
   'cargo.toml': cargo.join(', '),
   'gemfile': gemfile.join(', '),
+  'go.mod': gofile.join(', '),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, [...i, ...libraries].join(', ')])),
 }
 
