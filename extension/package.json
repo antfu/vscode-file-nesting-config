@@ -1,0 +1,60 @@
+{
+  "name": "file-nesting",
+  "displayName": "File Nesting Updater",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Auto updating for Anthony's file nesting config",
+  "categories": [
+    "Other"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antfu/vscode-file-nesting-config",
+    "directory": "extension"
+  },
+  "publisher": "antfu",
+  "main": "./dist/index.js",
+  "preview": true,
+  "contributes": {
+    "commands": [],
+    "configuration": {
+      "type": "object",
+      "title": "File Nesting Updater",
+      "properties": {
+        "fileNestingUpdater": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Enable file nesting",
+              "default": true
+            },
+            "maxDepth": {
+              "type": "number",
+              "description": "Maximum nesting depth",
+              "default": 3
+            },
+            "maxFiles": {
+              "type": "number",
+              "description": "Maximum files per folder",
+              "default": 10
+            },
+            "maxSize": {
+              "type": "number",
+              "description": "Maximum size per folder",
+              "default": 10
+            }
+          }
+        }      
+      }
+    }
+  },
+  "activationEvents": [
+    "*"
+  ],
+  "engines": {
+    "vscode": "^1.65.0"
+  },
+  "icon": "res/logo.png"
+}
