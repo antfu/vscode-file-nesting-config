@@ -90,6 +90,7 @@ const workspaces = [
   'turbo*',
   'yarn*',
   '.pnp.*',
+  'bower.json',
 ]
 
 const docker = [
