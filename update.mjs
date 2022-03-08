@@ -213,7 +213,7 @@ fs.writeFileSync('README.md',
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.experimental.fileNesting.enabled": true,
   "explorer.experimental.fileNesting.expand": false,
-  "explorer.experimental.fileNesting.patterns": ${body.trimStart()}
+  "explorer.experimental.fileNesting.patterns": ${body.trimStart()},
 \`\`\``.trim()
     })
   ,
