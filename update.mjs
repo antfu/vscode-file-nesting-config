@@ -93,13 +93,11 @@ fs.writeFileSync('README.md',
       const body = JSON.stringify(full, null, 2).split('\n').map(l => `  ${l}`).join('\n')
       return `
 \`\`\`jsonc
-{
   // updated ${todayDate}
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.experimental.fileNesting.enabled": true,
   "explorer.experimental.fileNesting.expand": false,
   "explorer.experimental.fileNesting.patterns": ${body.trimStart()}
-}
 \`\`\``.trim()
     })
   ,

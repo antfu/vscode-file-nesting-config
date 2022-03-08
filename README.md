@@ -14,7 +14,6 @@ With some scripts to avoid duplication of works. And it's very opinionated by An
 Open your VS Code, bring up your `settings.json`, copy-paste the snippet below, and you are good to go :)
 
 ```jsonc
-{
   // updated 2022-03-08
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.experimental.fileNesting.enabled": true,
@@ -40,7 +39,6 @@ Open your VS Code, bring up your `settings.json`, copy-paste the snippet below, 
     "svelte.config.*": ".env*, babel.config.*, jest.config.*, postcss.config.*, tailwind.config.*, unocss.config.*, vitest.config.*, windi.config.*",
     "remix.config.*": "remix.*, .env*, babel.config.*, jest.config.*, postcss.config.*, tailwind.config.*, unocss.config.*, vitest.config.*, windi.config.*"
   }
-}
 ```
 
 ## Contributing
