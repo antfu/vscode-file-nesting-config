@@ -24,6 +24,7 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
     "*.jsx": "$(capture).js",
     "*.ts": "$(capture).js, $(capture).*.ts",
     "*.tsx": "$(capture).ts",
+    "*.vue": "$(capture).*.ts, $(capture).*.js",
     "index.d.ts": "*.d.ts",
     "shims.d.ts": "*.d.ts",
     "go.mod": ".air*, go.sum",
