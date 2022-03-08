@@ -46,24 +46,22 @@ const services = [
 ]
 
 const linters = [
-  '.commitlintrc*',
+  '.commitlint*',
   '.editorconfig',
   '.eslint*',
   '.flowconfig',
+  '.jshintrc',
   '.markdownlint*',
   '.prettier*',
   '.stylelint*',
-  '.textlintrc*',
+  '.textlint*',
   '.yamllint*',
   'commitlint*',
-  'dangerfile.*',
+  'dangerfile*',
   'lint-staged*',
   'prettier*',
   'stylelint*',
-  'tslint.*',
-  'dangerfile.*',
-  '.flowconfig',
-  '.jshintrc',
+  'tslint*',
 ]
 
 const env = [
@@ -119,7 +117,7 @@ const libraries = [
   ...env,
   ...testingTools,
   ...tsconfig,
-].sort()
+]
 
 const packageJSON = [
   '.browserslist*',
@@ -137,7 +135,7 @@ const packageJSON = [
   ...linters,
   ...tsconfig,
   ...testingTools,
-].sort()
+]
 
 const readme = [
   'readme*',
@@ -156,7 +154,7 @@ const readme = [
   'contributors',
   'maintainers',
   'credits',
-].sort()
+]
 
 const cargo = [
   'cargo.lock',
@@ -166,7 +164,7 @@ const cargo = [
 
 const gofile = [
   'go.sum',
-  '.air*'
+  '.air*',
 ]
 
 const gemfile = [
@@ -185,16 +183,20 @@ const base = {
   'go.mod': 'go.sum',
 }
 
+function stringify(items) {
+  return Array.from(new Set(items)).sort().join(', ')
+}
+
 const full = {
   ...base,
-  '.env': env.join(', '),
-  'dockerfile': docker.join(', '),
-  'package.json': packageJSON.join(', '),
-  'readme.md': readme.join(', '),
-  'cargo.toml': cargo.join(', '),
-  'gemfile': gemfile.join(', '),
-  'go.mod': gofile.join(', '),
-  ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, [...i, ...libraries].join(', ')])),
+  '.env': stringify(env),
+  'dockerfile': stringify(docker),
+  'package.json': stringify(packageJSON),
+  'readme.md': stringify(readme),
+  'cargo.toml': stringify(cargo),
+  'gemfile': stringify(gemfile),
+  'go.mod': stringify(gofile),
+  ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
 }
 
 const today = new Date().toISOString().slice(0, 16).replace('T', ' ')
