@@ -53,7 +53,7 @@ const packageJSON = [
   'jsconfig.*',
   'tsconfig.*',
   'vercel.*',
-  'yarn.lock',
+  'yarn-*',
   'turbo.json',
   '.nvmrc',
   'vetur.config.*',
