@@ -14,7 +14,7 @@ With some scripts to avoid duplication of works. And it's very opinionated.
 Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below, and you are good to go :)
 
 ```jsonc
-  // updated 2022-03-08 03:11
+  // updated 2022-03-08 03:19
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.experimental.fileNesting.enabled": true,
   "explorer.experimental.fileNesting.expand": false,
@@ -27,7 +27,7 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
     "index.d.ts": "*.d.ts",
     "shims.d.ts": "*.d.ts",
     ".env": "*.env, .env-*, env.d.ts",
-    "package.json": ".browserslist*, .circleci*, .editorconfig, .eslint*, .gitlab*, .gitpod*, .markdownlint*, .node-version, .nodemon*, .npm*, .nvmrc, .prettier*, .releaserc*, .sentry*, .stackblitz, .stylelint*, .tazerc*, .travis.yml, .vscode*, .watchman*, .yamllint*, .yarnrc*, api-extractor.json, build.config.*, commitlint.config, gulp.*, jsconfig.*, lerna*, lint-staged.config, netlify.toml, package-lock.json, pnpm-*, renovate.*, rollup.config.*, stylelint.config.*, tsconfig.*, tsup.config.*, turbo.json, vercel.*, vetur.config.*, webpack.config.*, yarn-*",
+    "package.json": ".browserslist*, .circleci*, .editorconfig, .eslint*, .gitlab*, .gitpod*, .huskyrc.*, .markdownlint*, .node-version, .nodemon*, .npm*, .nvmrc, .prettier*, .releaserc*, .sentry*, .stackblitz, .stylelint*, .tazerc*, .travis.yml, .vscode*, .watchman*, .yamllint*, .yarnrc*, api-extractor.json, build.config.*, commitlint.config*, gulp.*, jsconfig.*, lerna*, lint-staged.config*, netlify.toml, nx.json, package-lock.json, pnpm-*, renovate.*, rollup.config.*, stylelint.config.*, tsconfig.*, tsup.config.*, turbo.json, vercel.*, vetur.config.*, webpack.config.*, yarn-*",
     "readme.md": "authors, backers.md, changelog.md, code_of_conduct.md, codeowners, contributing.md, license, security.md, sponsors.md",
     "vite.config.*": "*.env, .env-*, .mocha*, api-extractor.json, ava.config.*, babel.config.*, cypress.json, env.d.ts, jasmine.*, jest.config.*, jsconfig.*, postcss.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
     "vue.config.*": "*.env, .env-*, .mocha*, api-extractor.json, ava.config.*, babel.config.*, cypress.json, env.d.ts, jasmine.*, jest.config.*, jsconfig.*, postcss.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",

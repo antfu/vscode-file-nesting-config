@@ -42,8 +42,8 @@ const linters = [
   '.prettier*',
   '.stylelint*',
   '.yamllint*',
-  'commitlint.config',
-  'lint-staged.config',
+  'commitlint.config*',
+  'lint-staged.config*',
   'stylelint.config.*',
 ]
 
@@ -52,6 +52,47 @@ const env = [
   '.env-*',
   'env.d.ts',
 ]
+
+const workspaces = [
+  '.huskyrc.*',
+  '.node-version',
+  '.npm*',
+  '.nvmrc',
+  '.releaserc*',
+  '.tazerc*',
+  '.yarnrc*',
+  'lerna*',
+  'nx.json',
+  'package-lock.json',
+  'pnpm-*',
+  'turbo.json',
+  'yarn-*',
+]
+
+const packageJSON = [
+  '.browserslist*',
+  '.vscode*',
+  '.nodemon*',
+  '.watchman*',
+  'vetur.config.*',
+  ...workspaces,
+  ...buildTools,
+  ...services,
+  ...linters,
+  ...tsconfig,
+].sort()
+
+const readme = [
+  'license',
+  'codeowners',
+  'authors',
+  'code_of_conduct.md',
+  'contributing.md',
+  'changelog.md',
+  'backers.md',
+  'sponsors.md',
+  'security.md',
+].sort()
 
 // frameworks and their specific files
 const frameworks = {
@@ -75,45 +116,6 @@ const libraries = [
   ...env,
   ...testingTools,
   ...tsconfig,
-].sort()
-
-const packageJSON = [
-  '.browserslist*',
-  '.node-version',
-  '.nodemon*',
-  '.npm*',
-  '.nvmrc',
-  '.releaserc*',
-  '.tazerc*',
-  '.vscode*',
-  '.watchman*',
-  '.yarnrc*',
-  'lerna*',
-  'lint-staged.config',
-  'netlify.toml',
-  'package-lock.json',
-  'pnpm-*',
-  'nx.json',
-  'turbo.json',
-  'vetur.config.*',
-  'yarn-*',
-  '.huskyrc.*'
-  ...buildTools,
-  ...services,
-  ...linters,
-  ...tsconfig,
-].sort()
-
-const readme = [
-  'license',
-  'codeowners',
-  'authors',
-  'code_of_conduct.md',
-  'contributing.md',
-  'changelog.md',
-  'backers.md',
-  'sponsors.md',
-  'security.md',
 ].sort()
 
 const base = {
