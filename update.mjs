@@ -46,21 +46,22 @@ const services = [
 ]
 
 const linters = [
-  '.commitlintrc*',
+  '.commitlint*',
   '.editorconfig',
   '.eslint*',
   '.flowconfig',
+  '.jshintrc',
   '.markdownlint*',
   '.prettier*',
   '.stylelint*',
-  '.textlintrc*',
+  '.textlint*',
   '.yamllint*',
   'commitlint*',
-  'dangerfile.*',
+  'dangerfile*',
   'lint-staged*',
   'prettier*',
   'stylelint*',
-  'tslint.*',
+  'tslint*',
 ]
 
 const env = [
@@ -79,6 +80,7 @@ const workspaces = [
   '.yarnrc*',
   'lerna*',
   'nx.*',
+  'workspace.json',
   'package-lock.json',
   'pnpm*',
   '.pnpm*',
@@ -96,7 +98,7 @@ const frameworks = {
   'vite.config.*': ['index.html'],
   'vue.config.*': [],
   'nuxt.config.*': [],
-  'next.config.*': [],
+  'next.config.*': ['next-env.d.ts'],
   'svelte.config.*': [],
   'remix.config.*': ['remix.*'],
 }
@@ -106,6 +108,7 @@ const libraries = [
   '.babelrc',
   'babel.config.*',
   'postcss.config.*',
+  '.postcssrc.*',
   'svgo.config.*',
   'tailwind.config.*',
   'unocss.config.*',
@@ -114,7 +117,7 @@ const libraries = [
   ...env,
   ...testingTools,
   ...tsconfig,
-].sort()
+]
 
 const packageJSON = [
   '.browserslist*',
@@ -125,13 +128,14 @@ const packageJSON = [
   '.pm2*',
   'pm2.*',
   'vetur.config.*',
+  'nest-cli.*',
   ...workspaces,
   ...buildTools,
   ...services,
   ...linters,
   ...tsconfig,
   ...testingTools,
-].sort()
+]
 
 const readme = [
   'readme*',
@@ -150,7 +154,7 @@ const readme = [
   'contributors',
   'maintainers',
   'credits',
-].sort()
+]
 
 const cargo = [
   'cargo.lock',
@@ -179,16 +183,20 @@ const base = {
   'go.mod': 'go.sum',
 }
 
+function stringify(items) {
+  return Array.from(new Set(items)).sort().join(', ')
+}
+
 const full = {
   ...base,
-  '.env': env.join(', '),
-  'dockerfile': docker.join(', '),
-  'package.json': packageJSON.join(', '),
-  'readme.md': readme.join(', '),
-  'cargo.toml': cargo.join(', '),
-  'gemfile': gemfile.join(', '),
-  'go.mod': gofile.join(', '),
-  ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, [...i, ...libraries].join(', ')])),
+  '.env': stringify(env),
+  'dockerfile': stringify(docker),
+  'package.json': stringify(packageJSON),
+  'readme.md': stringify(readme),
+  'cargo.toml': stringify(cargo),
+  'gemfile': stringify(gemfile),
+  'go.mod': stringify(gofile),
+  ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
 }
 
 const today = new Date().toISOString().slice(0, 16).replace('T', ' ')
