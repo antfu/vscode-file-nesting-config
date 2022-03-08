@@ -62,6 +62,7 @@ const linters = [
   'prettier*',
   'stylelint*',
   'tslint*',
+  'dprint.json'
 ]
 
 const env = [
