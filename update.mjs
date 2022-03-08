@@ -131,6 +131,7 @@ const base = {
   '*.tsx': '$(capture).ts',
   'index.d.ts': '*.d.ts',
   'shims.d.ts': '*.d.ts',
+  'go.mod': 'go.sum',
 }
 
 const full = {
