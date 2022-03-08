@@ -193,6 +193,7 @@ const full = {
   '.env': stringify(env),
   'dockerfile': stringify(docker),
   'package.json': stringify(packageJSON),
+  'rush.json': stringify(packageJSON),
   'readme.md': stringify(readme),
   'cargo.toml': stringify(cargo),
   'gemfile': stringify(gemfile),
