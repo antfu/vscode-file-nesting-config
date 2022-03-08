@@ -48,6 +48,7 @@ const linters = [
   'commitlint*',
   'lint-staged*',
   'stylelint*',
+  'tslint.*',
 ]
 
 const env = [
