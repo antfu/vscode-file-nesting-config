@@ -105,7 +105,7 @@ const full = {
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, [...i, ...libraries].join(', ')])),
 }
 
-const today = new Date().toISOString().slice(0, 10)
+const today = new Date().toISOString().slice(0, 16).replace('T', ' ')
 
 fs.writeFileSync('README.md',
   fs.readFileSync('README.md', 'utf-8')
