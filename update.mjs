@@ -183,6 +183,8 @@ const base = {
   'index.d.ts': '*.d.ts',
   'shims.d.ts': '*.d.ts',
   'go.mod': 'go.sum',
+  'default.nix': 'shell.nix',
+  'flake.nix': 'flake.lock',
 }
 
 function stringify(items) {
