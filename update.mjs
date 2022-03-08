@@ -56,7 +56,11 @@ const packageJSON = [
   'turbo.json',
   '.nvmrc',
   'vetur.config.*',
-  '.sentryclirc'
+  '.sentryclirc',
+  'gulp.*',
+  'stylelint.config.*',
+  'svgo.config.*',
+  '.browserslistrc'
 ].sort()
 
 const readme = [
