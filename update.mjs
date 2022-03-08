@@ -86,7 +86,7 @@ const base = {
   '*.tsx': '$(capture).ts',
   'index.d.ts': '*.d.ts',
   'shims.d.ts': '*.d.ts',
-  '.env': '*.env, .env-*',
+  '.env': '*.env, .env-*, env.d.ts',
   'tsconfig.json': 'tsconfig.*.json',
   'webpack.config.js': 'webpack.config.*',
   'rollup.config.*': 'api-extractor.json',
