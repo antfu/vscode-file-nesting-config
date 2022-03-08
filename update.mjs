@@ -51,6 +51,7 @@ const linters = [
   '.prettier*',
   '.stylelint*',
   '.yamllint*',
+  '.commitlintrc*',
   'commitlint*',
   'lint-staged*',
   'stylelint*',
