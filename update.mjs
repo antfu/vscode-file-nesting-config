@@ -129,6 +129,7 @@ const packageJSON = [
   'pm2.*',
   'vetur.config.*',
   'nest-cli.*',
+  'typedoc*',
   ...workspaces,
   ...buildTools,
   ...services,
@@ -164,7 +165,7 @@ const cargo = [
 
 const gofile = [
   'go.sum',
-  '.air*',
+  '.air*'
 ]
 
 const gemfile = [
