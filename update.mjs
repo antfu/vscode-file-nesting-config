@@ -198,6 +198,8 @@ const full = {
   'cargo.toml': stringify(cargo),
   'gemfile': stringify(gemfile),
   'go.mod': stringify(gofile),
+  'default.nix': 'shell.nix',
+  'flake.nix': 'flake.lock',
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
 }
 
