@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/antfu",
+  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "scripts": {
+    "update": "node update.mjs",
+    "lint": "eslint --ext .js,.json,.md ."
+  },
+  "devDependencies": {
+    "@antfu/eslint-config-basic": "^0.18.3",
+    "eslint": "^8.10.0"
+  }
+}
