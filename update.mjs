@@ -97,6 +97,7 @@ const readme = [
   'backers.md',
   'sponsors.md',
   'security.md',
+  'readme*.md'
 ].sort()
 
 // frameworks and their specific files
