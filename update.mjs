@@ -182,6 +182,8 @@ const base = {
   'index.d.ts': '*.d.ts',
   'shims.d.ts': '*.d.ts',
   'go.mod': 'go.sum',
+  'default.nix': 'shell.nix',
+  'flake.nix': 'flake.lock',
 }
 
 function stringify(items) {
@@ -198,8 +200,6 @@ const full = {
   'cargo.toml': stringify(cargo),
   'gemfile': stringify(gemfile),
   'go.mod': stringify(gofile),
-  'default.nix': 'shell.nix',
-  'flake.nix': 'flake.lock',
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
 }
 
