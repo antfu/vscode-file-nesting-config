@@ -147,7 +147,6 @@ const readme = [
   'contributors',
   'maintainers',
   'credits',
-  'readme*.md'
 ].sort()
 
 const cargo = [
