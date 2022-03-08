@@ -60,6 +60,10 @@ const packageJSON = [
   '.gitlab-*'
   'vetur.config.*',
   '.sentryclirc',
+  '.stylelintrc',
+  '.yamllint',
+  'cypress.json',
+  '.gitlab-*.yml',
   'gulp.*',
   'stylelint.config.*',
   'svgo.config.*',
