@@ -70,7 +70,7 @@ const workspaces = [
   'package-lock.json',
   'pnpm-*',
   'turbo.json',
-  'yarn-*',
+  'yarn*',
 ]
 
 const packageJSON = [
