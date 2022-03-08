@@ -33,7 +33,7 @@ const packageJSON = [
   '.vscode*',
   '.stackblitz',
   '.tazerc*',
-  '.yarn*',
+  '.yarnrc*',
   '.prettier*',
   '.watchman*',
   '.nodemon*',
