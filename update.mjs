@@ -106,6 +106,7 @@ const libraries = [
   '.babelrc',
   'babel.config.*',
   'postcss.config.*',
+  '.postcssrc.*',
   'svgo.config.*',
   'tailwind.config.*',
   'unocss.config.*',

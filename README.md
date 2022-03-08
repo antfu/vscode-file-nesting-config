@@ -14,7 +14,7 @@ With some scripts to avoid duplication of works. And it's very opinionated.
 Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below, and you are good to go :)
 
 ```jsonc
-  // updated 2022-03-08 06:21
+  // updated 2022-03-08 06:23
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.experimental.fileNesting.enabled": true,
   "explorer.experimental.fileNesting.expand": false,
@@ -33,12 +33,12 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
     "readme.md": "authors, backers.md, changelog*.md, code_of_conduct.md, codeowners, contributing.md, contributors, copying, credits, governance.md, history.md, license*, maintainers, readme*, security.md, sponsors.md",
     "cargo.toml": "cargo.lock, rust-toolchain.toml, rustfmt.toml",
     "gemfile": "gemfile.lock, .ruby-version",
-    "vite.config.*": "index.html, *.env, .babelrc, .codecov, .env*, .mocha*, api-extractor.json, ava.config.*, babel.config.*, cypress.json, env.d.ts, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
-    "vue.config.*": "*.env, .babelrc, .codecov, .env*, .mocha*, api-extractor.json, ava.config.*, babel.config.*, cypress.json, env.d.ts, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
-    "nuxt.config.*": "*.env, .babelrc, .codecov, .env*, .mocha*, api-extractor.json, ava.config.*, babel.config.*, cypress.json, env.d.ts, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
-    "next.config.*": "*.env, .babelrc, .codecov, .env*, .mocha*, api-extractor.json, ava.config.*, babel.config.*, cypress.json, env.d.ts, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
-    "svelte.config.*": "*.env, .babelrc, .codecov, .env*, .mocha*, api-extractor.json, ava.config.*, babel.config.*, cypress.json, env.d.ts, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
-    "remix.config.*": "remix.*, *.env, .babelrc, .codecov, .env*, .mocha*, api-extractor.json, ava.config.*, babel.config.*, cypress.json, env.d.ts, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*"
+    "vite.config.*": "index.html, *.env, .babelrc, .codecov, .env*, .mocha*, .postcssrc.*, api-extractor.json, ava.config.*, babel.config.*, cypress.json, env.d.ts, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
+    "vue.config.*": "*.env, .babelrc, .codecov, .env*, .mocha*, .postcssrc.*, api-extractor.json, ava.config.*, babel.config.*, cypress.json, env.d.ts, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
+    "nuxt.config.*": "*.env, .babelrc, .codecov, .env*, .mocha*, .postcssrc.*, api-extractor.json, ava.config.*, babel.config.*, cypress.json, env.d.ts, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
+    "next.config.*": "*.env, .babelrc, .codecov, .env*, .mocha*, .postcssrc.*, api-extractor.json, ava.config.*, babel.config.*, cypress.json, env.d.ts, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
+    "svelte.config.*": "*.env, .babelrc, .codecov, .env*, .mocha*, .postcssrc.*, api-extractor.json, ava.config.*, babel.config.*, cypress.json, env.d.ts, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
+    "remix.config.*": "remix.*, *.env, .babelrc, .codecov, .env*, .mocha*, .postcssrc.*, api-extractor.json, ava.config.*, babel.config.*, cypress.json, env.d.ts, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*"
   }
 ```
 
