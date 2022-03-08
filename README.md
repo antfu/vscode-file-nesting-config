@@ -13,7 +13,7 @@ With some scripts to avoid duplication of works. And it's very opinionated by An
 
 Open your VS Code, bring up your `settings.json`, copy-paste the snippet below, and you are good to go :)
 
-```jsonc
+```json
   // updated 2022-03-08
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.experimental.fileNesting.enabled": true,
@@ -30,7 +30,7 @@ Open your VS Code, bring up your `settings.json`, copy-paste the snippet below, 
     "tsconfig.json": "tsconfig.*.json",
     "webpack.config.js": "webpack.config.*",
     "rollup.config.*": "api-extractor.json",
-    "package.json": ".circleci*, .editorconfig, .eslint*, .gitpod*, .markdownlint*, .node-version, .nodemon*, .npm*, .prettier*, .stackblitz, .tazerc*, .travis.yml, .vscode*, .watchman*, .yarnrc*, babel.config.*, build.config.*, lerna.json, netlify.toml, package-lock.json, pnpm-*, renovate.*, tsconfig.*, vercel.*, yarn.lock",
+    "package.json": ".circleci*, .editorconfig, .eslint*, .gitpod*, .markdownlint*, .node-version, .nodemon*, .npm*, .nvmrc, .prettier*, .stackblitz, .tazerc*, .travis.yml, .vscode*, .watchman*, .yarnrc*, babel.config.*, build.config.*, lerna.json, netlify.toml, package-lock.json, pnpm-*, renovate.*, tsconfig.*, turbo.json, vercel.*, yarn.lock",
     "readme.md": "authors, backers.md, changelog.md, code_of_conduct.md, codeowners, contributing.md, license, security.md, sponsors.md",
     "vite.config.*": ".env*, babel.config.*, jest.config.*, postcss.config.*, tailwind.config.*, unocss.config.*, vitest.config.*, windi.config.*",
     "vue.config.*": ".env*, babel.config.*, jest.config.*, postcss.config.*, tailwind.config.*, unocss.config.*, vitest.config.*, windi.config.*",
