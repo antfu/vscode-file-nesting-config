@@ -79,6 +79,7 @@ const workspaces = [
   '.yarnrc*',
   'lerna*',
   'nx.*',
+  'workspace.json',
   'package-lock.json',
   'pnpm*',
   '.pnpm*',
