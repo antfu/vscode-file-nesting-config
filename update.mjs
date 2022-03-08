@@ -1,5 +1,58 @@
 import fs from 'fs'
 
+const buildTools = [
+  'build.config.*',
+  'tsup.config.*',
+  'rollup.config.*',
+  'webpack.config.*',
+  'gulp.*',
+]
+
+const testingTools = [
+  'jest.config.*',
+  'ava.config.*',
+  'jasmine.*',
+  'vitest.config.*',
+  'cypress.json',
+  '.mocha*',
+]
+
+const tsconfig = [
+  'tsconfig.*',
+  'jsconfig.*',
+  'api-extractor.json',
+]
+
+const services = [
+  '.circleci*',
+  '.gitlab*',
+  '.gitpod*',
+  '.sentry*',
+  '.stackblitz',
+  '.travis.yml',
+  'vercel.*',
+  'netlify.toml',
+  'renovate.*',
+]
+
+const linters = [
+  '.editorconfig',
+  '.eslint*',
+  '.markdownlint*',
+  '.prettier*',
+  '.stylelint*',
+  '.yamllint*',
+  'commitlint.config',
+  'lint-staged.config',
+  'stylelint.config.*',
+]
+
+const env = [
+  '*.env',
+  '.env-*',
+  'env.d.ts',
+]
+
 // frameworks and their specific files
 const frameworks = {
   'vite.config.*': [],
@@ -12,64 +65,39 @@ const frameworks = {
 
 // library configs, will be appended to all the frameworks
 const libraries = [
-  '.env*',
   'babel.config.*',
-  'jest.config.*',
   'postcss.config.*',
   'svgo.config.*',
   'tailwind.config.*',
   'unocss.config.*',
-  'vitest.config.*',
   'webpack.config.*',
   'windi.config.*',
+  ...env,
+  ...testingTools,
+  ...tsconfig,
 ].sort()
 
 const packageJSON = [
   '.browserslist*',
-  '.circleci*',
-  '.editorconfig',
-  '.eslint*',
-  '.gitlab-*.yml',
-  '.gitlab-*',
-  '.gitpod*',
-  '.markdownlint*',
   '.node-version',
   '.nodemon*',
   '.npm*',
   '.nvmrc',
-  '.prettier*',
   '.releaserc*',
-  '.sentry*',
-  '.stackblitz',
-  '.stylelint*',
   '.tazerc*',
-  '.travis.yml',
   '.vscode*',
   '.watchman*',
-  '.yamllint*',
   '.yarnrc*',
-  'api-extractor*',
-  'babel.config.*',
-  'build.config.*',
-  'commitlint.config',
-  'cypress.json',
-  'gulp.*',
-  'jsconfig.*',
   'lerna*',
-  'lint-staged.config',
-  'netlify.toml',
   'package-lock.json',
   'pnpm-*',
-  'renovate.*',
-  'rollup.config.*',
-  'stylelint.config.*',
-  'svgo.config.*',
-  'tsconfig.*',
-  'tsup.config.*',
   'turbo.json',
-  'vercel.*',
   'vetur.config.*',
   'yarn-*',
+  ...buildTools,
+  ...services,
+  ...linters,
+  ...tsconfig,
 ].sort()
 
 const readme = [
@@ -85,21 +113,18 @@ const readme = [
 ].sort()
 
 const base = {
-  '.gitignore': '.gitattributes',
+  '.gitignore': '.git*',
   '*.js': '$(capture).js.map, $(capture).min.js, $(capture).d.ts',
   '*.jsx': '$(capture).js',
   '*.ts': '$(capture).js, $(capture).*.ts',
   '*.tsx': '$(capture).ts',
   'index.d.ts': '*.d.ts',
   'shims.d.ts': '*.d.ts',
-  '.env': '*.env, .env-*, env.d.ts',
-  'tsconfig.json': 'tsconfig.*.json',
-  'webpack.config.js': 'webpack.config.*',
-  'rollup.config.*': 'api-extractor.json',
 }
 
 const full = {
   ...base,
+  '.env': env.join(', '),
   'package.json': packageJSON.join(', '),
   'readme.md': readme.join(', '),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, [...i, ...libraries].join(', ')])),
