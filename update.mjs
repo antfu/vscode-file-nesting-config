@@ -145,6 +145,11 @@ const cargo = [
   'rustfmt.toml',
 ]
 
+const gemfile = [
+  'gemfile.lock',
+  '.ruby-version',
+]
+
 const base = {
   '.gitignore': '.gitattributes, .gitmodules, .mailmap, .git-blame*',
   '*.js': '$(capture).js.map, $(capture).min.js, $(capture).d.ts',
@@ -163,6 +168,7 @@ const full = {
   'package.json': packageJSON.join(', '),
   'readme.md': readme.join(', '),
   'cargo.toml': cargo.join(', '),
+  'gemfile': gemfile.join(', '),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, [...i, ...libraries].join(', ')])),
 }
 
