@@ -130,7 +130,7 @@ const readme = [
   'authors',
   'code_of_conduct.md',
   'contributing.md',
-  'changelog.md',
+  'changelog*.md',
   'backers.md',
   'sponsors.md',
   'security.md',
