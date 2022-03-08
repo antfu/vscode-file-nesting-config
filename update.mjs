@@ -6,6 +6,7 @@ const buildTools = [
   'rollup.config.*',
   'webpack.config.*',
   'gulp*',
+  'phpstan'
 ]
 
 const testingTools = [
@@ -19,6 +20,8 @@ const testingTools = [
   'karma.conf*',
   'playwright.config.*',
   'puppeteer.config.*',
+  'phpunit.*',
+  '.phpunit.*'
 ]
 
 const tsconfig = [
@@ -58,6 +61,7 @@ const linters = [
   'tslint.*',
   'dangerfile.*',
   '.flowconfig',
+  '.php-cs-fixer*'
 ]
 
 const env = [
@@ -80,6 +84,7 @@ const workspaces = [
   'pnpm-*',
   'turbo.json',
   'yarn*',
+  'composer.*',
 ]
 
 const docker = [
