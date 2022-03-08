@@ -22,6 +22,7 @@ const testingTools = [
 
 const tsconfig = [
   'tsconfig.*',
+  'tsdoc.*',
   'jsconfig.*',
   'api-extractor.json',
 ]
