@@ -100,7 +100,7 @@ const frameworks = {
   'vite.config.*': ['index.html'],
   'vue.config.*': [],
   'nuxt.config.*': [],
-  'next.config.*': [],
+  'next.config.*': ['next-env.d.ts'],
   'svelte.config.*': [],
   'remix.config.*': ['remix.*'],
 }
