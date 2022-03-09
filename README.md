@@ -14,7 +14,7 @@ With some scripts to avoid duplication of works. And it's very opinionated.
 Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below, and you are good to go :)
 
 ```jsonc
-  // updated 2022-03-09 06:08
+  // updated 2022-03-09 06:12
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.experimental.fileNesting.enabled": true,
   "explorer.experimental.fileNesting.expand": false,
@@ -26,6 +26,10 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
     "*.tsx": "$(capture).ts",
     "index.d.ts": "*.d.ts",
     "shims.d.ts": "*.d.ts",
+    "*.cpp": "$(capture).hpp, $(capture).h, $(capture).hxx",
+    "*.cxx": "$(capture).hpp, $(capture).h, $(capture).hxx",
+    "*.cc": "$(capture).hpp, $(capture).h, $(capture).hxx",
+    "*.c": "$(capture).h",
     "go.mod": ".air*, go.sum",
     "default.nix": "shell.nix",
     "flake.nix": "flake.lock",
