@@ -74,7 +74,7 @@ const linters = [
 
 const env = [
   '*.env',
-  '.env*',
+  '.env.*',
   'env.d.ts',
 ]
 
