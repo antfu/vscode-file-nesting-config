@@ -63,6 +63,7 @@ const linters = [
   'dangerfile*',
   'dprint.json',
   'lint-staged*',
+  '.lintstagedrc*',
   'prettier*',
   'stylelint*',
   'tslint*',
