@@ -45,6 +45,8 @@ const services = [
   'pullapprove*',
   'renovate*',
   'vercel*',
+  '.firebase*',
+  '.github*'
 ]
 
 const linters = [
@@ -94,6 +96,7 @@ const workspaces = [
   'turbo*',
   'workspace.json',
   'yarn*',
+  'firebase.json',
 ]
 
 const docker = [
