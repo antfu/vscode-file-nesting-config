@@ -136,6 +136,7 @@ const packageJSON = [
   '.pm2*',
   '.vscode*',
   '.watchman*',
+  '*config.js',
   'nest-cli.*',
   'nodemon*',
   'pm2.*',
