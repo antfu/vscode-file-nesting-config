@@ -187,6 +187,12 @@ const gemfile = [
   '.ruby-version',
 ]
 
+const composer = [
+  'composer.lock',
+  'phpunit.xml*',
+  'psalm*.xml',
+]
+
 const base = {
   '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*',
   '*.js': '$(capture).js.map, $(capture).min.js, $(capture).d.ts',
@@ -217,6 +223,7 @@ const full = {
   'cargo.toml': stringify(cargo),
   'gemfile': stringify(gemfile),
   'go.mod': stringify(gofile),
+  'composer.json': stringify(composer),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
 }
 
