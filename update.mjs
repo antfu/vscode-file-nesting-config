@@ -188,6 +188,7 @@ const gemfile = [
 const composer = [
   'composer.lock',
   'phpunit.xml*',
+  'psalm*.xml',
 ]
 
 const base = {
