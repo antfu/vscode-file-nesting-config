@@ -178,6 +178,10 @@ const cargo = [
   'cargo.lock',
   'rust-toolchain.toml',
   'rustfmt.toml',
+  '.rustfmt.toml',
+  'clippy.toml',
+  '.clippy.toml',
+  'cross.toml'
 ]
 
 const gofile = [
