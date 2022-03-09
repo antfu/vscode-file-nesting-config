@@ -187,6 +187,7 @@ const gemfile = [
 
 const composer = [
   'composer.lock',
+  'phpunit.xml*',
 ]
 
 const base = {
