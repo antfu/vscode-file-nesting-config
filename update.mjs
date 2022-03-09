@@ -35,6 +35,7 @@ const services = [
   '.gitpod*',
   '.sentry*',
   '.stackblitz*',
+  '.styleci*',
   '.travis*',
   'appveyor*',
   'azure-pipelines*',
