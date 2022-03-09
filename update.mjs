@@ -202,6 +202,10 @@ function stringify(items) {
   return Array.from(new Set(items)).sort().join(', ')
 }
 
+function capitalize(items) {
+  return Array.from(new Set(items)).sort().map(item => item.toUpperCase()).map(item => item.replace(/.MD$/, '.md'))
+}
+
 const full = {
   ...base,
   '.env': stringify(env),
@@ -209,6 +213,7 @@ const full = {
   'package.json': stringify(packageJSON),
   'rush.json': stringify(packageJSON),
   'readme.*': stringify(readme),
+  'README.*': stringify(capitalize(readme)),
   'cargo.toml': stringify(cargo),
   'gemfile': stringify(gemfile),
   'go.mod': stringify(gofile),
