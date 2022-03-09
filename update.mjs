@@ -202,6 +202,7 @@ const base = {
   '*.jsx': '$(capture).js',
   '*.ts': '$(capture).js, $(capture).*.ts',
   '*.tsx': '$(capture).ts',
+  '*.vue': '$(capture).*.ts, $(capture).*.js',
   'index.d.ts': '*.d.ts',
   'shims.d.ts': '*.d.ts',
   '*.cpp': '$(capture).hpp, $(capture).h, $(capture).hxx',
