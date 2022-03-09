@@ -196,6 +196,9 @@ const base = {
   'go.mod': 'go.sum',
   'default.nix': 'shell.nix',
   'flake.nix': 'flake.lock',
+  'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE',
+  'CMakeLists.txt': '*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json',
+  '.clang-tidy': '.clang-format',
 }
 
 function stringify(items) {
