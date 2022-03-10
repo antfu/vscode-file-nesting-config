@@ -11,6 +11,5 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Lint
       - uses: actions/checkout@v2
       - run: npm run lint
