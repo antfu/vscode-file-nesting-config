@@ -5,7 +5,8 @@
   "author": "Anthony Fu <anthonyfu117@hotmail.com>",
   "scripts": {
     "update": "node update.mjs",
-    "lint": "eslint --ext .js,.json ."
+    "lint": "eslint --ext .js,.json .",
+    "lint:fix": "npm run lint -- --fix"
   },
   "devDependencies": {
     "@antfu/eslint-config-basic": "^0.18.3",
