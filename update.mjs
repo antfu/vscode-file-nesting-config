@@ -114,6 +114,7 @@ const frameworks = {
   'svelte.config.*': ['mdsvex.config.js'],
   'remix.config.*': ['remix.*'],
   'artisan': ['server.php', 'webpack.mix.js'],
+  'astro.config.*': [],
 }
 
 // library configs, will be appended to all the frameworks
