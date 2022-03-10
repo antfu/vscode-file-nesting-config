@@ -148,6 +148,7 @@ const packageJSON = [
   'nodemon*',
   'pm2.*',
   'typedoc*',
+  'apollo.config.*',
   'vetur.config.*',
   ...workspaces,
   ...buildTools,
