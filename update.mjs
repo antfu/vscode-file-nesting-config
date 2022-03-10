@@ -103,6 +103,7 @@ const workspaces = [
 const docker = [
   'dockerfile*',
   '.dockerignore',
+  'docker-compose.yml',
 ]
 
 // frameworks and their specific files
