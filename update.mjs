@@ -116,6 +116,7 @@ const frameworks = {
   'remix.config.*': ['remix.*'],
   'artisan': ['server.php', 'webpack.mix.js'],
   'astro.config.*': [],
+  'gatsby-config.*': ['gatsby-browser.*', 'gatsby-node.*', 'gatsby-ssr.*', 'gatsby-transformer.*'],
 }
 
 // library configs, will be appended to all the frameworks
