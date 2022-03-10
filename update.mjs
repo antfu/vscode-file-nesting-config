@@ -2,10 +2,11 @@ import fs from 'fs'
 
 const buildTools = [
   'build.config.*',
-  'tsup.config.*',
-  'rollup.config.*',
-  'webpack.config.*',
+  'grunt*',
   'gulp*',
+  'rollup.config.*',
+  'tsup.config.*',
+  'webpack.config.*',
 ]
 
 const testingTools = [
@@ -15,10 +16,10 @@ const testingTools = [
   'cypress.json',
   'jasmine.*',
   'jest.config.*',
-  'vitest.config.*',
   'karma*',
   'playwright.config.*',
   'puppeteer.config.*',
+  'vitest.config.*',
 ]
 
 const tsconfig = [
@@ -34,15 +35,18 @@ const services = [
   '.gitpod*',
   '.sentry*',
   '.stackblitz*',
+  '.styleci*',
   '.travis*',
-  'vercel*',
-  'netlify*',
-  'renovate*',
   'appveyor*',
-  'crowdin*',
   'azure-pipelines*',
+  'crowdin*',
   'jenkins*',
+  'netlify*',
   'pullapprove*',
+  'renovate*',
+  'vercel*',
+  '.firebase*',
+  '.github*'
 ]
 
 const linters = [
@@ -50,23 +54,27 @@ const linters = [
   '.editorconfig',
   '.eslint*',
   '.flowconfig',
-  '.jshintrc',
+  '.jslint*',
   '.markdownlint*',
   '.prettier*',
   '.stylelint*',
   '.textlint*',
+  '.xo-config*',
   '.yamllint*',
   'commitlint*',
   'dangerfile*',
+  'dprint.json',
   'lint-staged*',
+  '.lintstagedrc*',
   'prettier*',
   'stylelint*',
   'tslint*',
+  'xo.config.*',
 ]
 
 const env = [
   '*.env',
-  '.env*',
+  '.env.*',
   'env.d.ts',
 ]
 
@@ -75,17 +83,21 @@ const workspaces = [
   '.node-version',
   '.npm*',
   '.nvmrc',
+  '.tool-versions',
+  '.pnp.*',
+  '.pnpm*',
   '.releaserc*',
   '.tazerc*',
   '.yarnrc*',
+  'bower.json',
   'lerna*',
   'nx.*',
-  'workspace.json',
   'package-lock.json',
   'pnpm*',
-  '.pnpm*',
   'turbo*',
+  'workspace.json',
   'yarn*',
+  'firebase.json',
 ]
 
 const docker = [
@@ -99,16 +111,21 @@ const frameworks = {
   'vue.config.*': [],
   'nuxt.config.*': [],
   'next.config.*': ['next-env.d.ts'],
-  'svelte.config.*': [],
+  'svelte.config.*': ['mdsvex.config.js'],
   'remix.config.*': ['remix.*'],
 }
 
 // library configs, will be appended to all the frameworks
 const libraries = [
-  '.babelrc',
+  '.babelrc*',
+  '.cssnanorc*',
+  '.htmlnanorc*',
+  '.postcssrc*',
+  '.terserrc*',
   'babel.config.*',
+  'cssnano.config.*',
+  'htmlnanorc.*',
   'postcss.config.*',
-  '.postcssrc.*',
   'svgo.config.*',
   'tailwind.config.*',
   'unocss.config.*',
@@ -121,12 +138,14 @@ const libraries = [
 
 const packageJSON = [
   '.browserslist*',
-  '.vscode*',
   '.nodemon*',
-  'nodemon*',
-  '.watchman*',
   '.pm2*',
+  '.vscode*',
+  '.watchman*',
+  'nest-cli.*',
+  'nodemon*',
   'pm2.*',
+  'typedoc*',
   'vetur.config.*',
   'nest-cli.*',
   'typedoc*',
@@ -139,28 +158,33 @@ const packageJSON = [
 ]
 
 const readme = [
-  'readme*',
-  'license*',
-  'codeowners',
   'authors',
-  'code_of_conduct.md',
-  'contributing.md',
-  'changelog*.md',
   'backers.md',
-  'sponsors.md',
-  'security.md',
+  'changelog*',
+  'citation*',
+  'code_of_conduct.md',
+  'codeowners',
+  'contributing.md',
+  'contributors',
+  'copying',
+  'credits',
   'governance.md',
   'history.md',
-  'copying',
-  'contributors',
+  'license*',
   'maintainers',
-  'credits',
+  'readme*',
+  'security.md',
+  'sponsors.md',
 ]
 
 const cargo = [
   'cargo.lock',
   'rust-toolchain.toml',
   'rustfmt.toml',
+  '.rustfmt.toml',
+  'clippy.toml',
+  '.clippy.toml',
+  'cross.toml'
 ]
 
 const gofile = [
@@ -173,15 +197,31 @@ const gemfile = [
   '.ruby-version',
 ]
 
+const composer = [
+  'composer.lock',
+  'phpunit.xml*',
+  'psalm*.xml',
+]
+
 const base = {
   '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*',
   '*.js': '$(capture).js.map, $(capture).min.js, $(capture).d.ts',
   '*.jsx': '$(capture).js',
   '*.ts': '$(capture).js, $(capture).*.ts',
   '*.tsx': '$(capture).ts',
+  '*.vue': '$(capture).*.ts, $(capture).*.js',
   'index.d.ts': '*.d.ts',
   'shims.d.ts': '*.d.ts',
+  '*.cpp': '$(capture).hpp, $(capture).h, $(capture).hxx',
+  '*.cxx': '$(capture).hpp, $(capture).h, $(capture).hxx',
+  '*.cc': '$(capture).hpp, $(capture).h, $(capture).hxx',
+  '*.c': '$(capture).h',
   'go.mod': 'go.sum',
+  'default.nix': 'shell.nix',
+  'flake.nix': 'flake.lock',
+  'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE',
+  'CMakeLists.txt': '*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json',
+  '.clang-tidy': '.clang-format',
 }
 
 function stringify(items) {
@@ -193,10 +233,12 @@ const full = {
   '.env': stringify(env),
   'dockerfile': stringify(docker),
   'package.json': stringify(packageJSON),
-  'readme.md': stringify(readme),
+  'rush.json': stringify(packageJSON),
+  'readme.*': stringify(readme),
   'cargo.toml': stringify(cargo),
   'gemfile': stringify(gemfile),
   'go.mod': stringify(gofile),
+  'composer.json': stringify(composer),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
 }
 
@@ -212,7 +254,7 @@ fs.writeFileSync('README.md',
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.experimental.fileNesting.enabled": true,
   "explorer.experimental.fileNesting.expand": false,
-  "explorer.experimental.fileNesting.patterns": ${body.trimStart()}
+  "explorer.experimental.fileNesting.patterns": ${body.trimStart()},
 \`\`\``.trim()
     })
   ,
