@@ -201,7 +201,14 @@ const composer = [
   'composer.lock',
   'phpunit.xml*',
   'psalm*.xml',
-  '.php*.cache'
+  '.php*.cache',
+]
+
+const dotnetProject = [
+  '*proj.user',
+  '*.config',
+  'appsettings.*',
+  'bundleconfig.json',
 ]
 
 const base = {
@@ -240,6 +247,8 @@ const full = {
   'gemfile': stringify(gemfile),
   'go.mod': stringify(gofile),
   'composer.json': stringify(composer),
+  '*.csproj': stringify(dotnetProject),
+  '*.vbproj': stringify(dotnetProject),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
 }
 
