@@ -46,7 +46,7 @@ const services = [
   'renovate*',
   'vercel*',
   '.firebase*',
-  '.github*'
+  '.github*',
 ]
 
 const linters = [
@@ -182,7 +182,7 @@ const cargo = [
   '.rustfmt.toml',
   'clippy.toml',
   '.clippy.toml',
-  'cross.toml'
+  'cross.toml',
 ]
 
 const gofile = [
