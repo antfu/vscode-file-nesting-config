@@ -10,6 +10,16 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
-      - run: npm run lint
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.1
+        with:
+          version: 6.32.1
+      
+      - run: pnpm install
+
+      - name: Lint
+        run: pnpm run lint
