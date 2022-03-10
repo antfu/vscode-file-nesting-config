@@ -202,7 +202,14 @@ const composer = [
   'composer.lock',
   'phpunit.xml*',
   'psalm*.xml',
-  '.php*.cache'
+  '.php*.cache',
+]
+
+const dotnetProject = [
+  '*proj.user',
+  '*.config',
+  'appsettings.*',
+  'bundleconfig.json',
 ]
 
 const base = {
@@ -224,6 +231,13 @@ const base = {
   'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE',
   'CMakeLists.txt': '*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json',
   '.clang-tidy': '.clang-format',
+  '*.pubxml': '$(capture).pubxml.user',
+  '*.asax': '$(capture).*.cs, $(capture).*.vb',
+  '*.ascx': '$(capture).*.cs, $(capture).*.vb',
+  '*.ashx': '$(capture).*.cs, $(capture).*.vb',
+  '*.aspx': '$(capture).*.cs, $(capture).*.vb',
+  '*.master': '$(capture).*.cs, $(capture).*.vb',
+  '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
 }
 
 function stringify(items) {
@@ -241,6 +255,8 @@ const full = {
   'gemfile': stringify(gemfile),
   'go.mod': stringify(gofile),
   'composer.json': stringify(composer),
+  '*.csproj': stringify(dotnetProject),
+  '*.vbproj': stringify(dotnetProject),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
 }
 
