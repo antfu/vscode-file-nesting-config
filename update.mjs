@@ -110,7 +110,7 @@ const frameworks = {
   'vue.config.*': [],
   'nuxt.config.*': [],
   'next.config.*': ['next-env.d.ts'],
-  'svelte.config.*': [],
+  'svelte.config.*': ['mdsvex.config.js'],
   'remix.config.*': ['remix.*'],
 }
 
