@@ -230,6 +230,13 @@ const base = {
   'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE',
   'CMakeLists.txt': '*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json',
   '.clang-tidy': '.clang-format',
+  '*.pubxml': '$(capture).pubxml.user',
+  '*.asax': '$(capture).*.cs, $(capture).*.vb',
+  '*.ascx': '$(capture).*.cs, $(capture).*.vb',
+  '*.ashx': '$(capture).*.cs, $(capture).*.vb',
+  '*.aspx': '$(capture).*.cs, $(capture).*.vb',
+  '*.master': '$(capture).*.cs, $(capture).*.vb',
+  '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
 }
 
 function stringify(items) {
