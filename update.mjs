@@ -201,6 +201,7 @@ const composer = [
   'composer.lock',
   'phpunit.xml*',
   'psalm*.xml',
+  '.php*.cache'
 ]
 
 const base = {
