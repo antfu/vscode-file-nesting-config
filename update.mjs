@@ -83,6 +83,7 @@ const workspaces = [
   '.node-version',
   '.npm*',
   '.nvmrc',
+  '.tool-versions',
   '.pnp.*',
   '.pnpm*',
   '.releaserc*',
