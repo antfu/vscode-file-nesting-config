@@ -214,6 +214,15 @@ const dotnetProject = [
   'bundleconfig.json',
 ]
 
+const pubspecYAML = [
+  '.metadata', 
+  '.packages',
+  'all_lint_rules.yaml',
+  'analysis_options.yaml', 
+  'build.yaml', 
+  'pubspec.lock',
+]
+
 const base = {
   '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*',
   '*.js': '$(capture).js.map, $(capture).min.js, $(capture).d.ts',
@@ -240,6 +249,7 @@ const base = {
   '*.aspx': '$(capture).*.cs, $(capture).*.vb',
   '*.master': '$(capture).*.cs, $(capture).*.vb',
   '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
+  '*.dart': '$(capture).freezed.dart, $(capture).g.dart',
 }
 
 function stringify(items) {
@@ -252,6 +262,7 @@ const full = {
   'dockerfile': stringify(docker),
   'package.json': stringify(packageJSON),
   'rush.json': stringify(packageJSON),
+  'pubspec.yaml': stringify(pubspecYAML),
   'readme.*': stringify(readme),
   'cargo.toml': stringify(cargo),
   'gemfile': stringify(gemfile),
