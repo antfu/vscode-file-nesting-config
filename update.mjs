@@ -269,7 +269,14 @@ function stringify(items) {
   return Array.from(new Set(items)).sort().join(', ')
 }
 
-const full = {
+function sortObject(obj) {
+  return Object.keys(obj).sort().reduce((acc, key) => {
+    acc[key] = obj[key]
+    return acc
+  }, {})
+}
+
+const full = sortObject({
   ...base,
   '.env': stringify(env),
   'dockerfile': stringify(docker),
@@ -286,7 +293,7 @@ const full = {
   'mix.exs': stringify(elixir),
   '*.ex': stringify(phoenixLiveView),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
-}
+})
 
 const today = new Date().toISOString().slice(0, 16).replace('T', ' ')
 
