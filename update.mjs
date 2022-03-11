@@ -223,6 +223,19 @@ const pubspecYAML = [
   'pubspec.lock',
 ]
 
+const elixir = [
+  "mix.lock",
+  ".formatter.exs",
+  ".credo.exs",
+  ".dialyzer_ignore.exs",
+]
+
+const phoenixLiveView = [
+  "$(capture).html.eex",
+  "$(capture).html.leex",
+  "$(capture).html.heex",
+]
+
 const base = {
   '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*',
   '*.js': '$(capture).js.map, $(capture).min.js, $(capture).d.ts',
@@ -270,6 +283,8 @@ const full = {
   'composer.json': stringify(composer),
   '*.csproj': stringify(dotnetProject),
   '*.vbproj': stringify(dotnetProject),
+  "mix.exs": stringify(elixir),
+  "*.ex": stringify(phoenixLiveView),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
 }
 
