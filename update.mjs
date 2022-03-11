@@ -231,7 +231,9 @@ const elixir = [
 ]
 
 const phoenixLiveView = [
-  "$(capture).html.heex"
+  "$(capture).html.eex",
+  "$(capture).html.leex",
+  "$(capture).html.heex",
 ]
 
 const base = {
