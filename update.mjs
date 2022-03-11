@@ -108,7 +108,7 @@ const docker = [
 
 // frameworks and their specific files
 const frameworks = {
-  'vite.config.*': ['index.html'],
+  'vite.config.*': [],
   'vue.config.*': [],
   'nuxt.config.*': [],
   'next.config.*': ['next-env.d.ts'],
@@ -215,25 +215,25 @@ const dotnetProject = [
 ]
 
 const pubspecYAML = [
-  '.metadata', 
+  '.metadata',
   '.packages',
   'all_lint_rules.yaml',
-  'analysis_options.yaml', 
-  'build.yaml', 
+  'analysis_options.yaml',
+  'build.yaml',
   'pubspec.lock',
 ]
 
 const elixir = [
-  "mix.lock",
-  ".formatter.exs",
-  ".credo.exs",
-  ".dialyzer_ignore.exs",
+  'mix.lock',
+  '.formatter.exs',
+  '.credo.exs',
+  '.dialyzer_ignore.exs',
 ]
 
 const phoenixLiveView = [
-  "$(capture).html.eex",
-  "$(capture).html.leex",
-  "$(capture).html.heex",
+  '$(capture).html.eex',
+  '$(capture).html.leex',
+  '$(capture).html.heex',
 ]
 
 const base = {
@@ -283,8 +283,8 @@ const full = {
   'composer.json': stringify(composer),
   '*.csproj': stringify(dotnetProject),
   '*.vbproj': stringify(dotnetProject),
-  "mix.exs": stringify(elixir),
-  "*.ex": stringify(phoenixLiveView),
+  'mix.exs': stringify(elixir),
+  '*.ex': stringify(phoenixLiveView),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
 }
 
