@@ -263,7 +263,7 @@ const base = {
   '*.master': '$(capture).*.cs, $(capture).*.vb',
   '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
   '*.dart': '$(capture).freezed.dart, $(capture).g.dart',
-  '*.module.ts": "$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts',
+  '*.module.ts': '$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts',
 }
 
 function stringify(items) {
