@@ -46,7 +46,7 @@ const services = [
   'renovate*',
   'vercel*',
   '.firebase*',
-  '.github*'
+  '.github*',
 ]
 
 const linters = [
@@ -103,16 +103,20 @@ const workspaces = [
 const docker = [
   'dockerfile*',
   '.dockerignore',
+  'docker-compose.yml',
 ]
 
 // frameworks and their specific files
 const frameworks = {
-  'vite.config.*': ['index.html'],
+  'vite.config.*': [],
   'vue.config.*': [],
   'nuxt.config.*': [],
   'next.config.*': ['next-env.d.ts'],
   'svelte.config.*': ['mdsvex.config.js'],
   'remix.config.*': ['remix.*'],
+  'artisan': ['server.php', 'webpack.mix.js'],
+  'astro.config.*': [],
+  'gatsby-config.*': ['gatsby-browser.*', 'gatsby-node.*', 'gatsby-ssr.*', 'gatsby-transformer.*'],
 }
 
 // library configs, will be appended to all the frameworks
@@ -146,6 +150,7 @@ const packageJSON = [
   'nodemon*',
   'pm2.*',
   'typedoc*',
+  'apollo.config.*',
   'vetur.config.*',
   ...workspaces,
   ...buildTools,
@@ -182,7 +187,7 @@ const cargo = [
   '.rustfmt.toml',
   'clippy.toml',
   '.clippy.toml',
-  'cross.toml'
+  'cross.toml',
 ]
 
 const gofile = [
@@ -199,6 +204,36 @@ const composer = [
   'composer.lock',
   'phpunit.xml*',
   'psalm*.xml',
+  '.php*.cache',
+]
+
+const dotnetProject = [
+  '*proj.user',
+  '*.config',
+  'appsettings.*',
+  'bundleconfig.json',
+]
+
+const pubspecYAML = [
+  '.metadata',
+  '.packages',
+  'all_lint_rules.yaml',
+  'analysis_options.yaml',
+  'build.yaml',
+  'pubspec.lock',
+]
+
+const elixir = [
+  'mix.lock',
+  '.formatter.exs',
+  '.credo.exs',
+  '.dialyzer_ignore.exs',
+]
+
+const phoenixLiveView = [
+  '$(capture).html.eex',
+  '$(capture).html.leex',
+  '$(capture).html.heex',
 ]
 
 const base = {
@@ -220,25 +255,46 @@ const base = {
   'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE',
   'CMakeLists.txt': '*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json',
   '.clang-tidy': '.clang-format',
+  '*.pubxml': '$(capture).pubxml.user',
+  '*.asax': '$(capture).*.cs, $(capture).*.vb',
+  '*.ascx': '$(capture).*.cs, $(capture).*.vb',
+  '*.ashx': '$(capture).*.cs, $(capture).*.vb',
+  '*.aspx': '$(capture).*.cs, $(capture).*.vb',
+  '*.master': '$(capture).*.cs, $(capture).*.vb',
+  '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
+  '*.dart': '$(capture).freezed.dart, $(capture).g.dart',
+  '*.module.ts": "$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts',
 }
 
 function stringify(items) {
   return Array.from(new Set(items)).sort().join(', ')
 }
 
-const full = {
+function sortObject(obj) {
+  return Object.keys(obj).sort().reduce((acc, key) => {
+    acc[key] = obj[key]
+    return acc
+  }, {})
+}
+
+const full = sortObject({
   ...base,
   '.env': stringify(env),
   'dockerfile': stringify(docker),
   'package.json': stringify(packageJSON),
   'rush.json': stringify(packageJSON),
+  'pubspec.yaml': stringify(pubspecYAML),
   'readme.*': stringify(readme),
   'cargo.toml': stringify(cargo),
   'gemfile': stringify(gemfile),
   'go.mod': stringify(gofile),
   'composer.json': stringify(composer),
+  '*.csproj': stringify(dotnetProject),
+  '*.vbproj': stringify(dotnetProject),
+  'mix.exs': stringify(elixir),
+  '*.ex': stringify(phoenixLiveView),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
-}
+})
 
 const today = new Date().toISOString().slice(0, 16).replace('T', ' ')
 
