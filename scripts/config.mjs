@@ -1,5 +1,3 @@
-import fs from 'fs'
-
 const buildTools = [
   'build.config.*',
   'grunt*',
@@ -194,7 +192,7 @@ const cargo = [
 
 const gofile = [
   'go.sum',
-  '.air*'
+  '.air*',
 ]
 
 const gemfile = [
@@ -265,7 +263,7 @@ const base = {
   '*.master': '$(capture).*.cs, $(capture).*.vb',
   '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
   '*.dart': '$(capture).freezed.dart, $(capture).g.dart',
-  '*.module.ts': "$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts"
+  '*.module.ts': '$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts',
 }
 
 function stringify(items) {
@@ -298,21 +296,8 @@ const full = sortObject({
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
 })
 
-const today = new Date().toISOString().slice(0, 16).replace('T', ' ')
-
-fs.writeFileSync('README.md',
-  fs.readFileSync('README.md', 'utf-8')
-    .replace(/```json([\s\S]*?)```/m, () => {
-      const body = JSON.stringify(full, null, 2).split('\n').map(l => `  ${l}`).join('\n')
-      return `
-\`\`\`jsonc
-  // updated ${today}
-  // https://github.com/antfu/vscode-file-nesting-config
-  "explorer.experimental.fileNesting.enabled": true,
-  "explorer.experimental.fileNesting.expand": false,
-  "explorer.experimental.fileNesting.patterns": ${body.trimStart()},
-\`\`\``.trim()
-    })
-  ,
-  'utf-8',
-)
+export const config = {
+  'explorer.experimental.fileNesting.enabled': true,
+  'explorer.experimental.fileNesting.expand': false,
+  'explorer.experimental.fileNesting.patterns': full,
+}
