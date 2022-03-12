@@ -14,7 +14,7 @@ With some scripts to avoid duplication of works. And it's very opinionated.
 Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below, and you are good to go :)
 
 ```jsonc
-// updated 2022-03-12 15:26
+// updated 2022-03-12 16:03
 // https://github.com/antfu/vscode-file-nesting-config
   {
     "explorer.experimental.fileNesting.enabled": true,
