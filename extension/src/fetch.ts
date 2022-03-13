@@ -1,4 +1,5 @@
 import fetch from 'node-fetch'
+import type { ExtensionContext } from 'vscode'
 import { window, workspace } from 'vscode'
 import { MSG_PREFIX, URL } from './constants'
 
@@ -19,7 +20,7 @@ export async function fetchLatest() {
   return config['explorer.experimental.fileNesting.patterns']
 }
 
-export async function fetchAndUpdate(prompt = true) {
+export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
   const patterns = await fetchLatest()
   let shouldUpdate = true
 
@@ -40,8 +41,13 @@ export async function fetchAndUpdate(prompt = true) {
       config.update('explorer.experimental.fileNesting.enabled', true, true)
     if (!config.has('explorer.experimental.fileNesting.expand'))
       config.update('explorer.experimental.fileNesting.expand', false, true)
-    // TODO: prompt about overriding
-    config.update('explorer.experimental.fileNesting.patterns', patterns, true)
+
+    config.update('explorer.experimental.fileNesting.patterns', {
+      '//': `Last update at ${new Date().toLocaleString()}`,
+      ...patterns,
+    }, true)
+
+    ctx.globalState.update('lastUpdate', Date.now())
 
     window.showInformationMessage(`${MSG_PREFIX} Config updated`)
   }

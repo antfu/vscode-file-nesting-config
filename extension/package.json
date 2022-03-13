@@ -37,6 +37,11 @@
           "type": "boolean",
           "description": "Should show up the prompt before doing auto update",
           "default": true
+        },
+        "fileNestingUpdater.autoUpdateInterval": {
+          "type": "number",
+          "description": "The minimal interval for auto update, in minutes",
+          "default": 720
         }
       }
     }
