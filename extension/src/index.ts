@@ -1,4 +1,5 @@
 import { commands } from 'vscode'
+import { getConfig } from './config'
 import { fetchAndUpdate } from './fetch'
 
 /**
@@ -12,7 +13,9 @@ import { fetchAndUpdate } from './fetch'
 
 export async function activate(/* ctx: ExtensionContext */) {
   commands.registerCommand('antfu.file-nesting.manualUpdate', () => fetchAndUpdate(false))
-  fetchAndUpdate(true)
+
+  if (getConfig('fileNestingUpdater.autoUpdate'))
+    fetchAndUpdate(getConfig('fileNestingUpdater.promptOnAutoUpdate'))
 }
 
 export function deactivate() {}
