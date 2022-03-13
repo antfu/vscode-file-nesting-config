@@ -17,7 +17,13 @@
   "main": "./dist/index.js",
   "preview": true,
   "contributes": {
-    "commands": [],
+    "commands": [
+      {
+        "command": "antfu.file-nesting.manualUpdate",
+        "title": "Update config now",
+        "category": "File Nesting"
+      }
+    ],
     "configuration": {
       "type": "object",
       "title": "File Nesting Updater",
@@ -46,7 +52,7 @@
               "default": 10
             }
           }
-        }      
+        }
       }
     }
   },

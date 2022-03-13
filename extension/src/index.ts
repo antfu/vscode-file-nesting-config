@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
-import type { ExtensionContext } from 'vscode'
-import { window, workspace } from 'vscode'
+// import type { ExtensionContext } from 'vscode'
+import { commands, window, workspace } from 'vscode'
 
 /**
  * TODO:
@@ -8,10 +8,11 @@ import { window, workspace } from 'vscode'
  * - [x] prompt about overriding
  * - cache
  * - settings (interval)
- * - manual command
+ * - [x] manual command
  */
 
 const URL = 'https://cdn.jsdelivr.net/gh/antfu/vscode-file-nesting-config@main/README.md'
+const MSG_PREFIX = 'File Nesting:'
 
 async function fetchLatest() {
   const md = await fetch(URL).then(r => r.text())
@@ -30,7 +31,9 @@ async function fetchLatest() {
   return config['explorer.experimental.fileNesting.patterns']
 }
 
-export async function activate(ctx: ExtensionContext) {
+export async function activate(/* ctx: ExtensionContext */) {
+  commands.registerCommand('antfu.file-nesting.manualUpdate', () => fetchAndUpdate(false))
+
   fetchAndUpdate(true)
 }
 
@@ -42,7 +45,7 @@ async function fetchAndUpdate(prompt = true) {
     const buttonUpdate = 'Update'
     const buttonSkip = 'Skip this time'
     const result = await window.showInformationMessage(
-      '[File Nesting] new config found, do you want to update?',
+      `${MSG_PREFIX} new config found, do you want to update?`,
       buttonUpdate,
       buttonSkip,
     )
@@ -57,7 +60,8 @@ async function fetchAndUpdate(prompt = true) {
       config.update('explorer.experimental.fileNesting.expand', false, true)
     // TODO: prompt about overriding
     config.update('explorer.experimental.fileNesting.patterns', patterns, true)
-    window.showInformationMessage('Updated with latest patterns')
+
+    window.showInformationMessage(`${MSG_PREFIX} Config updated`)
   }
 }
 
