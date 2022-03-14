@@ -28,7 +28,7 @@ Config to make your file tree cleaner by [the file nesting feature](https://code
 }
 ```
 
-It will checks for update every 12 hours by default. You can also do it manually by executing command `File Nesting Updater: Update config now`.
+It will check for update every 12 hours by default. You can also do it manually by executing command `File Nesting Updater: Update config now`.
 
 ## License
 

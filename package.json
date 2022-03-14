@@ -11,7 +11,8 @@
     "lint": "eslint --ext .",
     "lint:fix": "npm run lint -- --fix",
     "ext:build": "cd extension && tsup src/index.ts --external vscode",
-    "ext:dev": "nr ext:build --watch src"
+    "ext:dev": "nr ext:build --watch src",
+    "ext:publish": "nr ext:build && cd extension && vsce publish"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.18.8",
