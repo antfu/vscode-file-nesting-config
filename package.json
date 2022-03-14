@@ -1,15 +1,26 @@
 {
   "private": true,
+  "workspaces": [
+    "extension"
+  ],
   "license": "MIT",
   "author": "Anthony Fu <anthonyfu117@hotmail.com>",
   "funding": "https://github.com/sponsors/antfu",
   "scripts": {
     "update": "node update.mjs",
-    "lint": "eslint --ext .js,.json .",
-    "lint:fix": "npm run lint -- --fix"
+    "lint": "eslint --ext .",
+    "lint:fix": "npm run lint -- --fix",
+    "ext:build": "cd extension && tsup src/index.ts --external vscode",
+    "ext:dev": "nr ext:build --watch src",
+    "ext:publish": "nr ext:build && cd extension && vsce publish"
   },
   "devDependencies": {
-    "@antfu/eslint-config-basic": "^0.18.6",
-    "eslint": "^8.10.0"
+    "@antfu/eslint-config": "^0.18.8",
+    "@antfu/ni": "^0.13.2",
+    "@types/vscode": "^1.65.0",
+    "eslint": "^8.11.0",
+    "node-fetch": "^3.2.3",
+    "tsup": "^5.12.1",
+    "typescript": "^4.6.2"
   }
 }

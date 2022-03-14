@@ -1,0 +1,56 @@
+{
+  "name": "file-nesting",
+  "displayName": "File Nesting Updater",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Auto updating for Anthony's file nesting config",
+  "categories": [
+    "Other"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antfu/vscode-file-nesting-config",
+    "directory": "extension"
+  },
+  "publisher": "antfu",
+  "main": "./dist/index.js",
+  "preview": true,
+  "contributes": {
+    "commands": [
+      {
+        "command": "antfu.file-nesting.manualUpdate",
+        "title": "Update config now",
+        "category": "File Nesting Updater"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "File Nesting Updater",
+      "properties": {
+        "fileNestingUpdater.autoUpdate": {
+          "type": "boolean",
+          "description": "Fetch and update the latest config automatically",
+          "default": true
+        },
+        "fileNestingUpdater.promptOnAutoUpdate": {
+          "type": "boolean",
+          "description": "Should show up the prompt before doing auto update",
+          "default": true
+        },
+        "fileNestingUpdater.autoUpdateInterval": {
+          "type": "number",
+          "description": "The minimal interval for auto update, in minutes",
+          "default": 720
+        }
+      }
+    }
+  },
+  "activationEvents": [
+    "*"
+  ],
+  "engines": {
+    "vscode": "^1.65.0"
+  },
+  "icon": "res/logo.png"
+}
