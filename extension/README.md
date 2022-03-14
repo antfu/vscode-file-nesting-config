@@ -7,7 +7,7 @@
 <h1 align="center">File Nesting Updater</h1>
 
 <p align="center">
-Auto updater for <a href="https://github.com/antfu/vscode-file-nesting-config" target="_blank"><code>vscode-file-nesting-config</code></a>.
+Auto updater for <a href="https://github.com/antfu/vscode-file-nesting-config" target="_blank"><code>vscode-file-nesting-config</code></a>.<br>
 A config to make your file tree cleaner with the <a href="https://code.visualstudio.com/updates/v1_64#_explorer-file-nesting">file nesting feature</a> of VS Code.</a>
 </p>
 
