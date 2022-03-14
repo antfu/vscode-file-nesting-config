@@ -1,7 +1,7 @@
 <br>
 
 <p align="center">
-<img src="./res/logo.png" style="width:100px;" />
+<img src="https://raw.githubusercontent.com/antfu/vscode-file-nesting-config/main/extension/res/logo.png" style="width:100px;" />
 </p>
 
 <h1 align="center">File Nesting Updater</h1>

@@ -1,7 +1,7 @@
 {
   "name": "file-nesting",
   "displayName": "File Nesting Updater",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "description": "Auto updating for Anthony's file nesting config",
   "categories": [
