@@ -117,6 +117,7 @@ const frameworks = {
   'artisan': ['server.php', 'webpack.mix.js'],
   'astro.config.*': [],
   'gatsby-config.*': ['gatsby-browser.*', 'gatsby-node.*', 'gatsby-ssr.*', 'gatsby-transformer.*'],
+  'quasar.conf.js': ['quasar.extensions.json']
 }
 
 // library configs, will be appended to all the frameworks
