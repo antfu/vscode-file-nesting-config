@@ -45,7 +45,7 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
     "*.pubxml": "$(capture).pubxml.user",
     "*.resx": "$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb",
     "*.ts": "$(capture).js, $(capture).*.ts",
-    "*.tsx": "$(capture).ts",
+    "*.tsx": "$(capture).ts, $(capture).*.tsx",
     "*.vbproj": "*.config, *proj.user, appsettings.*, bundleconfig.json",
     "*.vue": "$(capture).*.ts, $(capture).*.js",
     ".clang-tidy": ".clang-format",
