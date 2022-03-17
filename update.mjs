@@ -105,7 +105,7 @@ const workspaces = [
 const docker = [
   'dockerfile*',
   '.dockerignore',
-  'docker-compose.*'
+  'docker-compose.*',
 ]
 
 // frameworks and their specific files
@@ -119,7 +119,7 @@ const frameworks = {
   'artisan': ['server.php', 'webpack.mix.js'],
   'astro.config.*': [],
   'gatsby-config.*': ['gatsby-browser.*', 'gatsby-node.*', 'gatsby-ssr.*', 'gatsby-transformer.*'],
-  'quasar.conf.js': ['quasar.extensions.json']
+  'quasar.conf.js': ['quasar.extensions.json'],
 }
 
 // library configs, will be appended to all the frameworks
@@ -252,7 +252,6 @@ const base = {
   '*.ts': '$(capture).js, $(capture).*.ts',
   '*.tsx': '$(capture).ts, $(capture).*.tsx',
   '*.vue': '$(capture).*.ts, $(capture).*.js',
-  'index.d.ts': '*.d.ts',
   'shims.d.ts': '*.d.ts',
   '*.cpp': '$(capture).hpp, $(capture).h, $(capture).hxx',
   '*.cxx': '$(capture).hpp, $(capture).h, $(capture).hxx',
