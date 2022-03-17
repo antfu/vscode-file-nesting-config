@@ -70,12 +70,14 @@ const linters = [
   'stylelint*',
   'tslint*',
   'xo.config.*',
+  'pyrightconfig.json',
 ]
 
 const env = [
   '*.env',
   '.env.*',
   'env.d.ts',
+  '.envrc',
 ]
 
 const workspaces = [
@@ -231,6 +233,12 @@ const elixir = [
   '.dialyzer_ignore.exs',
 ]
 
+const pdm = [
+  'pyproject.toml',
+  'pdm.lock',
+  '.pdm.toml',
+]
+
 const phoenixLiveView = [
   '$(capture).html.eex',
   '$(capture).html.leex',
@@ -296,6 +304,7 @@ const full = sortObject({
   '*.csproj': stringify(dotnetProject),
   '*.vbproj': stringify(dotnetProject),
   'mix.exs': stringify(elixir),
+  'pyproject.toml': stringify(pdm),
   '*.ex': stringify(phoenixLiveView),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
 })
