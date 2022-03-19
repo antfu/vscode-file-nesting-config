@@ -67,6 +67,7 @@ const linters = [
   'lint-staged*',
   '.lintstagedrc*',
   'prettier*',
+  'phpcs.xml',
   'stylelint*',
   'tslint*',
   'xo.config.*',
