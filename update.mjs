@@ -273,6 +273,8 @@ const base = {
   '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
   '*.dart': '$(capture).freezed.dart, $(capture).g.dart',
   '*.module.ts': '$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts',
+  '*.java': '$(capture).class',
+  '.project': '.classpath',
 }
 
 function stringify(items) {
