@@ -67,15 +67,18 @@ const linters = [
   'lint-staged*',
   '.lintstagedrc*',
   'prettier*',
+  'phpcs.xml',
   'stylelint*',
   'tslint*',
   'xo.config.*',
+  'pyrightconfig.json',
 ]
 
 const env = [
   '*.env',
   '.env.*',
   'env.d.ts',
+  '.envrc',
 ]
 
 const workspaces = [
@@ -103,7 +106,7 @@ const workspaces = [
 const docker = [
   'dockerfile*',
   '.dockerignore',
-  'docker-compose.*'
+  'docker-compose.*',
 ]
 
 // frameworks and their specific files
@@ -117,6 +120,7 @@ const frameworks = {
   'artisan': ['server.php', 'webpack.mix.js'],
   'astro.config.*': [],
   'gatsby-config.*': ['gatsby-browser.*', 'gatsby-node.*', 'gatsby-ssr.*', 'gatsby-transformer.*'],
+  'quasar.conf.js': ['quasar.extensions.json'],
 }
 
 // library configs, will be appended to all the frameworks
@@ -230,6 +234,12 @@ const elixir = [
   '.dialyzer_ignore.exs',
 ]
 
+const pdm = [
+  'pyproject.toml',
+  'pdm.lock',
+  '.pdm.toml',
+]
+
 const phoenixLiveView = [
   '$(capture).html.eex',
   '$(capture).html.leex',
@@ -240,10 +250,9 @@ const base = {
   '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*',
   '*.js': '$(capture).js.map, $(capture).min.js, $(capture).d.ts, $(capture).test.js, $(capture).spec.js',
   '*.jsx': '$(capture).js, $(capture).test.jsx, $(capture).spec.jsx',
-  '*.ts': '$(capture).js, $(capture).*.ts, $(capture).test.ts, $(capture).spec.ts',
-  '*.tsx': '$(capture).ts, $(capture).test.tsx, $(capture).spec.tsx',
+  '*.ts': '$(capture).js, $(capture).*.ts',
+  '*.tsx': '$(capture).ts, $(capture).*.tsx',
   '*.vue': '$(capture).*.ts, $(capture).*.js',
-  'index.d.ts': '*.d.ts',
   'shims.d.ts': '*.d.ts',
   '*.cpp': '$(capture).hpp, $(capture).h, $(capture).hxx',
   '*.cxx': '$(capture).hpp, $(capture).h, $(capture).hxx',
@@ -264,6 +273,8 @@ const base = {
   '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
   '*.dart': '$(capture).freezed.dart, $(capture).g.dart',
   '*.module.ts': '$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts',
+  '*.java': '$(capture).class',
+  '.project': '.classpath',
 }
 
 function stringify(items) {
@@ -295,6 +306,7 @@ const full = sortObject({
   '*.csproj': stringify(dotnetProject),
   '*.vbproj': stringify(dotnetProject),
   'mix.exs': stringify(elixir),
+  'pyproject.toml': stringify(pdm),
   '*.ex': stringify(phoenixLiveView),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
 })
