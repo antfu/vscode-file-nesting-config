@@ -22,7 +22,7 @@ We now have a new VS Code extension to handle the updates automatically for you.
 Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below, and you are good to go :)
 
 ```jsonc
-  // updated 2022-03-20 08:58
+  // updated 2022-03-21 10:38
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.experimental.fileNesting.enabled": true,
   "explorer.experimental.fileNesting.expand": false,
@@ -39,8 +39,8 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
     "*.dart": "$(capture).freezed.dart, $(capture).g.dart",
     "*.ex": "$(capture).html.eex, $(capture).html.heex, $(capture).html.leex",
     "*.java": "$(capture).class",
-    "*.js": "$(capture).js.map, $(capture).min.js, $(capture).d.ts",
-    "*.jsx": "$(capture).js",
+    "*.js": "$(capture).js.map, $(capture).*.js",
+    "*.jsx": "$(capture).js, $(capture).*.jsx",
     "*.master": "$(capture).*.cs, $(capture).*.vb",
     "*.module.ts": "$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts",
     "*.pubxml": "$(capture).pubxml.user",
