@@ -248,6 +248,7 @@ const phoenixLiveView = [
 
 const base = {
   '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*',
+  '*.css': '$(capture).css.map, $(capture).*.css',
   '*.js': '$(capture).js.map, $(capture).*.js',
   '*.jsx': '$(capture).js, $(capture).*.jsx',
   '*.ts': '$(capture).js, $(capture).*.ts',
