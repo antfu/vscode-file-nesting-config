@@ -157,6 +157,7 @@ const packageJSON = [
   'apollo.config.*',
   'vetur.config.*',
   '.czrc',
+  '.cz-config.js',
   '.versionrc*',
   ...workspaces,
   ...buildTools,
