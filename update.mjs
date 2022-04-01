@@ -42,6 +42,7 @@ const services = [
   'crowdin*',
   'jenkins*',
   'netlify*',
+  'Procfile',
   'pullapprove*',
   'renovate*',
   'vercel*',
