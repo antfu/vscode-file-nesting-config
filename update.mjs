@@ -156,6 +156,8 @@ const packageJSON = [
   'typedoc*',
   'apollo.config.*',
   'vetur.config.*',
+  '.czrc',
+  '.versionrc*',
   ...workspaces,
   ...buildTools,
   ...services,
