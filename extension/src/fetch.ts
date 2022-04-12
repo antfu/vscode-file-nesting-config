@@ -1,10 +1,14 @@
 import fetch from 'node-fetch'
 import type { ExtensionContext } from 'vscode'
 import { window, workspace } from 'vscode'
-import { MSG_PREFIX, URL } from './constants'
+import { MSG_PREFIX, URL_PREFIX, FILE } from './constants'
+import { getConfig } from './config'
 
 export async function fetchLatest() {
-  const md = await fetch(URL).then(r => r.text())
+  const repo = getConfig<string>('fileNestingUpdater.upstreamRepo')
+  const branch = getConfig<string>('fileNestingUpdater.upstreamBranch')
+  const url = `${URL_PREFIX}/${repo}@${branch}/${FILE}`
+  const md = await fetch(url).then(r => r.text())
   const content = (md.match(/```jsonc([\s\S]*?)```/) || [])[1] || ''
 
   const json = `{${
