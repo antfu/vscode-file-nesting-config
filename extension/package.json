@@ -42,6 +42,16 @@
           "type": "number",
           "description": "The minimal interval for auto update, in minutes",
           "default": 720
+        },
+        "fileNestingUpdater.upstreamRepo": {
+          "type": "string",
+          "description": "The upstream repo you want to update from",
+          "default": "antfu/vscode-file-nesting-config"
+        },
+        "fileNestingUpdater.upstreamBranch": {
+          "type": "string",
+          "description": "The branch name of upstream repo",
+          "default": "main"
         }
       }
     }
