@@ -268,7 +268,7 @@ const base = {
   'flake.nix': 'flake.lock',
   'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE',
   'CMakeLists.txt': '*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json',
-  '.clang-tidy': '.clang-format',
+  '.clang-tidy': '.clang-format, .clangd',
   '*.pubxml': '$(capture).pubxml.user',
   '*.asax': '$(capture).*.cs, $(capture).*.vb',
   '*.ascx': '$(capture).*.cs, $(capture).*.vb',
