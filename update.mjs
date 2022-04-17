@@ -189,7 +189,7 @@ const readme = [
 ]
 
 const cargo = [
-  'cargo.lock',
+  'Cargo.lock',
   'rust-toolchain.toml',
   'rustfmt.toml',
   '.rustfmt.toml',
@@ -304,7 +304,7 @@ const full = sortObject({
   'readme.md': stringify(readme),
   'readme.txt': stringify(readme),
   'readme.rst': stringify(readme),
-  'cargo.toml': stringify(cargo),
+  'Cargo.toml': stringify(cargo),
   'gemfile': stringify(gemfile),
   'go.mod': stringify(gofile),
   'composer.json': stringify(composer),
