@@ -236,6 +236,8 @@ const elixir = [
   '.formatter.exs',
   '.credo.exs',
   '.dialyzer_ignore.exs',
+  '.iex.exs',
+  '.tool-versions',
 ]
 
 const pdm = [
