@@ -110,6 +110,32 @@ const docker = [
   'docker-compose.*',
 ]
 
+// latex
+const tex = [
+  '$(capture).aux',
+  '$(capture).bbl',
+  '$(capture).blg',
+  '$(capture).idx',
+  '$(capture).ind',
+  '$(capture).lof',
+  '$(capture).lot',
+  '$(capture).out',
+  '$(capture).toc',
+  '$(capture).acn',
+  '$(capture).acr',
+  '$(capture).alg',
+  '$(capture).glg',
+  '$(capture).glo',
+  '$(capture).gls',
+  '$(capture).ist',
+  '$(capture).fls',
+  '$(capture).log',
+  '$(capture).synctex.gz',
+  '$(capture).xdv',
+  '$(capture).fdb_latexmk',
+  '$(capture).pdf'
+]
+
 // frameworks and their specific files
 const frameworks = {
   'vite.config.*': [],
@@ -312,6 +338,7 @@ const full = sortObject({
   'mix.exs': stringify(elixir),
   'pyproject.toml': stringify(pdm),
   '*.ex': stringify(phoenixLiveView),
+  '*.tex': stringify(tex),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
 })
 
