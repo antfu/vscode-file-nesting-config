@@ -22,7 +22,7 @@ We now have a new VS Code extension to handle the updates automatically for you.
 Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below, and you are good to go :)
 
 ```jsonc
-  // updated 2022-04-18 05:45
+  // updated 2022-04-24 14:10
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.experimental.fileNesting.enabled": true,
   "explorer.experimental.fileNesting.expand": false,
@@ -46,6 +46,7 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
     "*.module.ts": "$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts",
     "*.pubxml": "$(capture).pubxml.user",
     "*.resx": "$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb",
+    "*.tex": "$(capture).acn, $(capture).acr, $(capture).alg, $(capture).aux, $(capture).bbl, $(capture).blg, $(capture).fdb_latexmk, $(capture).fls, $(capture).glg, $(capture).glo, $(capture).gls, $(capture).idx, $(capture).ind, $(capture).ist, $(capture).lof, $(capture).log, $(capture).lot, $(capture).out, $(capture).pdf, $(capture).synctex.gz, $(capture).toc, $(capture).xdv",
     "*.ts": "$(capture).js, $(capture).*.ts",
     "*.tsx": "$(capture).ts, $(capture).*.tsx",
     "*.vbproj": "*.config, *proj.user, appsettings.*, bundleconfig.json",
