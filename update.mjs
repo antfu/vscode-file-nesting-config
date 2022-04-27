@@ -17,6 +17,8 @@ const testingTools = [
   'jasmine.*',
   'jest.config.*',
   'karma*',
+  'lighthouserc.*',
+  '.lighthouserc.*',
   'playwright.config.*',
   'puppeteer.config.*',
   'vitest.config.*',
