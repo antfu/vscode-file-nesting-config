@@ -354,9 +354,9 @@ fs.writeFileSync('README.md',
 \`\`\`jsonc
   // updated ${today}
   // https://github.com/antfu/vscode-file-nesting-config
-  "explorer.experimental.fileNesting.enabled": true,
-  "explorer.experimental.fileNesting.expand": false,
-  "explorer.experimental.fileNesting.patterns": ${body.trimStart()},
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": ${body.trimStart()},
 \`\`\``.trim()
     })
   ,
