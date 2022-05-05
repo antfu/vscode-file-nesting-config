@@ -3,3 +3,5 @@ yarn.lock
 package-lock.json
 dist
 .DS_Store
+*.log
+*.vsix

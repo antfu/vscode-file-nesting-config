@@ -60,7 +60,7 @@
     "onStartupFinished"
   ],
   "engines": {
-    "vscode": "^1.65.0"
+    "vscode": "^1.67.0"
   },
   "icon": "res/logo.png"
 }

@@ -12,15 +12,16 @@
     "lint:fix": "npm run lint -- --fix",
     "ext:build": "cd extension && tsup src/index.ts --external vscode",
     "ext:dev": "nr ext:build --watch src",
-    "ext:publish": "nr ext:build && cd extension && vsce publish --no-dependencies"
+    "ext:publish": "nr ext:build && cd extension && vsce publish --no-dependencies",
+    "ext:pack": "nr ext:build && cd extension && vsce package --no-dependencies"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.18.8",
-    "@antfu/ni": "^0.13.2",
-    "@types/vscode": "^1.65.0",
-    "eslint": "^8.11.0",
-    "node-fetch": "^3.2.3",
-    "tsup": "^5.12.1",
-    "typescript": "^4.6.2"
+    "@antfu/eslint-config": "^0.23.0",
+    "@antfu/ni": "^0.16.2",
+    "@types/vscode": "^1.66.0",
+    "eslint": "^8.14.0",
+    "node-fetch": "^3.2.4",
+    "tsup": "^5.12.7",
+    "typescript": "^4.6.4"
   }
 }
