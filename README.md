@@ -14,11 +14,11 @@ With some scripts to avoid duplication of works. And it's very opinionated.
 Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below, and you are good to go :)
 
 ```jsonc
-  // updated 2022-03-08 06:23
+  // updated 2022-05-06 02:02
   // https://github.com/antfu/vscode-file-nesting-config
-  "explorer.experimental.fileNesting.enabled": true,
-  "explorer.experimental.fileNesting.expand": false,
-  "explorer.experimental.fileNesting.patterns": {
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
     ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
     "*.js": "$(capture).js.map, $(capture).min.js, $(capture).d.ts",
     "*.jsx": "$(capture).js",
