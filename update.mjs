@@ -286,6 +286,7 @@ const base = {
   '*.js': '$(capture).js.map, $(capture).*.js',
   '*.jsx': '$(capture).js, $(capture).*.jsx',
   '*.ts': '$(capture).js, $(capture).*.ts',
+  '*.component.ts': '$(capture).component.html, $(capture).component.spec.ts, $(capture).component.css, $(capture).component.scss, $(capture).component.sass, $(capture).component.less',
   '*.tsx': '$(capture).ts, $(capture).*.tsx',
   '*.vue': '$(capture).*.ts, $(capture).*.js',
   'shims.d.ts': '*.d.ts',
