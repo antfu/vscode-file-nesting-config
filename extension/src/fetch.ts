@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 import type { ExtensionContext } from 'vscode'
 import { window, workspace } from 'vscode'
-import { MSG_PREFIX, URL_PREFIX, FILE } from './constants'
+import { FILE, MSG_PREFIX, URL_PREFIX } from './constants'
 import { getConfig } from './config'
 
 export async function fetchLatest() {

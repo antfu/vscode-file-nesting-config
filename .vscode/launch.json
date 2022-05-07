@@ -13,6 +13,6 @@
         "${workspaceFolder}/extension/dist/**/*.js"
       ],
       "preLaunchTask": "npm: ext:dev"
-    },
+    }
   ]
 }
