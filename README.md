@@ -23,8 +23,10 @@ We now have a new VS Code extension to handle the updates automatically for you.
 
 Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below, and you are good to go :)
 
+<!-- eslint-skip -->
+
 ```jsonc
-  // updated 2022-05-06 07:53
+  // updated 2022-05-07 07:11
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
