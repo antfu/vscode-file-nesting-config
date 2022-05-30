@@ -17,7 +17,7 @@ With some scripts to avoid duplication of works. And it's very opinionated.
 
 We now have a new VS Code extension to handle the updates automatically for you.
 
-[Check the readme for instrcutions](https://github.com/antfu/vscode-file-nesting-config/tree/main/extension).
+[Check the readme for instructions](https://github.com/antfu/vscode-file-nesting-config/tree/main/extension).
 
 ### Update Manually
 
