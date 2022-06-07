@@ -307,6 +307,7 @@ const base = {
   '*.aspx': '$(capture).*.cs, $(capture).*.vb',
   '*.master': '$(capture).*.cs, $(capture).*.vb',
   '*.xaml': '$(capture).xaml.cs',
+  '*.cshtml' : '$(capture).cshtml.cs',
   '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
   '*.dart': '$(capture).freezed.dart, $(capture).g.dart',
   '*.module.ts': '$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts',
