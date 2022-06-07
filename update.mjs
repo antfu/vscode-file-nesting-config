@@ -6,7 +6,7 @@ const buildTools = [
   'gulp*',
   'rollup.config.*',
   'tsup.config.*',
-  'webpack.config.*',
+  'webpack*',
 ]
 
 const testingTools = [
