@@ -26,7 +26,7 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
 <!-- eslint-skip -->
 
 ```jsonc
-  // updated 2022-06-07 16:38
+  // updated 2022-06-14 15:29
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
@@ -39,21 +39,22 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
     "*.cc": "$(capture).hpp, $(capture).h, $(capture).hxx",
     "*.component.ts": "$(capture).component.html, $(capture).component.spec.ts, $(capture).component.css, $(capture).component.scss, $(capture).component.sass, $(capture).component.less",
     "*.cpp": "$(capture).hpp, $(capture).h, $(capture).hxx",
+    "*.cshtml": "$(capture).cshtml.cs",
     "*.csproj": "*.config, *proj.user, appsettings.*, bundleconfig.json",
     "*.css": "$(capture).css.map, $(capture).*.css",
     "*.cxx": "$(capture).hpp, $(capture).h, $(capture).hxx",
     "*.dart": "$(capture).freezed.dart, $(capture).g.dart",
     "*.ex": "$(capture).html.eex, $(capture).html.heex, $(capture).html.leex",
     "*.java": "$(capture).class",
-    "*.js": "$(capture).js.map, $(capture).*.js",
-    "*.jsx": "$(capture).js, $(capture).*.jsx",
+    "*.js": "$(capture).js.map, $(capture).*.js, $(capture)_*.js",
+    "*.jsx": "$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx",
     "*.master": "$(capture).*.cs, $(capture).*.vb",
     "*.module.ts": "$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts",
     "*.pubxml": "$(capture).pubxml.user",
     "*.resx": "$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb",
     "*.tex": "$(capture).acn, $(capture).acr, $(capture).alg, $(capture).aux, $(capture).bbl, $(capture).blg, $(capture).fdb_latexmk, $(capture).fls, $(capture).glg, $(capture).glo, $(capture).gls, $(capture).idx, $(capture).ind, $(capture).ist, $(capture).lof, $(capture).log, $(capture).lot, $(capture).out, $(capture).pdf, $(capture).synctex.gz, $(capture).toc, $(capture).xdv",
-    "*.ts": "$(capture).js, $(capture).*.ts",
-    "*.tsx": "$(capture).ts, $(capture).*.tsx",
+    "*.ts": "$(capture).js, $(capture).*.ts, $(capture)_*.js, $(capture)_*.ts",
+    "*.tsx": "$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx",
     "*.vbproj": "*.config, *proj.user, appsettings.*, bundleconfig.json",
     "*.vue": "$(capture).*.ts, $(capture).*.js",
     "*.xaml": "$(capture).xaml.cs",
@@ -68,6 +69,7 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
     "cargo.toml": ".clippy.toml, .rustfmt.toml, cargo.lock, clippy.toml, cross.toml, rust-toolchain.toml, rustfmt.toml",
     "composer.json": ".php*.cache, composer.lock, phpunit.xml*, psalm*.xml",
     "default.nix": "shell.nix",
+    "deno.json*": "*.env, .env.*, .envrc, api-extractor.json, env.d.ts, import-map.json, import_map.json, jsconfig.*, tsconfig.*, tsdoc.*",
     "dockerfile": ".dockerignore, docker-compose.*, dockerfile*",
     "flake.nix": "flake.lock",
     "gatsby-config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, cssnano.config.*, cypress.json, env.d.ts, gatsby-browser.*, gatsby-node.*, gatsby-ssr.*, gatsby-transformer.*, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
