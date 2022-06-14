@@ -280,14 +280,21 @@ const phoenixLiveView = [
   '$(capture).html.heex',
 ]
 
+const denoRuntime = [
+  'import_map.json',
+  'import-map.json',
+  ...tsconfig,
+  ...env
+]
+
 const base = {
   '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*',
   '*.css': '$(capture).css.map, $(capture).*.css',
-  '*.js': '$(capture).js.map, $(capture).*.js',
-  '*.jsx': '$(capture).js, $(capture).*.jsx',
-  '*.ts': '$(capture).js, $(capture).*.ts',
+  '*.js': '$(capture).js.map, $(capture).*.js, $(capture)_*.js',
+  '*.jsx': '$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx',
+  '*.ts': '$(capture).js, $(capture).*.ts, $(capture)_*.js, $(capture)_*.ts',
   '*.component.ts': '$(capture).component.html, $(capture).component.spec.ts, $(capture).component.css, $(capture).component.scss, $(capture).component.sass, $(capture).component.less',
-  '*.tsx': '$(capture).ts, $(capture).*.tsx',
+  '*.tsx': '$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx',
   '*.vue': '$(capture).*.ts, $(capture).*.js',
   'shims.d.ts': '*.d.ts',
   '*.cpp': '$(capture).hpp, $(capture).h, $(capture).hxx',
@@ -343,6 +350,7 @@ const full = sortObject({
   'pyproject.toml': stringify(pdm),
   '*.ex': stringify(phoenixLiveView),
   '*.tex': stringify(tex),
+  "deno.json*": stringify(denoRuntime),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
 })
 
