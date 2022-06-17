@@ -99,7 +99,7 @@ const workspaces = [
   'lerna*',
   'nx.*',
   'package-lock.json',
-  'package.nls.*.json',
+  'package.nls*.json',
   'pnpm*',
   'turbo*',
   'workspace.json',
