@@ -46,6 +46,7 @@ const services = [
   'netlify*',
   'Procfile',
   'pullapprove*',
+  'release-tasks.sh',
   'renovate*',
   'vercel*',
   '.firebase*',
