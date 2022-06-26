@@ -163,6 +163,8 @@ const libraries = [
   '.terserrc*',
   'babel.config.*',
   'cssnano.config.*',
+  'formkit.config.*',
+  'formulate.config.*',
   'htmlnanorc.*',
   'postcss.config.*',
   'svgo.config.*',
