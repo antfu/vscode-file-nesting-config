@@ -13,7 +13,7 @@ const testingTools = [
   '.codecov',
   '.mocha*',
   'ava.config.*',
-  'cypress.json',
+  'cypress.*',
   'jasmine.*',
   'jest.config.*',
   'karma*',
@@ -137,7 +137,7 @@ const tex = [
   '$(capture).synctex.gz',
   '$(capture).xdv',
   '$(capture).fdb_latexmk',
-  '$(capture).pdf'
+  '$(capture).pdf',
 ]
 
 // frameworks and their specific files
@@ -202,12 +202,12 @@ const packageJSON = [
 
 const readme = [
   'authors',
-  'backers.md',
+  'backers*',
   'changelog*',
   'citation*',
-  'code_of_conduct.md',
+  'code_of_conduct*',
   'codeowners',
-  'contributing.md',
+  'contributing*',
   'contributors',
   'copying',
   'credits',
@@ -217,7 +217,7 @@ const readme = [
   'maintainers',
   'readme*',
   'security.md',
-  'sponsors.md',
+  'sponsors*',
 ]
 
 const cargo = [
