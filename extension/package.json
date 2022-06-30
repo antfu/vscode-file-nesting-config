@@ -1,21 +1,28 @@
 {
+  "publisher": "antfu",
   "name": "file-nesting",
   "displayName": "File Nesting Updater",
   "version": "1.0.0",
   "private": true,
   "description": "Auto updating for Anthony's file nesting config",
-  "categories": [
-    "Other"
-  ],
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/antfu/vscode-file-nesting-config",
     "directory": "extension"
   },
-  "publisher": "antfu",
+  "categories": [
+    "Other"
+  ],
   "main": "./dist/index.js",
   "preview": true,
+  "icon": "res/logo.png",
+  "engines": {
+    "vscode": "^1.67.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "contributes": {
     "commands": [
       {
@@ -55,12 +62,5 @@
         }
       }
     }
-  },
-  "activationEvents": [
-    "onStartupFinished"
-  ],
-  "engines": {
-    "vscode": "^1.67.0"
-  },
-  "icon": "res/logo.png"
+  }
 }
