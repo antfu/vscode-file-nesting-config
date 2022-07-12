@@ -51,6 +51,7 @@ const services = [
   'vercel*',
   '.firebase*',
   '.github*',
+  'unlighthouse*'
 ]
 
 const linters = [
@@ -318,7 +319,7 @@ const base = {
   '*.aspx': '$(capture).*.cs, $(capture).*.vb',
   '*.master': '$(capture).*.cs, $(capture).*.vb',
   '*.xaml': '$(capture).xaml.cs',
-  '*.cshtml' : '$(capture).cshtml.cs',
+  '*.cshtml': '$(capture).cshtml.cs',
   '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
   '*.dart': '$(capture).freezed.dart, $(capture).g.dart',
   '*.bloc.dart': '$(capture).event.dart, $(capture).state.dart',
