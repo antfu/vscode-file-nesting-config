@@ -6,14 +6,14 @@ const buildTools = [
   'gulp*',
   'rollup.config.*',
   'tsup.config.*',
-  'webpack.config.*',
+  'webpack*',
 ]
 
 const testingTools = [
   '.codecov',
   '.mocha*',
   'ava.config.*',
-  'cypress.json',
+  'cypress.*',
   'jasmine.*',
   'jest.config.*',
   'karma*',
@@ -46,10 +46,12 @@ const services = [
   'netlify*',
   'Procfile',
   'pullapprove*',
+  'release-tasks.sh',
   'renovate*',
   'vercel*',
   '.firebase*',
   '.github*',
+  'unlighthouse*'
 ]
 
 const linters = [
@@ -99,6 +101,7 @@ const workspaces = [
   'lerna*',
   'nx.*',
   'package-lock.json',
+  'package.nls*.json',
   'pnpm*',
   'turbo*',
   'workspace.json',
@@ -135,7 +138,7 @@ const tex = [
   '$(capture).synctex.gz',
   '$(capture).xdv',
   '$(capture).fdb_latexmk',
-  '$(capture).pdf'
+  '$(capture).pdf',
 ]
 
 // frameworks and their specific files
@@ -161,6 +164,8 @@ const libraries = [
   '.terserrc*',
   'babel.config.*',
   'cssnano.config.*',
+  'formkit.config.*',
+  'formulate.config.*',
   'htmlnanorc.*',
   'postcss.config.*',
   'svgo.config.*',
@@ -198,12 +203,12 @@ const packageJSON = [
 
 const readme = [
   'authors',
-  'backers.md',
+  'backers*',
   'changelog*',
   'citation*',
-  'code_of_conduct.md',
+  'code_of_conduct*',
   'codeowners',
-  'contributing.md',
+  'contributing*',
   'contributors',
   'copying',
   'credits',
@@ -213,7 +218,7 @@ const readme = [
   'maintainers',
   'readme*',
   'security.md',
-  'sponsors.md',
+  'sponsors*',
 ]
 
 const cargo = [
@@ -280,14 +285,21 @@ const phoenixLiveView = [
   '$(capture).html.heex',
 ]
 
+const denoRuntime = [
+  'import_map.json',
+  'import-map.json',
+  ...tsconfig,
+  ...env
+]
+
 const base = {
   '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*',
   '*.css': '$(capture).css.map, $(capture).*.css',
-  '*.js': '$(capture).js.map, $(capture).*.js',
-  '*.jsx': '$(capture).js, $(capture).*.jsx',
-  '*.ts': '$(capture).js, $(capture).*.ts, $(capture).d.ts.map',
+  '*.js': '$(capture).js.map, $(capture).*.js, $(capture)_*.js',
+  '*.jsx': '$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx',
+  '*.ts': '$(capture).js, $(capture).d.ts.map, $(capture).*.ts, $(capture)_*.js, $(capture)_*.ts',
   '*.component.ts': '$(capture).component.html, $(capture).component.spec.ts, $(capture).component.css, $(capture).component.scss, $(capture).component.sass, $(capture).component.less',
-  '*.tsx': '$(capture).ts, $(capture).*.tsx',
+  '*.tsx': '$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx',
   '*.vue': '$(capture).*.ts, $(capture).*.js',
   'shims.d.ts': '*.d.ts',
   '*.cpp': '$(capture).hpp, $(capture).h, $(capture).hxx',
@@ -306,8 +318,11 @@ const base = {
   '*.ashx': '$(capture).*.cs, $(capture).*.vb',
   '*.aspx': '$(capture).*.cs, $(capture).*.vb',
   '*.master': '$(capture).*.cs, $(capture).*.vb',
+  '*.xaml': '$(capture).xaml.cs',
+  '*.cshtml': '$(capture).cshtml.cs',
   '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
   '*.dart': '$(capture).freezed.dart, $(capture).g.dart',
+  '*.bloc.dart': '$(capture).event.dart, $(capture).state.dart',
   '*.module.ts': '$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts',
   '*.java': '$(capture).class',
   '.project': '.classpath',
@@ -342,6 +357,7 @@ const full = sortObject({
   'pyproject.toml': stringify(pdm),
   '*.ex': stringify(phoenixLiveView),
   '*.tex': stringify(tex),
+  "deno.json*": stringify(denoRuntime),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
 })
 
