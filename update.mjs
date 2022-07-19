@@ -297,7 +297,7 @@ const base = {
   '*.css': '$(capture).css.map, $(capture).*.css',
   '*.js': '$(capture).js.map, $(capture).*.js, $(capture)_*.js',
   '*.jsx': '$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx',
-  '*.ts': '$(capture).js, $(capture).*.ts, $(capture)_*.js, $(capture)_*.ts',
+  '*.ts': '$(capture).js, $(capture).d.ts.map, $(capture).*.ts, $(capture)_*.js, $(capture)_*.ts',
   '*.component.ts': '$(capture).component.html, $(capture).component.spec.ts, $(capture).component.css, $(capture).component.scss, $(capture).component.sass, $(capture).component.less',
   '*.tsx': '$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx',
   '*.vue': '$(capture).*.ts, $(capture).*.js',
