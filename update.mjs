@@ -22,6 +22,7 @@ const testingTools = [
   'playwright.config.*',
   'puppeteer.config.*',
   'vitest.config.*',
+  'histoire.config.*'
 ]
 
 const tsconfig = [
@@ -300,7 +301,7 @@ const base = {
   '*.ts': '$(capture).js, $(capture).d.ts.map, $(capture).*.ts, $(capture)_*.js, $(capture)_*.ts',
   '*.component.ts': '$(capture).component.html, $(capture).component.spec.ts, $(capture).component.css, $(capture).component.scss, $(capture).component.sass, $(capture).component.less',
   '*.tsx': '$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx',
-  '*.vue': '$(capture).*.ts, $(capture).*.js',
+  '*.vue': '$(capture).*.ts, $(capture).*.js, $(capture).story.vue',
   'shims.d.ts': '*.d.ts',
   '*.cpp': '$(capture).hpp, $(capture).h, $(capture).hxx',
   '*.cxx': '$(capture).hpp, $(capture).h, $(capture).hxx',
