@@ -164,6 +164,7 @@ const libraries = [
   '.postcssrc*',
   '.terserrc*',
   'babel.config.*',
+  'contentlayer.config.*',
   'cssnano.config.*',
   'formkit.config.*',
   'formulate.config.*',
