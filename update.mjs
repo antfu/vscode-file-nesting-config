@@ -322,6 +322,8 @@ const base = {
   '*.master': '$(capture).*.cs, $(capture).*.vb',
   '*.xaml': '$(capture).xaml.cs',
   '*.cshtml': '$(capture).cshtml.cs',
+  '*.cs': '$(capture).*.cs',
+  'I*.cs': '$(capture).cs',
   '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
   '*.dart': '$(capture).freezed.dart, $(capture).g.dart',
   '*.bloc.dart': '$(capture).event.dart, $(capture).state.dart',
