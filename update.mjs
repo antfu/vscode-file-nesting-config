@@ -72,7 +72,7 @@ const linters = [
   '.dprint.json',
   'dprint.json',
   '.dlint.json',
-  "dlint.json",
+  'dlint.json',
   'lint-staged*',
   '.lintstagedrc*',
   'prettier*',
