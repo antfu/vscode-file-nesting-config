@@ -334,6 +334,11 @@ const base = {
   '*.java': '$(capture).class',
   '.project': '.classpath',
 }
+// Based on the new SvelteKit's routing system https://kit.svelte.dev/docs/routing
+const svelteKitRouting = {
+  '+page.svelte': '+page.server.ts,+page.server.js,+page.ts,+page.js ',
+  '+layout.svelte':'+layout.ts,+layout.ts,+layout.js,+layout.server.ts,+layout.server.js'   
+}
 
 function stringify(items) {
   return Array.from(new Set(items)).sort().join(', ')
@@ -366,6 +371,7 @@ const full = sortObject({
   '*.tex': stringify(tex),
   "deno.json*": stringify(denoRuntime),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
+  ...svelteKitRouting
 })
 
 const today = new Date().toISOString().slice(0, 16).replace('T', ' ')
