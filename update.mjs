@@ -267,6 +267,7 @@ const pubspecYAML = [
   'analysis_options.yaml',
   'build.yaml',
   'pubspec.lock',
+  'pubspec_overrides.yaml',
 ]
 
 const elixir = [
