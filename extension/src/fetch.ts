@@ -4,7 +4,7 @@ import { window, workspace } from 'vscode'
 import { FILE, MSG_PREFIX, URL_PREFIX } from './constants'
 import { getConfig } from './config'
 
-export async function fetchLatest() {
+export async function fetchLatest(): Promise<{ config: {}; lastUpdated: number }> {
   const repo = getConfig<string>('fileNestingUpdater.upstreamRepo')
   const branch = getConfig<string>('fileNestingUpdater.upstreamBranch')
   const url = `${URL_PREFIX}/${repo}@${branch}/${FILE}`
@@ -19,13 +19,22 @@ export async function fetchLatest() {
       .join('\n')
       .slice(0, -1)
   }}`
+  // Extract the date from the top comment "// updated 2022-09-10 20:46" <- iso date
+  const updateStr = '// updated '
+  const lastUpdated = Date.parse(content.slice(content.indexOf(updateStr) + updateStr.length, content.indexOf('\n')))
 
   const config = JSON.parse(json) || {}
-  return config['explorer.fileNesting.patterns']
+  return { config: config['explorer.fileNesting.patterns'], lastUpdated }
 }
 
+/** @returns `true` if it updated the config. `false` if no new config was available or the user denied the request */
 export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
-  const patterns = await fetchLatest()
+  const { lastUpdated, config: patterns } = await fetchLatest()
+  const config = workspace.getConfiguration()
+  const newVersionAvailable = lastUpdated > (Date.parse((config.get('explorer.fileNesting.patterns') as {})['//']) || 0)
+  if (!newVersionAvailable)
+    return false
+
   let shouldUpdate = true
 
   if (prompt) {
@@ -40,12 +49,11 @@ export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
   }
 
   if (shouldUpdate) {
-    const config = workspace.getConfiguration()
     config.update('explorer.fileNesting.enabled', true, true)
     if (config.inspect('explorer.fileNesting.expand').globalValue == null)
       config.update('explorer.fileNesting.expand', false, true)
     config.update('explorer.fileNesting.patterns', {
-      '//': `Last update at ${new Date().toLocaleString()}`,
+      '//': `Last update at ${new Date().toISOString()}`,
       ...patterns,
     }, true)
 
@@ -53,4 +61,6 @@ export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
 
     window.showInformationMessage(`${MSG_PREFIX} Config updated`)
   }
+
+  return shouldUpdate
 }

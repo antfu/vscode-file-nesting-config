@@ -22,7 +22,7 @@ const testingTools = [
   'playwright.config.*',
   'puppeteer.config.*',
   'vitest.config.*',
-  'histoire.config.*'
+  'histoire.config.*',
 ]
 
 const tsconfig = [
@@ -52,7 +52,7 @@ const services = [
   'vercel*',
   '.firebase*',
   '.github*',
-  'unlighthouse*'
+  'unlighthouse*',
 ]
 
 const linters = [
@@ -294,7 +294,7 @@ const denoRuntime = [
   'import_map.json',
   'import-map.json',
   ...tsconfig,
-  ...env
+  ...env,
 ]
 
 const base = {
@@ -337,7 +337,7 @@ const base = {
 // Based on the new SvelteKit's routing system https://kit.svelte.dev/docs/routing
 const svelteKitRouting = {
   '+page.svelte': '+page.server.ts,+page.server.js,+page.ts,+page.js ',
-  '+layout.svelte':'+layout.ts,+layout.ts,+layout.js,+layout.server.ts,+layout.server.js'   
+  '+layout.svelte': '+layout.ts,+layout.ts,+layout.js,+layout.server.ts,+layout.server.js',
 }
 
 function stringify(items) {
@@ -369,9 +369,9 @@ const full = sortObject({
   'pyproject.toml': stringify(pdm),
   '*.ex': stringify(phoenixLiveView),
   '*.tex': stringify(tex),
-  "deno.json*": stringify(denoRuntime),
+  'deno.json*': stringify(denoRuntime),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
-  ...svelteKitRouting
+  ...svelteKitRouting,
 })
 
 const today = new Date().toISOString().slice(0, 16).replace('T', ' ')
