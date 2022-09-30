@@ -180,6 +180,7 @@ const libraries = [
   'windi.config.*',
   ...env,
   ...testingTools,
+  ...tsconfig,
 ]
 
 const packageJSON = [
@@ -201,7 +202,6 @@ const packageJSON = [
   ...buildTools,
   ...services,
   ...linters,
-  ...tsconfig,
   ...testingTools,
 ]
 
