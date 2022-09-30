@@ -202,7 +202,6 @@ const packageJSON = [
   ...buildTools,
   ...services,
   ...linters,
-  ...tsconfig,
   ...testingTools,
 ]
 
