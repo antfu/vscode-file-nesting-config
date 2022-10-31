@@ -41,9 +41,13 @@ export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
 
   if (shouldUpdate) {
     const config = workspace.getConfiguration()
-    config.update('explorer.fileNesting.enabled', true, true)
+
+    if (config.inspect('explorer.fileNesting.enabled').globalValue == null)
+      config.update('explorer.fileNesting.enabled', true, true)
+
     if (config.inspect('explorer.fileNesting.expand').globalValue == null)
       config.update('explorer.fileNesting.expand', false, true)
+    
     config.update('explorer.fileNesting.patterns', {
       '//': `Last update at ${new Date().toLocaleString()}`,
       ...patterns,
