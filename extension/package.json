@@ -2,7 +2,7 @@
   "publisher": "antfu",
   "name": "file-nesting",
   "displayName": "File Nesting Updater",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "private": true,
   "description": "Auto updating for Anthony's file nesting config",
   "license": "MIT",
