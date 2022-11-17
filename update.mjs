@@ -312,6 +312,7 @@ const base = {
   '*.cc': '$(capture).hpp, $(capture).h, $(capture).hxx',
   '*.c': '$(capture).h',
   'go.mod': 'go.sum',
+  '*.go': '$(capture)_test.go',
   'default.nix': 'shell.nix',
   'flake.nix': 'flake.lock',
   'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE',
