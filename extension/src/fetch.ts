@@ -25,8 +25,15 @@ export async function fetchLatest() {
 }
 
 export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
+  const config = workspace.getConfiguration()
   const patterns = await fetchLatest()
   let shouldUpdate = true
+
+  const oringalPatterns = { ...(config.get<object>('explorer.fileNesting.patterns') || {}) }
+  delete oringalPatterns['//']
+  // no change
+  if (Object.keys(oringalPatterns).length > 0 && JSON.stringify(patterns) === JSON.stringify(oringalPatterns))
+    return false
 
   if (prompt) {
     const buttonUpdate = 'Update'
@@ -40,8 +47,6 @@ export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
   }
 
   if (shouldUpdate) {
-    const config = workspace.getConfiguration()
-
     if (config.inspect('explorer.fileNesting.enabled')?.globalValue == null)
       config.update('explorer.fileNesting.enabled', true, true)
 
