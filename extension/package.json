@@ -48,7 +48,7 @@
         "fileNestingUpdater.autoUpdateInterval": {
           "type": "number",
           "description": "The minimal interval for auto update, in minutes",
-          "default": 720
+          "default": 4320
         },
         "fileNestingUpdater.upstreamRepo": {
           "type": "string",
