@@ -105,6 +105,7 @@ const workspaces = [
   'lerna*',
   'nx.*',
   'package-lock.json',
+  'npm-shrinkwrap.json',
   'package.nls*.json',
   'pnpm*',
   'turbo*',
