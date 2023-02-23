@@ -5,7 +5,7 @@
 
 > Requires VS Code v1.67
 
-This is a config snippet making your file tree cleaner with the [file nesting feature](https://code.visualstudio.com/updates/v1_64#_explorer-file-nesting) of VS Code.
+This is a config snippet making your file tree cleaner with the [file nesting feature](https://code.visualstudio.com/updates/v1_67#_explorer-file-nesting) of VS Code.
 
 Inspired by [this tweet](https://twitter.com/dzhavatushev/status/1500511236634599430) by [Dzhavat Ushev](https://twitter.com/dzhavatushev) and [this tweet](https://twitter.com/jachands/status/1500173829733240844) by [Jacob Hands](https://twitter.com/jachands).
 
