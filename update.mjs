@@ -176,6 +176,7 @@ const libraries = [
   'postcss.config.*',
   'svgo.config.*',
   'tailwind.config.*',
+  'uno.config.*',
   'unocss.config.*',
   'webpack.config.*',
   'windi.config.*',
