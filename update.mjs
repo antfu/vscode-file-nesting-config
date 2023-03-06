@@ -293,6 +293,7 @@ const phoenixLiveView = [
 const denoRuntime = [
   'import_map.json',
   'import-map.json',
+  'deno.lock',
   ...tsconfig,
   ...env,
 ]
