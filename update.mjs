@@ -59,7 +59,7 @@ const linters = [
   '.commitlint*',
   '.editorconfig',
   '.eslint*',
-  'eslint.config.js',
+  'eslint*',
   '.flowconfig',
   '.jslint*',
   '.markdownlint*',
