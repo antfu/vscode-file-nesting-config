@@ -7,6 +7,7 @@ const buildTools = [
   'rollup.config.*',
   'tsup.config.*',
   'webpack*',
+  'rspack*',
 ]
 
 const testingTools = [
@@ -180,6 +181,7 @@ const libraries = [
   'uno.config.*',
   'unocss.config.*',
   'webpack.config.*',
+  'rspack.config.*',
   'windi.config.*',
   ...env,
   ...testingTools,
