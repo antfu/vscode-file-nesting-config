@@ -154,7 +154,7 @@ const frameworks = {
   'vue.config.*': [],
   'nuxt.config.*': [],
   'next.config.*': ['next-env.d.ts'],
-  'svelte.config.*': ['mdsvex.config.js', 'vite.config.*'],
+  'svelte.config.*': ['mdsvex.config.js', 'vite.config.*', 'houdini.config.*'],
   'remix.config.*': ['remix.*'],
   'artisan': ['server.php', 'webpack.mix.js'],
   'astro.config.*': [],
@@ -345,8 +345,8 @@ const base = {
 }
 // Based on the new SvelteKit's routing system https://kit.svelte.dev/docs/routing
 const svelteKitRouting = {
-  '+page.svelte': '+page.server.ts,+page.server.js,+page.ts,+page.js ',
-  '+layout.svelte': '+layout.ts,+layout.ts,+layout.js,+layout.server.ts,+layout.server.js',
+  '+page.svelte': '+page.server.ts,+page.server.js,+page.ts,+page.js,+page.gql',
+  '+layout.svelte': '+layout.ts,+layout.ts,+layout.js,+layout.server.ts,+layout.server.js,+layout.gql',
 }
 
 function stringify(items) {
