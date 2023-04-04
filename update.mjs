@@ -102,6 +102,7 @@ const workspaces = [
   '.pnpm*',
   '.simple-git-hooks*',
   '.releaserc*',
+  'release.config.*',
   '.tazerc*',
   '.yarnrc*',
   'bower.json',
