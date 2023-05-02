@@ -2,6 +2,7 @@ import fs from 'fs'
 
 const buildTools = [
   'build.config.*',
+  'electron-builder.*',
   'grunt*',
   'gulp*',
   'rollup.config.*',
