@@ -311,6 +311,7 @@ const base = {
   '*.css': '$(capture).css.map, $(capture).*.css',
   '*.js': '$(capture).js.map, $(capture).*.js, $(capture)_*.js',
   '*.mjs': '$(capture).mjs.map, $(capture).*.mjs, $(capture)_*.mjs',
+  '*.mts': '$(capture).mts.map, $(capture).*.mts, $(capture)_*.mts',
   '*.cjs': '$(capture).cjs.map, $(capture).*.cjs, $(capture)_*.cjs',
   '*.jsx': '$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx',
   '*.ts': '$(capture).js, $(capture).d.ts.map, $(capture).*.ts, $(capture)_*.js, $(capture)_*.ts',
