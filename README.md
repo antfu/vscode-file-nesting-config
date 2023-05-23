@@ -26,7 +26,7 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
 <!-- eslint-skip -->
 
 ```jsonc
-  // updated 2023-05-02 20:48
+  // updated 2023-05-23 12:49
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
@@ -55,6 +55,7 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
     "*.master": "$(capture).*.cs, $(capture).*.vb",
     "*.mjs": "$(capture).mjs.map, $(capture).*.mjs, $(capture)_*.mjs",
     "*.module.ts": "$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts",
+    "*.mts": "$(capture).mts.map, $(capture).*.mts, $(capture)_*.mts",
     "*.pubxml": "$(capture).pubxml.user",
     "*.resx": "$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb",
     "*.tex": "$(capture).acn, $(capture).acr, $(capture).alg, $(capture).aux, $(capture).bbl, $(capture).blg, $(capture).fdb_latexmk, $(capture).fls, $(capture).glg, $(capture).glo, $(capture).gls, $(capture).idx, $(capture).ind, $(capture).ist, $(capture).lof, $(capture).log, $(capture).lot, $(capture).out, $(capture).pdf, $(capture).synctex.gz, $(capture).toc, $(capture).xdv",
