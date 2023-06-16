@@ -286,10 +286,53 @@ const elixir = [
   '.tool-versions',
 ]
 
-const pdm = [
+const pythonConfigs = [
+  'tox.ini',
+  '.editorconfig',
+  '.flake8',
+  '.isort.cfg',
+  '.python-version',
+]
+
+const requirementstxt = [
+  'requirements*.txt',
+  'requirements*.in',
+  'requirements*.pip',
+  ...pythonConfigs,
+]
+
+const setupcfg = [
+  'setup.cfg',
+  'MANIFEST.in',
+  ...requirementstxt,
+]
+
+const setuppy = [
+  'setup.py',
+  ...setupcfg,
+]
+
+const pipfile = [
+  'Pipfile',
+  'Pipfile.lock',
+  ...requirementstxt,
+]
+
+const hatchtoml = [
+  'hatch.toml',
+  ...requirementstxt,
+]
+
+const pyprojecttoml = [
+  // the one config file to rule them all
   'pyproject.toml',
   'pdm.lock',
   '.pdm.toml',
+  '.pdm-python',
+  'poetry.lock',
+  ...setuppy,
+  ...pipfile,
+  ...hatchtoml,
 ]
 
 const phoenixLiveView = [
@@ -380,7 +423,12 @@ const full = sortObject({
   '*.csproj': stringify(dotnetProject),
   '*.vbproj': stringify(dotnetProject),
   'mix.exs': stringify(elixir),
-  'pyproject.toml': stringify(pdm),
+  'pyproject.toml': stringify(pyprojecttoml),
+  'setup.cfg': stringify(setupcfg),
+  'setup.py': stringify(setuppy),
+  'Pipfile': stringify(pipfile),
+  'hatch.toml': stringify(hatchtoml),
+  'requirements.txt': stringify(requirementstxt),
   '*.ex': stringify(phoenixLiveView),
   '*.tex': stringify(tex),
   'deno.json*': stringify(denoRuntime),
