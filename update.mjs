@@ -156,7 +156,7 @@ const tex = [
 const frameworks = {
   'vite.config.*': [],
   'vue.config.*': [],
-  'nuxt.config.*': [],
+  'nuxt.config.*': ['.nuxtignore'],
   'next.config.*': ['next-env.d.ts'],
   'svelte.config.*': ['mdsvex.config.js', 'vite.config.*', 'houdini.config.*'],
   'remix.config.*': ['remix.*'],
