@@ -94,6 +94,7 @@ const env = [
 ]
 
 const workspaces = [
+  '.gitmojirc.json',
   '.huskyrc*',
   '.node-version',
   '.npm*',
