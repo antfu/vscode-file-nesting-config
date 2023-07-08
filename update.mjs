@@ -104,6 +104,8 @@ const workspaces = [
   '.simple-git-hooks*',
   '.releaserc*',
   'release.config.*',
+  '.release-please*.json',
+  'release-please*.json',
   '.tazerc*',
   '.yarnrc*',
   'bower.json',
