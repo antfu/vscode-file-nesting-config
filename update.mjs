@@ -189,6 +189,8 @@ const libraries = [
   'webpack.config.*',
   'rspack.config.*',
   'windi.config.*',
+  'i18n.config.*',
+  'vuetify.config.*',
   ...env,
   ...testingTools,
   ...tsconfig,
