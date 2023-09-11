@@ -160,7 +160,7 @@ const frameworks = {
   'vite.config.*': [],
   'vue.config.*': [],
   'nuxt.config.*': ['.nuxtignore'],
-  'next.config.*': ['next-env.d.ts'],
+  'next.config.*': ['next-env.d.ts', 'next-i18next.config.*'],
   'svelte.config.*': ['mdsvex.config.js', 'vite.config.*', 'houdini.config.*'],
   'remix.config.*': ['remix.*'],
   'artisan': ['server.php', 'webpack.mix.js'],
