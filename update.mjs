@@ -227,7 +227,7 @@ const readme = [
   'codeowners',
   'contributing*',
   'contributors',
-  'copying',
+  'copying*',
   'credits',
   'governance.md',
   'history.md',
