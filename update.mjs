@@ -120,6 +120,7 @@ const workspaces = [
   'workspace.json',
   'yarn*',
   'firebase.json',
+  'bun.lockb',
 ]
 
 const docker = [
