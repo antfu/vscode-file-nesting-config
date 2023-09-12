@@ -94,7 +94,6 @@ const env = [
 ]
 
 const workspaces = [
-  '.gitmojirc.json',
   '.huskyrc*',
   '.node-version',
   '.npm*',
@@ -119,6 +118,7 @@ const workspaces = [
   'workspace.json',
   'yarn*',
   'firebase.json',
+  '.gitmojirc.json',
 ]
 
 const docker = [
