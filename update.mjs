@@ -125,8 +125,10 @@ const workspaces = [
 
 const docker = [
   'dockerfile*',
+  '*.dockerfile',
   '.dockerignore',
   'docker-compose.*',
+  ".devcontainer.*",
 ]
 
 // latex
@@ -417,7 +419,7 @@ function sortObject(obj) {
 const full = sortObject({
   ...base,
   '.env': stringify(env),
-  'dockerfile': stringify(docker),
+  'Dockerfile': stringify(docker),
   'package.json': stringify(packageJSON),
   'rush.json': stringify(packageJSON),
   'pubspec.yaml': stringify(pubspecYAML),

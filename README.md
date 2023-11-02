@@ -26,7 +26,7 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
 <!-- eslint-skip -->
 
 ```jsonc
-  // updated 2023-10-26 17:56
+  // updated 2023-11-02 22:04
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
@@ -73,6 +73,7 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
     ".project": ".classpath",
     "BUILD.bazel": "*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE",
     "CMakeLists.txt": "*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json",
+    "Dockerfile": "*.dockerfile, .devcontainer.*, .dockerignore, docker-compose.*, dockerfile*",
     "I*.cs": "$(capture).cs",
     "Pipfile": ".editorconfig, .flake8, .isort.cfg, .python-version, Pipfile, Pipfile.lock, requirements*.in, requirements*.pip, requirements*.txt, tox.ini",
     "artisan": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, histoire.config.*, htmlnanorc.*, i18n.config.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, playwright.config.*, postcss.config.*, puppeteer.config.*, rspack.config.*, server.php, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, uno.config.*, unocss.config.*, vitest.config.*, vuetify.config.*, webpack.config.*, webpack.mix.js, windi.config.*",
@@ -81,7 +82,6 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
     "composer.json": ".php*.cache, composer.lock, phpunit.xml*, psalm*.xml",
     "default.nix": "shell.nix",
     "deno.json*": "*.env, .env.*, .envrc, api-extractor.json, deno.lock, env.d.ts, import-map.json, import_map.json, jsconfig.*, tsconfig.*, tsdoc.*",
-    "dockerfile": ".dockerignore, docker-compose.*, dockerfile*",
     "flake.nix": "flake.lock",
     "gatsby-config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, gatsby-browser.*, gatsby-node.*, gatsby-ssr.*, gatsby-transformer.*, histoire.config.*, htmlnanorc.*, i18n.config.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, playwright.config.*, postcss.config.*, puppeteer.config.*, rspack.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, uno.config.*, unocss.config.*, vitest.config.*, vuetify.config.*, webpack.config.*, windi.config.*",
     "gemfile": ".ruby-version, gemfile.lock",
