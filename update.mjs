@@ -238,6 +238,8 @@ const readme = [
   'SPONSORS*',
 ]
 
+addTitleCaseVariants(readme)
+
 const cargo = [
   'cargo.lock',
   'rust-toolchain.toml',
@@ -415,10 +417,31 @@ function sortObject(obj) {
 }
 
 /**
+ * @param {string} str
+ */
+function toTitleCase(str) {
+  return str.toLowerCase().replace(/(^|[-_])(\w)/g, (_, a, b) => `${a}${b.toUpperCase()}`)
+}
+
+/**
+ * Add title case variants of key/values to the object if they don't already exist
+ * @param {string[]} arr
+ */
+function addTitleCaseVariants(arr) {
+  for (const key of arr) {
+    const keyTitle = toTitleCase(key)
+    if (!arr.includes(keyTitle)) {
+      arr.push(keyTitle)
+    }
+  }
+  return arr
+}
+
+/**
  * Add lowercase variants of key/values to the object if they don't already exist
  * @param {Record<string, string>} obj
  */
-function addCaseVariants(obj) {
+function addLowerCaseVariants(obj) {
   for (const [key, value] of Object.entries(obj)) {
     const keyLower = key.toLowerCase()
     if (!(keyLower in obj)) {
@@ -428,7 +451,7 @@ function addCaseVariants(obj) {
   return obj
 }
 
-const full = sortObject(addCaseVariants({
+const full = sortObject(addLowerCaseVariants({
   ...base,
   '.env': stringify(env),
   'Dockerfile': stringify(docker),
@@ -436,6 +459,7 @@ const full = sortObject(addCaseVariants({
   'rush.json': stringify(packageJSON),
   'pubspec.yaml': stringify(pubspecYAML),
   'README*': stringify(readme),
+  'Readme*': stringify(readme),
   'Cargo.toml': stringify(cargo),
   'gemfile': stringify(gemfile),
   'go.mod': stringify(gofile),
