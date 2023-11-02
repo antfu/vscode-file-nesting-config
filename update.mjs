@@ -219,23 +219,23 @@ const packageJSON = [
 ]
 
 const readme = [
-  'authors',
-  'backers*',
-  'changelog*',
-  'citation*',
-  'code_of_conduct*',
-  'codeowners',
-  'contributing*',
-  'contributors',
-  'copying*',
-  'credits',
-  'governance.md',
-  'history.md',
-  'license*',
-  'maintainers',
-  'readme*',
-  'security.md',
-  'sponsors*',
+  'AUTHORS',
+  'BACKERS*',
+  'CHANGELOG*',
+  'CITATION*',
+  'CODE_OF_CONDUCT*',
+  'CODEOWNERS',
+  'CONTRIBUTING*',
+  'CONTRIBUTORS',
+  'COPYING*',
+  'CREDITS',
+  'GOVERNANCE.MD',
+  'HISTORY.MD',
+  'LICENSE*',
+  'MAINTAINERS',
+  'README*',
+  'SECURITY.MD',
+  'SPONSORS*',
 ]
 
 const cargo = [
@@ -414,15 +414,29 @@ function sortObject(obj) {
   }, {})
 }
 
-const full = sortObject({
+/**
+ * Add lowercase variants of key/values to the object if they don't already exist
+ * @param {Record<string, string>} obj
+ */
+function addCaseVariants(obj) {
+  for (const [key, value] of Object.entries(obj)) {
+    const keyLower = key.toLowerCase()
+    if (!(keyLower in obj)) {
+      obj[keyLower] = value.toLowerCase()
+    }
+  }
+  return obj
+}
+
+const full = sortObject(addCaseVariants({
   ...base,
   '.env': stringify(env),
-  'dockerfile': stringify(docker),
+  'Dockerfile': stringify(docker),
   'package.json': stringify(packageJSON),
   'rush.json': stringify(packageJSON),
   'pubspec.yaml': stringify(pubspecYAML),
-  'readme*': stringify(readme),
-  'cargo.toml': stringify(cargo),
+  'README*': stringify(readme),
+  'Cargo.toml': stringify(cargo),
   'gemfile': stringify(gemfile),
   'go.mod': stringify(gofile),
   'composer.json': stringify(composer),
@@ -440,7 +454,7 @@ const full = sortObject({
   'deno.json*': stringify(denoRuntime),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
   ...svelteKitRouting,
-})
+}))
 
 const today = new Date().toISOString().slice(0, 16).replace('T', ' ')
 
