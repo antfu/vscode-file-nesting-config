@@ -218,7 +218,7 @@ const packageJSON = [
   ...linters,
 ]
 
-const readme = [
+let readme = [
   'AUTHORS',
   'BACKERS*',
   'CHANGELOG*',
@@ -238,7 +238,8 @@ const readme = [
   'SPONSORS*',
 ]
 
-addTitleCaseVariants(readme)
+readme = addTitleCaseVariants(readme)
+readme = addLowerCaseVariants(readme)
 
 const cargo = [
   'cargo.lock',
@@ -424,34 +425,24 @@ function toTitleCase(str) {
 }
 
 /**
- * Add title case variants of key/values to the object if they don't already exist
+ * Add title case variants of key/values to the array
  * @param {string[]} arr
  */
 function addTitleCaseVariants(arr) {
-  for (const key of arr) {
-    const keyTitle = toTitleCase(key)
-    if (!arr.includes(keyTitle)) {
-      arr.push(keyTitle)
-    }
-  }
-  return arr
+  const upperCaseArr = arr.map((elm) => toTitleCase(elm))
+  return [...arr, ...upperCaseArr]
 }
 
 /**
- * Add lowercase variants of key/values to the object if they don't already exist
- * @param {Record<string, string>} obj
+ * Add lowercase variants of key/values to the array
+ * @param {string[]} arr
  */
-function addLowerCaseVariants(obj) {
-  for (const [key, value] of Object.entries(obj)) {
-    const keyLower = key.toLowerCase()
-    if (!(keyLower in obj)) {
-      obj[keyLower] = value.toLowerCase()
-    }
-  }
-  return obj
+function addLowerCaseVariants(arr) {
+  const lowerCaseArr = arr.map((elm) => elm.toLowerCase())
+  return [...arr, ...lowerCaseArr]
 }
 
-const full = sortObject(addLowerCaseVariants({
+const full = sortObject({
   ...base,
   '.env': stringify(env),
   'Dockerfile': stringify(docker),
@@ -460,6 +451,7 @@ const full = sortObject(addLowerCaseVariants({
   'pubspec.yaml': stringify(pubspecYAML),
   'README*': stringify(readme),
   'Readme*': stringify(readme),
+  'readme*': stringify(readme),
   'Cargo.toml': stringify(cargo),
   'gemfile': stringify(gemfile),
   'go.mod': stringify(gofile),
@@ -478,7 +470,7 @@ const full = sortObject(addLowerCaseVariants({
   'deno.json*': stringify(denoRuntime),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
   ...svelteKitRouting,
-}))
+})
 
 const today = new Date().toISOString().slice(0, 16).replace('T', ' ')
 
