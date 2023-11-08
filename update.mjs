@@ -84,6 +84,7 @@ const linters = [
   'tslint*',
   'xo.config.*',
   'pyrightconfig.json',
+  'biome.json',
 ]
 
 const env = [
