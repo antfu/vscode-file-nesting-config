@@ -129,7 +129,7 @@ const docker = [
   '*.dockerfile',
   '.dockerignore',
   'docker-compose.*',
-  ".devcontainer.*",
+  '.devcontainer.*',
 ]
 
 // latex
@@ -432,7 +432,7 @@ function toTitleCase(str) {
  * @param {string[]} arr
  */
 function addTitleCaseVariants(arr) {
-  const upperCaseArr = arr.map((elm) => toTitleCase(elm))
+  const upperCaseArr = arr.map(elm => toTitleCase(elm))
   return [...arr, ...upperCaseArr]
 }
 
@@ -441,7 +441,7 @@ function addTitleCaseVariants(arr) {
  * @param {string[]} arr
  */
 function addLowerCaseVariants(arr) {
-  const lowerCaseArr = arr.map((elm) => elm.toLowerCase())
+  const lowerCaseArr = arr.map(elm => elm.toLowerCase())
   return [...arr, ...lowerCaseArr]
 }
 
