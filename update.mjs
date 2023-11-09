@@ -219,25 +219,28 @@ const packageJSON = [
   ...linters,
 ]
 
-const readme = [
-  'authors',
-  'backers*',
-  'changelog*',
-  'citation*',
-  'code_of_conduct*',
-  'codeowners',
-  'contributing*',
-  'contributors',
-  'copying*',
-  'credits',
-  'governance.md',
-  'history.md',
-  'license*',
-  'maintainers',
-  'readme*',
-  'security.md',
-  'sponsors*',
+let readme = [
+  'AUTHORS',
+  'BACKERS*',
+  'CHANGELOG*',
+  'CITATION*',
+  'CODE_OF_CONDUCT*',
+  'CODEOWNERS',
+  'CONTRIBUTING*',
+  'CONTRIBUTORS',
+  'COPYING*',
+  'CREDITS',
+  'GOVERNANCE.MD',
+  'HISTORY.MD',
+  'LICENSE*',
+  'MAINTAINERS',
+  'README*',
+  'SECURITY.MD',
+  'SPONSORS*',
 ]
+
+readme = addTitleCaseVariants(readme)
+readme = addLowerCaseVariants(readme)
 
 const cargo = [
   'cargo.lock',
@@ -415,15 +418,42 @@ function sortObject(obj) {
   }, {})
 }
 
+/**
+ * @param {string} str
+ */
+function toTitleCase(str) {
+  return str.toLowerCase().replace(/(^|[-_])(\w)/g, (_, a, b) => `${a}${b.toUpperCase()}`)
+}
+
+/**
+ * Add title case variants of key/values to the array
+ * @param {string[]} arr
+ */
+function addTitleCaseVariants(arr) {
+  const upperCaseArr = arr.map((elm) => toTitleCase(elm))
+  return [...arr, ...upperCaseArr]
+}
+
+/**
+ * Add lowercase variants of key/values to the array
+ * @param {string[]} arr
+ */
+function addLowerCaseVariants(arr) {
+  const lowerCaseArr = arr.map((elm) => elm.toLowerCase())
+  return [...arr, ...lowerCaseArr]
+}
+
 const full = sortObject({
   ...base,
   '.env': stringify(env),
-  'dockerfile': stringify(docker),
+  'Dockerfile': stringify(docker),
   'package.json': stringify(packageJSON),
   'rush.json': stringify(packageJSON),
   'pubspec.yaml': stringify(pubspecYAML),
+  'README*': stringify(readme),
+  'Readme*': stringify(readme),
   'readme*': stringify(readme),
-  'cargo.toml': stringify(cargo),
+  'Cargo.toml': stringify(cargo),
   'gemfile': stringify(gemfile),
   'go.mod': stringify(gofile),
   'composer.json': stringify(composer),
