@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from 'node:fs'
 
 const buildTools = [
   'build.config.*',
@@ -84,6 +84,7 @@ const linters = [
   'tslint*',
   'xo.config.*',
   'pyrightconfig.json',
+  'biome.json',
 ]
 
 const env = [
@@ -220,25 +221,28 @@ const packageJSON = [
   ...linters,
 ]
 
-const readme = [
-  'authors',
-  'backers*',
-  'changelog*',
-  'citation*',
-  'code_of_conduct*',
-  'codeowners',
-  'contributing*',
-  'contributors',
-  'copying*',
-  'credits',
-  'governance.md',
-  'history.md',
-  'license*',
-  'maintainers',
-  'readme*',
-  'security.md',
-  'sponsors*',
+let readme = [
+  'AUTHORS',
+  'BACKERS*',
+  'CHANGELOG*',
+  'CITATION*',
+  'CODE_OF_CONDUCT*',
+  'CODEOWNERS',
+  'CONTRIBUTING*',
+  'CONTRIBUTORS',
+  'COPYING*',
+  'CREDITS',
+  'GOVERNANCE.MD',
+  'HISTORY.MD',
+  'LICENSE*',
+  'MAINTAINERS',
+  'README*',
+  'SECURITY.MD',
+  'SPONSORS*',
 ]
+
+readme = addTitleCaseVariants(readme)
+readme = addLowerCaseVariants(readme)
 
 const cargo = [
   'cargo.lock',
@@ -397,7 +401,7 @@ const base = {
   '*.module.ts': '$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts',
   '*.java': '$(capture).class',
   '.project': '.classpath',
-  '*.fs': '$(capture).fs.js, $(capture).fs.jsx, $(capture).fs.ts, $(capture).fs.tsx, $(capture).fs.rs, $(capture).fs.php, $(capture).fs.dart'
+  '*.fs': '$(capture).fs.js, $(capture).fs.jsx, $(capture).fs.ts, $(capture).fs.tsx, $(capture).fs.rs, $(capture).fs.php, $(capture).fs.dart',
 }
 // Based on the new SvelteKit's routing system https://kit.svelte.dev/docs/routing
 const svelteKitRouting = {
@@ -416,6 +420,31 @@ function sortObject(obj) {
   }, {})
 }
 
+/**
+ * @param {string} str
+ */
+function toTitleCase(str) {
+  return str.toLowerCase().replace(/(^|[-_])(\w)/g, (_, a, b) => `${a}${b.toUpperCase()}`)
+}
+
+/**
+ * Add title case variants of key/values to the array
+ * @param {string[]} arr
+ */
+function addTitleCaseVariants(arr) {
+  const upperCaseArr = arr.map((elm) => toTitleCase(elm))
+  return [...arr, ...upperCaseArr]
+}
+
+/**
+ * Add lowercase variants of key/values to the array
+ * @param {string[]} arr
+ */
+function addLowerCaseVariants(arr) {
+  const lowerCaseArr = arr.map((elm) => elm.toLowerCase())
+  return [...arr, ...lowerCaseArr]
+}
+
 const full = sortObject({
   ...base,
   '.env': stringify(env),
@@ -423,8 +452,10 @@ const full = sortObject({
   'package.json': stringify(packageJSON),
   'rush.json': stringify(packageJSON),
   'pubspec.yaml': stringify(pubspecYAML),
+  'README*': stringify(readme),
+  'Readme*': stringify(readme),
   'readme*': stringify(readme),
-  'cargo.toml': stringify(cargo),
+  'Cargo.toml': stringify(cargo),
   'gemfile': stringify(gemfile),
   'go.mod': stringify(gofile),
   'composer.json': stringify(composer),
@@ -446,11 +477,10 @@ const full = sortObject({
 
 const today = new Date().toISOString().slice(0, 16).replace('T', ' ')
 
-fs.writeFileSync('README.md',
-  fs.readFileSync('README.md', 'utf-8')
-    .replace(/```json([\s\S]*?)```/m, () => {
-      const body = JSON.stringify(full, null, 2).split('\n').map(l => `  ${l}`).join('\n')
-      return `
+fs.writeFileSync('README.md', fs.readFileSync('README.md', 'utf-8')
+  .replace(/```json([\s\S]*?)```/m, () => {
+    const body = JSON.stringify(full, null, 2).split('\n').map(l => `  ${l}`).join('\n')
+    return `
 \`\`\`jsonc
   // updated ${today}
   // https://github.com/antfu/vscode-file-nesting-config
@@ -458,7 +488,4 @@ fs.writeFileSync('README.md',
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": ${body.trimStart()},
 \`\`\``.trim()
-    })
-  ,
-  'utf-8',
-)
+  }), 'utf-8')
