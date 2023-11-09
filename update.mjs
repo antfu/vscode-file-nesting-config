@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from 'node:fs'
 
 const buildTools = [
   'build.config.*',
@@ -396,7 +396,7 @@ const base = {
   '*.module.ts': '$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts',
   '*.java': '$(capture).class',
   '.project': '.classpath',
-  '*.fs': '$(capture).fs.js, $(capture).fs.jsx, $(capture).fs.ts, $(capture).fs.tsx, $(capture).fs.rs, $(capture).fs.php, $(capture).fs.dart'
+  '*.fs': '$(capture).fs.js, $(capture).fs.jsx, $(capture).fs.ts, $(capture).fs.tsx, $(capture).fs.rs, $(capture).fs.php, $(capture).fs.dart',
 }
 // Based on the new SvelteKit's routing system https://kit.svelte.dev/docs/routing
 const svelteKitRouting = {
@@ -445,11 +445,10 @@ const full = sortObject({
 
 const today = new Date().toISOString().slice(0, 16).replace('T', ' ')
 
-fs.writeFileSync('README.md',
-  fs.readFileSync('README.md', 'utf-8')
-    .replace(/```json([\s\S]*?)```/m, () => {
-      const body = JSON.stringify(full, null, 2).split('\n').map(l => `  ${l}`).join('\n')
-      return `
+fs.writeFileSync('README.md', fs.readFileSync('README.md', 'utf-8')
+  .replace(/```json([\s\S]*?)```/m, () => {
+    const body = JSON.stringify(full, null, 2).split('\n').map(l => `  ${l}`).join('\n')
+    return `
 \`\`\`jsonc
   // updated ${today}
   // https://github.com/antfu/vscode-file-nesting-config
@@ -457,7 +456,4 @@ fs.writeFileSync('README.md',
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": ${body.trimStart()},
 \`\`\``.trim()
-    })
-  ,
-  'utf-8',
-)
+  }), 'utf-8')

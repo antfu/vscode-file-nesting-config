@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+import { fetch } from 'ofetch'
 import type { ExtensionContext } from 'vscode'
 import { window, workspace } from 'vscode'
 import { FILE, MSG_PREFIX, URL_PREFIX } from './constants'
