@@ -126,8 +126,10 @@ const workspaces = [
 
 const docker = [
   'dockerfile*',
+  '*.dockerfile',
   '.dockerignore',
   'docker-compose.*',
+  ".devcontainer.*",
 ]
 
 // latex
