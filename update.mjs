@@ -383,7 +383,7 @@ const base = {
   'default.nix': 'shell.nix',
   'flake.nix': 'flake.lock',
   'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE',
-  'CMakeLists.txt': '*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json',
+  'CMakeLists.txt': '*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json, CMakeCache.txt',
   '.clang-tidy': '.clang-format, .clangd, compile_commands.json',
   '*.pubxml': '$(capture).pubxml.user',
   '*.asax': '$(capture).*.cs, $(capture).*.vb',
