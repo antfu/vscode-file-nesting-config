@@ -11,6 +11,10 @@ const buildTools = [
   'rspack*',
 ]
 
+const dependencyAnalysis = [
+  '*.knip.*'
+]
+
 const testingTools = [
   '.codecov',
   '.mocha*',
