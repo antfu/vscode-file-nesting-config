@@ -223,7 +223,7 @@ const packageJSON = [
   ...buildTools,
   ...services,
   ...linters,
-  ...dependencyAnalysis
+  ...dependencyAnalysis,
 ]
 
 let readme = [
