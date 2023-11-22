@@ -12,7 +12,7 @@ const buildTools = [
 ]
 
 const dependencyAnalysis = [
-  '*.knip.*'
+  '*.knip.*',
 ]
 
 const testingTools = [
@@ -223,6 +223,7 @@ const packageJSON = [
   ...buildTools,
   ...services,
   ...linters,
+  ...dependencyAnalysis
 ]
 
 let readme = [
