@@ -390,6 +390,7 @@ const base = {
   '*.ascx': '$(capture).*.cs, $(capture).*.vb',
   '*.ashx': '$(capture).*.cs, $(capture).*.vb',
   '*.aspx': '$(capture).*.cs, $(capture).*.vb',
+  '*.axaml': '$(capture).axaml.cs',
   '*.master': '$(capture).*.cs, $(capture).*.vb',
   '*.xaml': '$(capture).xaml.cs',
   '*.cshtml': '$(capture).cshtml.cs',
