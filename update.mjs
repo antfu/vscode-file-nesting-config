@@ -367,7 +367,7 @@ const base = {
   '*.mjs': '$(capture).mjs.map, $(capture).*.mjs, $(capture)_*.mjs',
   '*.mts': '$(capture).mts.map, $(capture).*.mts, $(capture)_*.mts',
   '*.cjs': '$(capture).cjs.map, $(capture).*.cjs, $(capture)_*.cjs',
-  '*.jsx': '$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx, $(capture).less, $(capture).module.less',
+  '*.jsx': '$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx, $(capture).less, $(capture).module.less, $(capture).module.css',
   '*.ts': '$(capture).js, $(capture).d.ts.map, $(capture).*.ts, $(capture)_*.js, $(capture)_*.ts',
   '*.component.ts': '$(capture).component.html, $(capture).component.spec.ts, $(capture).component.css, $(capture).component.scss, $(capture).component.sass, $(capture).component.less',
   '*.tsx': '$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx, $(capture).less, $(capture).module.less, $(capture).scss, $(capture).module.scss, $(capture).module.css',
