@@ -11,6 +11,10 @@ const buildTools = [
   'rspack*',
 ]
 
+const dependencyAnalysis = [
+  '*.knip.*',
+]
+
 const testingTools = [
   '.codecov',
   '.mocha*',
@@ -220,6 +224,7 @@ const packageJSON = [
   ...buildTools,
   ...services,
   ...linters,
+  ...dependencyAnalysis,
 ]
 
 let readme = [
