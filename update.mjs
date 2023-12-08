@@ -12,7 +12,7 @@ const buildTools = [
 ]
 
 const dependencyAnalysis = [
-  '*.knip.*',
+  '.knip.*',
 ]
 
 const testingTools = [
