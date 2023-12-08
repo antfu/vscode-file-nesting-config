@@ -14,12 +14,18 @@ importers:
       '@antfu/ni':
         specifier: ^0.21.12
         version: 0.21.12
+      '@types/eslint':
+        specifier: ^8.44.8
+        version: 8.44.8
       '@types/vscode':
         specifier: ^1.84.2
         version: 1.84.2
       eslint:
         specifier: ^8.55.0
         version: 8.55.0
+      eslint-factory:
+        specifier: ^0.0.0
+        version: 0.0.0(eslint@8.55.0)
       ofetch:
         specifier: ^1.3.3
         version: 1.3.3
@@ -633,6 +639,17 @@ packages:
       - typescript
     dev: true
 
+  /@types/eslint@8.44.8:
+    resolution: {integrity: sha512-4K8GavROwhrYl2QXDXm0Rv9epkA8GBFu0EI+XrrnnuCl7u8CWBRusX7fXJfanhZTDWSAL24gDI/UqXyUM0Injw==}
+    dependencies:
+      '@types/estree': 1.0.5
+      '@types/json-schema': 7.0.15
+    dev: true
+
+  /@types/estree@1.0.5:
+    resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
+    dev: true
+
   /@types/json-schema@7.0.15:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
     dev: true
@@ -1213,6 +1230,14 @@ packages:
     resolution: {integrity: sha512-PcBsqtd5QHEZH4ROvpnRN4EP0qcHh9voCCHgtyHxnJZHGspJREcZn7oPqRG/GfWt9m3C0fkC2l5CuBtMig2wXQ==}
     dependencies:
       parse-gitignore: 2.0.0
+    dev: true
+
+  /eslint-factory@0.0.0(eslint@8.55.0):
+    resolution: {integrity: sha512-szUL6ozGk3DFXJmFtV/0kYayfUeNcaxsRTw+kBfHVaQNe2yCPIlYRQqGW7yR7jD/hLwA4cgxa95mtzNIF9YyNA==}
+    peerDependencies:
+      eslint: ^8.50.0
+    dependencies:
+      eslint: 8.55.0
     dev: true
 
   /eslint-import-resolver-node@0.3.9:
