@@ -60,6 +60,7 @@ const services = [
   '.firebase*',
   '.github*',
   'unlighthouse*',
+  'sonar-project.properties',
 ]
 
 const linters = [
