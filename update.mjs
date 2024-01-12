@@ -136,6 +136,7 @@ const docker = [
   '*.dockerfile',
   '.dockerignore',
   'docker-compose.*',
+  'compose.*',
   '.devcontainer.*',
 ]
 
