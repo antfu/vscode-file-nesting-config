@@ -16,6 +16,10 @@ const dependencyAnalysis = [
   '.knip.*',
 ]
 
+const syntaxHighlighting = [
+  'ec.config.*,
+]
+
 const testingTools = [
   '.codecov',
   '.mocha*',
@@ -229,6 +233,7 @@ const packageJSON = [
   ...services,
   ...linters,
   ...dependencyAnalysis,
+  ...syntaxHighlighting
 ]
 
 let readme = [
