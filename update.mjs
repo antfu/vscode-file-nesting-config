@@ -17,7 +17,7 @@ const dependencyAnalysis = [
 ]
 
 const syntaxHighlighting = [
-  'ec.config.*,
+  'ec.config.*',
 ]
 
 const testingTools = [
