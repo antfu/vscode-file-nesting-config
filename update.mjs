@@ -204,6 +204,8 @@ const libraries = [
   'windi.config.*',
   'i18n.config.*',
   'vuetify.config.*',
+  'capacitor.config.*',
+  'ionic.config.*',
   ...env,
   ...testingTools,
   ...tsconfig,
