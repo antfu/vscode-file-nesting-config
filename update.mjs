@@ -372,6 +372,12 @@ const denoRuntime = [
   ...env,
 ]
 
+const razor = [
+  '$(capture).razor.css',
+  '$(capture).razor.scss',
+  '$(capture).razor.cs'
+]
+
 const base = {
   '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*',
   '*.css': '$(capture).css.map, $(capture).*.css',
@@ -485,6 +491,7 @@ const full = sortObject({
   '*.ex': stringify(phoenixLiveView),
   '*.tex': stringify(tex),
   'deno.json*': stringify(denoRuntime),
+  '*.razor': stringify(razor),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
   ...svelteKitRouting,
 })
