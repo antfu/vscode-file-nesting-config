@@ -26,7 +26,7 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
 <!-- eslint-skip -->
 
 ```jsonc
-  // updated 2024-02-19 11:46
+  // updated 2024-03-12 11:18
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
@@ -59,6 +59,7 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
     "*.module.ts": "$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts",
     "*.mts": "$(capture).mts.map, $(capture).*.mts, $(capture)_*.mts",
     "*.pubxml": "$(capture).pubxml.user",
+    "*.razor": "$(capture).razor.cs, $(capture).razor.css, $(capture).razor.scss",
     "*.resx": "$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb",
     "*.tex": "$(capture).acn, $(capture).acr, $(capture).alg, $(capture).aux, $(capture).bbl, $(capture).blg, $(capture).fdb_latexmk, $(capture).fls, $(capture).glg, $(capture).glo, $(capture).gls, $(capture).idx, $(capture).ind, $(capture).ist, $(capture).lof, $(capture).log, $(capture).lot, $(capture).out, $(capture).pdf, $(capture).synctex.gz, $(capture).toc, $(capture).xdv",
     "*.ts": "$(capture).js, $(capture).d.ts.map, $(capture).*.ts, $(capture)_*.js, $(capture)_*.ts",
