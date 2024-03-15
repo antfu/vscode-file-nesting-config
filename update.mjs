@@ -375,7 +375,7 @@ const denoRuntime = [
 const razor = [
   '$(capture).razor.css',
   '$(capture).razor.scss',
-  '$(capture).razor.cs'
+  '$(capture).razor.cs',
 ]
 
 const base = {
