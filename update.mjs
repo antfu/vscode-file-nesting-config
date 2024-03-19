@@ -91,6 +91,7 @@ const linters = [
   'xo.config.*',
   'pyrightconfig.json',
   'biome.json',
+  '.pylintrc',
 ]
 
 const env = [
@@ -356,6 +357,7 @@ const pyprojecttoml = [
   ...setuppy,
   ...pipfile,
   ...hatchtoml,
+  ...linters,
 ]
 
 const phoenixLiveView = [
