@@ -92,6 +92,8 @@ const linters = [
   'pyrightconfig.json',
   'biome.json',
   '.pylintrc',
+  'ruff.toml',
+  '.ruff.toml',
 ]
 
 const env = [
