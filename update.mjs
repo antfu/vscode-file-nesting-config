@@ -61,6 +61,7 @@ const services = [
   '.github*',
   'unlighthouse*',
   'sonar-project.properties',
+  'wrangler.toml',
 ]
 
 const linters = [
