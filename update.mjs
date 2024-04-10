@@ -141,6 +141,7 @@ const docker = [
   'docker-compose.*',
   'compose.*',
   '.devcontainer.*',
+  'captain-definition',
 ]
 
 // latex
