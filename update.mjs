@@ -356,6 +356,7 @@ const pyprojecttoml = [
   '.pdm.toml',
   '.pdm-python',
   'poetry.lock',
+  'poetry.toml',
   ...setuppy,
   ...pipfile,
   ...hatchtoml,
