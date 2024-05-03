@@ -395,6 +395,7 @@ const base = {
   '*.component.ts': '$(capture).component.html, $(capture).component.spec.ts, $(capture).component.css, $(capture).component.scss, $(capture).component.sass, $(capture).component.less',
   '*.tsx': '$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx, $(capture).less, $(capture).module.less, $(capture).scss, $(capture).module.scss',
   '*.vue': '$(capture).*.ts, $(capture).*.js, $(capture).story.vue',
+  '*.md': '$(capture).*',
   'shims.d.ts': '*.d.ts',
   '*.cpp': '$(capture).hpp, $(capture).h, $(capture).hxx, $(capture).hh',
   '*.cxx': '$(capture).hpp, $(capture).h, $(capture).hxx, $(capture).hh',
