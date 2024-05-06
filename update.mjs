@@ -395,7 +395,6 @@ const base = {
   '*.component.ts': '$(capture).component.html, $(capture).component.spec.ts, $(capture).component.css, $(capture).component.scss, $(capture).component.sass, $(capture).component.less',
   '*.tsx': '$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx, $(capture).less, $(capture).module.less, $(capture).scss, $(capture).module.scss',
   '*.vue': '$(capture).*.ts, $(capture).*.js, $(capture).story.vue',
-  '*.md': '$(capture).*',
   'shims.d.ts': '*.d.ts',
   '*.cpp': '$(capture).hpp, $(capture).h, $(capture).hxx, $(capture).hh',
   '*.cxx': '$(capture).hpp, $(capture).h, $(capture).hxx, $(capture).hh',
@@ -439,11 +438,13 @@ function stringify(items) {
   return Array.from(new Set(items)).sort().join(', ')
 }
 
-function sortObject(obj) {
-  return Object.keys(obj).sort().reduce((acc, key) => {
-    acc[key] = obj[key]
-    return acc
-  }, {})
+function sortObject(obj, fn = (a, b) => a.localeCompare(b)) {
+  return Object.keys(obj)
+    .sort(fn)
+    .reduce((acc, key) => {
+      acc[key] = obj[key]
+      return acc
+    }, {})
 }
 
 /**
@@ -500,6 +501,12 @@ const full = sortObject({
   '*.razor': stringify(razor),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
   ...svelteKitRouting,
+}, (a, b) => {
+  if (a.startsWith('*') && !b.startsWith('*'))
+    return 1
+  if (!a.startsWith('*') && b.startsWith('*'))
+    return -1
+  return a.localeCompare(b)
 })
 
 const today = new Date().toISOString().slice(0, 16).replace('T', ' ')
