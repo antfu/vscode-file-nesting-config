@@ -417,8 +417,6 @@ const base = {
   '*.fs': '$(capture).fs.js, $(capture).fs.js.map, $(capture).fs.jsx, $(capture).fs.ts, $(capture).fs.tsx, $(capture).fs.rs, $(capture).fs.php, $(capture).fs.dart',
   '*.go': '$(capture)_test.go',
   '*.java': '$(capture).class',
-  'pom.xml': 'mvnw*',
-  'application.properties': '*.properties',
   '*.js': '$(capture).js.map, $(capture).*.js, $(capture)_*.js',
   '*.jsx': '$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx, $(capture).less, $(capture).module.less',
   '*.master': '$(capture).*.cs, $(capture).*.vb',
@@ -441,6 +439,8 @@ const base = {
   'I*.cs': '$(capture).cs',
   'Makefile': '*.mk',
   'shims.d.ts': '*.d.ts',
+  'pom.xml': 'mvnw*',
+  'application.properties': '*.properties',
 }
 // Based on the new SvelteKit's routing system https://kit.svelte.dev/docs/routing
 const svelteKitRouting = {
