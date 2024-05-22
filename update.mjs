@@ -431,6 +431,7 @@ const base = {
   '*.tsx': '$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx, $(capture).less, $(capture).module.less, $(capture).scss, $(capture).module.scss',
   '*.vue': '$(capture).*.ts, $(capture).*.js, $(capture).story.vue',
   '*.xaml': '$(capture).xaml.cs',
+  "ansible.cfg": "ansible.cfg, .ansible-lint, requirements.yml",
   'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE',
   'CMakeLists.txt': '*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json, CMakeCache.txt',
   'default.nix': 'shell.nix',
