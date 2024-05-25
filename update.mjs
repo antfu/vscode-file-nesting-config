@@ -178,7 +178,7 @@ const tex = [
 // frameworks and their specific files
 // @keep-sorted
 const frameworks = {
-  'app.config.*':
+  'app.config.*': [],
   'artisan': ['server.php', 'webpack.mix.js'],
   'astro.config.*': [],
   'gatsby-config.*': ['gatsby-browser.*', 'gatsby-node.*', 'gatsby-ssr.*', 'gatsby-transformer.*'],
