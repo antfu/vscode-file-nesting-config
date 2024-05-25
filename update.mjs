@@ -390,6 +390,11 @@ const denoRuntime = [
   ...env,
 ]
 
+const sqlite = [
+  '*.db-shm',
+  '*.db-wal',
+]
+
 const razor = [
   '$(capture).razor.css',
   '$(capture).razor.scss',
@@ -513,6 +518,7 @@ const full = sortObject({
   '*.ex': stringify(phoenixLiveView),
   '*.tex': stringify(tex),
   'deno.json*': stringify(denoRuntime),
+  '*.db': stringify(sqlite),
   '*.razor': stringify(razor),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
   ...svelteKitRouting,
