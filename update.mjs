@@ -64,6 +64,7 @@ const services = [
   'sonar-project.properties',
   'unlighthouse*',
   'vercel*',
+  'wrangler.toml',
 ]
 // @keep-sorted
 const linters = [
@@ -146,6 +147,7 @@ const docker = [
   'docker-compose.*',
   'compose.*',
   '.devcontainer.*',
+  'captain-definition',
 ]
 
 // latex
