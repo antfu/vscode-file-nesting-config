@@ -61,6 +61,8 @@ const services = [
   '.github*',
   'unlighthouse*',
   'sonar-project.properties',
+  'unlighthouse*',
+  'vercel*',
   'wrangler.toml',
 ]
 
