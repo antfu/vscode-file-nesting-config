@@ -64,6 +64,7 @@ const services = [
   'sonar-project.properties',
   'unlighthouse*',
   'vercel*',
+  'wrangler.toml',
 ]
 // @keep-sorted
 const linters = [
@@ -146,6 +147,7 @@ const docker = [
   'docker-compose.*',
   'compose.*',
   '.devcontainer.*',
+  'captain-definition',
 ]
 
 // latex
@@ -178,6 +180,7 @@ const tex = [
 // frameworks and their specific files
 // @keep-sorted
 const frameworks = {
+  'app.config.*': [],
   'artisan': ['server.php', 'webpack.mix.js'],
   'astro.config.*': [],
   'gatsby-config.*': ['gatsby-browser.*', 'gatsby-node.*', 'gatsby-ssr.*', 'gatsby-transformer.*'],
@@ -210,6 +213,7 @@ const libraries = [
   'panda.config.*',
   'postcss.config.*',
   'rspack.config.*',
+  'sst.config.*',
   'svgo.config.*',
   'tailwind.config.*',
   'uno.config.*',
@@ -388,6 +392,11 @@ const denoRuntime = [
   ...env,
 ]
 
+const sqlite = [
+  '*.db-shm',
+  '*.db-wal',
+]
+
 const razor = [
   '$(capture).razor.css',
   '$(capture).razor.scss',
@@ -512,6 +521,7 @@ const full = sortObject({
   '*.ex': stringify(phoenixLiveView),
   '*.tex': stringify(tex),
   'deno.json*': stringify(denoRuntime),
+  '*.db': stringify(sqlite),
   '*.razor': stringify(razor),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
   ...svelteKitRouting,
