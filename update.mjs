@@ -435,6 +435,7 @@ const base = {
   '*.module.ts': '$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts',
   '*.mts': '$(capture).mts.map, $(capture).*.mts, $(capture)_*.mts',
   '*.pubxml': '$(capture).pubxml.user',
+  '*.py': '$(capture).pyi',
   '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
   '*.ts': '$(capture).js, $(capture).d.ts.map, $(capture).*.ts, $(capture)_*.js, $(capture)_*.ts',
   '*.tsx': '$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx, $(capture).less, $(capture).module.less, $(capture).scss, $(capture).module.scss',
