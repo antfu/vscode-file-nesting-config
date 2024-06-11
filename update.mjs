@@ -440,6 +440,7 @@ const base = {
   '*.ts': '$(capture).js, $(capture).d.ts.map, $(capture).*.ts, $(capture)_*.js, $(capture)_*.ts',
   '*.tsx': '$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx, $(capture).less, $(capture).module.less, $(capture).scss, $(capture).module.scss',
   '*.vue': '$(capture).*.ts, $(capture).*.js, $(capture).story.vue',
+  '*.w': '$(capture).*.w, I$(capture).w',
   '*.xaml': '$(capture).xaml.cs',
   'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE',
   'CMakeLists.txt': '*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json, CMakeCache.txt',
