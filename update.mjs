@@ -537,7 +537,7 @@ const full = sortObject({
 const today = new Date().toISOString().slice(0, 16).replace('T', ' ')
 
 fs.writeFileSync('README.md', fs.readFileSync('README.md', 'utf-8')
-  .replace(/```json([\s\S]*?)```/m, () => {
+  .replace(/```json([\s\S]*?)```/, () => {
     const body = JSON.stringify(full, null, 2).split('\n').map(l => `  ${l}`).join('\n')
     return `
 \`\`\`jsonc
