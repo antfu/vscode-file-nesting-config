@@ -4,7 +4,13 @@ import { getConfig } from './config'
 import { fetchAndUpdate } from './fetch'
 
 export async function activate(ctx: ExtensionContext) {
-  commands.registerCommand('antfu.file-nesting.manualUpdate', () => fetchAndUpdate(ctx, false))
+  commands.registerCommand(
+    'antfu.file-nesting.manualUpdate',
+    () => fetchAndUpdate(ctx, {
+      prompt: false,
+      anyUpdate: true,
+    }),
+  )
 
   const lastUpdate = ctx.globalState.get('lastUpdate', 0)
   const initialized = ctx.globalState.get('init', false)
@@ -12,13 +18,13 @@ export async function activate(ctx: ExtensionContext) {
 
   if (!initialized) {
     ctx.globalState.update('init', true)
-    fetchAndUpdate(ctx, false)
+    fetchAndUpdate(ctx, { prompt: false })
   }
 
   if (getConfig('fileNestingUpdater.autoUpdate')) {
     if (Date.now() - lastUpdate >= autoUpdateInterval * 60_000)
-      fetchAndUpdate(ctx, getConfig('fileNestingUpdater.promptOnAutoUpdate'))
+      fetchAndUpdate(ctx, { prompt: getConfig('fileNestingUpdater.promptOnAutoUpdate') })
   }
 }
 
-export function deactivate() {}
+export function deactivate() { }

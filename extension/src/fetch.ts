@@ -24,7 +24,15 @@ export async function fetchLatest() {
   return config['explorer.fileNesting.patterns']
 }
 
-export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
+interface Options {
+  // Whether to prompt the user
+  prompt?: boolean
+  /** Everything up-to-date notification */
+  anyUpdate?: boolean
+}
+
+export async function fetchAndUpdate(ctx: ExtensionContext, opt: Options) {
+  const { prompt = true, anyUpdate } = opt || {}
   const fileNestingConfig = new Config()
   const patterns = await fetchLatest()
   let shouldUpdate = true
@@ -32,8 +40,12 @@ export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
   const originalPatterns = { ...(fileNestingConfig.get<object>('patterns') || {}) }
   delete originalPatterns['//']
   // no change
-  if (Object.keys(originalPatterns).length > 0 && JSON.stringify(patterns) === JSON.stringify(originalPatterns))
+  if (Object.keys(originalPatterns).length > 0 && JSON.stringify(patterns) === JSON.stringify(originalPatterns)) {
+    if (anyUpdate)
+      window.showInformationMessage(`${MSG_PREFIX} Everything up-to-date`)
+
     return false
+  }
 
   if (prompt) {
     const buttonUpdate = 'Update'
