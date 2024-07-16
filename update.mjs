@@ -265,6 +265,7 @@ let readme = [
   'HISTORY.MD',
   'LICENSE*',
   'MAINTAINERS',
+  'README_*',
   'RELEASE_NOTES*',
   'SECURITY.MD',
   'SPONSORS*',
