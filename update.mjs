@@ -406,6 +406,12 @@ const razor = [
   '$(capture).razor.cs',
 ]
 
+const sanity = [
+  'sanity.cli.*',
+  'sanity.types.ts',
+  'schema.json',
+]
+
 // @keep-sorted
 const base = {
   '.clang-tidy': '.clang-format, .clangd, compile_commands.json',
@@ -528,6 +534,7 @@ const full = sortObject({
   'deno.json*': stringify(denoRuntime),
   '*.db': stringify(sqlite),
   '*.razor': stringify(razor),
+  'sanity.config.*': stringify(sanity),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
   ...svelteKitRouting,
 }, (a, b) => {
