@@ -110,6 +110,7 @@ const env = [
 
 // @keep-sorted
 const workspaces = [
+  '*.code-workspace',
   '.gitmojirc.json',
   '.huskyrc*',
   '.node-version',
