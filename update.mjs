@@ -474,7 +474,8 @@ function stringify(items) {
 }
 
 function sortObject(obj, fn = (a, b) => a.localeCompare(b)) {
-  return Object.keys(obj)
+  return Object
+    .keys(obj)
     .sort(fn)
     .reduce((acc, key) => {
       acc[key] = obj[key]
