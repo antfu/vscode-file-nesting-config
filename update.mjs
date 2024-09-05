@@ -20,31 +20,36 @@ const syntaxHighlighting = [
   'ec.config.*',
 ]
 
+// @keep-sorted
 const testingTools = [
   '.codecov',
+  '.lighthouserc.*',
   '.mocha*',
   'ava.config.*',
   'cypress.*',
+  'histoire.config.*',
   'jasmine.*',
   'jest.config.*',
   'karma*',
   'lighthouserc.*',
-  '.lighthouserc.*',
   'playwright.config.*',
   'puppeteer.config.*',
   'vitest.config.*',
-  'histoire.config.*',
 ]
 
+// @keep-sorted
 const tsconfig = [
+  'api-extractor.json',
+  'jsconfig.*',
   'tsconfig.*',
   'tsdoc.*',
-  'jsconfig.*',
-  'api-extractor.json',
 ]
 
+// @keep-sorted
 const services = [
   '.circleci*',
+  '.firebase*',
+  '.github*',
   '.gitlab*',
   '.gitpod*',
   '.sentry*',
@@ -60,79 +65,85 @@ const services = [
   'pullapprove*',
   'release-tasks.sh',
   'renovate*',
-  'vercel*',
-  '.firebase*',
-  '.github*',
-  'unlighthouse*',
   'sonar-project.properties',
+  'unlighthouse*',
+  'vercel*',
+  'wrangler.toml',
 ]
-
+// @keep-sorted
 const linters = [
   '.commitlint*',
+  '.dlint.json',
+  '.dprint.json*',
   '.editorconfig',
   '.eslint*',
-  'eslint*',
   '.flowconfig',
   '.jslint*',
+  '.lintstagedrc*',
   '.markdownlint*',
   '.prettier*',
+  '.pylintrc',
+  '.ruff.toml',
   '.stylelint*',
   '.textlint*',
   '.xo-config*',
   '.yamllint*',
+  'biome.json*',
   'commitlint*',
   'dangerfile*',
-  '.dprint.json*',
-  'dprint.json*',
-  '.dlint.json',
   'dlint.json',
+  'dprint.json*',
+  'eslint*',
   'lint-staged*',
-  '.lintstagedrc*',
-  'prettier*',
   'phpcs.xml',
+  'prettier*',
+  'pyrightconfig.json',
+  'ruff.toml',
   'stylelint*',
   'tslint*',
   'xo.config.*',
-  'pyrightconfig.json',
-  'biome.json',
 ]
 
+// @keep-sorted
 const env = [
-  '*.env',
   '.env.*',
-  'env.d.ts',
   '.envrc',
+  '*.env',
+  'env.d.ts',
 ]
 
+// @keep-sorted
 const workspaces = [
+  '*.code-workspace',
+  '.gitmojirc.json',
   '.huskyrc*',
   '.node-version',
   '.npm*',
   '.nvmrc',
-  '.tool-versions',
   '.pnp.*',
   '.pnpm*',
-  '.simple-git-hooks*',
-  '.releaserc*',
-  'release.config.*',
   '.release-please*.json',
-  'release-please*.json',
+  '.releaserc*',
+  '.simple-git-hooks*',
   '.tazerc*',
+  '.tool-versions',
   '.yarnrc*',
   'bower.json',
+  'bun.lockb',
+  'bunfig.toml',
+  'firebase.json',
   'lerna*',
+  'npm-shrinkwrap.json',
   'nx.*',
   'package-lock.json',
-  'npm-shrinkwrap.json',
   'package.nls*.json',
   'pnpm*',
+  'release-please*.json',
+  'release.config.*',
   'simple-git-hooks*',
   'turbo*',
   'workspace.json',
   'yarn*',
-  'firebase.json',
-  'bun.lockb',
-  '.gitmojirc.json',
 ]
 
 const docker = [
@@ -142,49 +153,54 @@ const docker = [
   'docker-compose.*',
   'compose.*',
   '.devcontainer.*',
+  'captain-definition',
 ]
 
 // latex
+// @keep-sorted
 const tex = [
-  '$(capture).aux',
-  '$(capture).bbl',
-  '$(capture).blg',
-  '$(capture).idx',
-  '$(capture).ind',
-  '$(capture).lof',
-  '$(capture).lot',
-  '$(capture).out',
-  '$(capture).toc',
   '$(capture).acn',
   '$(capture).acr',
   '$(capture).alg',
+  '$(capture).aux',
+  '$(capture).bbl',
+  '$(capture).blg',
+  '$(capture).fdb_latexmk',
+  '$(capture).fls',
   '$(capture).glg',
   '$(capture).glo',
   '$(capture).gls',
+  '$(capture).idx',
+  '$(capture).ind',
   '$(capture).ist',
-  '$(capture).fls',
+  '$(capture).lof',
   '$(capture).log',
-  '$(capture).synctex.gz',
-  '$(capture).xdv',
-  '$(capture).fdb_latexmk',
+  '$(capture).lot',
+  '$(capture).out',
   '$(capture).pdf',
+  '$(capture).synctex.gz',
+  '$(capture).toc',
+  '$(capture).xdv',
 ]
 
 // frameworks and their specific files
+// @keep-sorted
 const frameworks = {
-  'vite.config.*': [],
-  'vue.config.*': [],
-  'nuxt.config.*': ['.nuxtignore', '.nuxtrc'],
-  'next.config.*': ['next-env.d.ts', 'next-i18next.config.*'],
-  'svelte.config.*': ['mdsvex.config.js', 'vite.config.*', 'houdini.config.*'],
-  'remix.config.*': ['remix.*'],
+  'app.config.*': [],
   'artisan': ['server.php', 'webpack.mix.js'],
   'astro.config.*': [],
   'gatsby-config.*': ['gatsby-browser.*', 'gatsby-node.*', 'gatsby-ssr.*', 'gatsby-transformer.*'],
+  'next.config.*': ['next-env.d.ts', 'next-i18next.config.*'],
+  'nuxt.config.*': ['.nuxtignore', '.nuxtrc'],
   'quasar.conf.js': ['quasar.extensions.json'],
+  'remix.config.*': ['remix.*'],
+  'svelte.config.*': ['mdsvex.config.js', 'vite.config.*', 'houdini.config.*'],
+  'vite.config.*': [],
+  'vue.config.*': [],
 }
 
 // library configs, will be appended to all the frameworks
+// @keep-sorted
 const libraries = [
   '.babelrc*',
   '.cssnanorc*',
@@ -192,42 +208,46 @@ const libraries = [
   '.postcssrc*',
   '.terserrc*',
   'babel.config.*',
+  'capacitor.config.*',
   'contentlayer.config.*',
   'cssnano.config.*',
   'formkit.config.*',
   'formulate.config.*',
   'htmlnanorc.*',
+  'i18n.config.*',
+  'ionic.config.*',
+  'panda.config.*',
   'postcss.config.*',
+  'rspack.config.*',
+  'sst.config.*',
   'svgo.config.*',
   'tailwind.config.*',
-  'panda.config.*',
   'uno.config.*',
   'unocss.config.*',
-  'webpack.config.*',
-  'rspack.config.*',
-  'windi.config.*',
-  'i18n.config.*',
   'vuetify.config.*',
+  'webpack.config.*',
+  'windi.config.*',
   ...env,
   ...testingTools,
   ...tsconfig,
 ]
 
+// @keep-sorted
 const packageJSON = [
   '.browserslist*',
+  '.cz-config.js',
+  '.czrc',
   '.nodemon*',
   '.pm2*',
+  '.versionrc*',
   '.vscode*',
   '.watchman*',
+  'apollo.config.*',
   'nest-cli.*',
   'nodemon*',
   'pm2.*',
   'typedoc*',
-  'apollo.config.*',
   'vetur.config.*',
-  '.czrc',
-  '.cz-config.js',
-  '.versionrc*',
   ...workspaces,
   ...buildTools,
   ...services,
@@ -236,6 +256,7 @@ const packageJSON = [
   ...syntaxHighlighting,
 ]
 
+// @keep-sorted
 let readme = [
   'AUTHORS',
   'BACKERS*',
@@ -251,7 +272,9 @@ let readme = [
   'HISTORY.MD',
   'LICENSE*',
   'MAINTAINERS',
-  'README*',
+  'README_*',
+  'README-*',
+  'RELEASE_NOTES*',
   'SECURITY.MD',
   'SPONSORS*',
 ]
@@ -259,14 +282,15 @@ let readme = [
 readme = addTitleCaseVariants(readme)
 readme = addLowerCaseVariants(readme)
 
+// @keep-sorted
 const cargo = [
+  '.clippy.toml',
+  '.rustfmt.toml',
   'cargo.lock',
+  'clippy.toml',
+  'cross.toml',
   'rust-toolchain.toml',
   'rustfmt.toml',
-  '.rustfmt.toml',
-  'clippy.toml',
-  '.clippy.toml',
-  'cross.toml',
 ]
 
 const gofile = [
@@ -356,9 +380,11 @@ const pyprojecttoml = [
   '.pdm.toml',
   '.pdm-python',
   'poetry.lock',
+  'poetry.toml',
   ...setuppy,
   ...pipfile,
   ...hatchtoml,
+  ...linters,
 ]
 
 const phoenixLiveView = [
@@ -375,49 +401,72 @@ const denoRuntime = [
   ...env,
 ]
 
+const sqlite = [
+  '*.db-shm',
+  '*.db-wal',
+]
+
+const razor = [
+  '$(capture).razor.css',
+  '$(capture).razor.scss',
+  '$(capture).razor.cs',
+]
+
+const sanity = [
+  'sanity.cli.*',
+  'sanity.types.ts',
+  'schema.json',
+]
+
+// @keep-sorted
 const base = {
-  '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*',
-  '*.css': '$(capture).css.map, $(capture).*.css',
-  '*.js': '$(capture).js.map, $(capture).*.js, $(capture)_*.js',
-  '*.mjs': '$(capture).mjs.map, $(capture).*.mjs, $(capture)_*.mjs',
-  '*.mts': '$(capture).mts.map, $(capture).*.mts, $(capture)_*.mts',
-  '*.cjs': '$(capture).cjs.map, $(capture).*.cjs, $(capture)_*.cjs',
-  '*.jsx': '$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx, $(capture).less, $(capture).module.less',
-  '*.ts': '$(capture).js, $(capture).d.ts.map, $(capture).*.ts, $(capture)_*.js, $(capture)_*.ts',
-  '*.component.ts': '$(capture).component.html, $(capture).component.spec.ts, $(capture).component.css, $(capture).component.scss, $(capture).component.sass, $(capture).component.less',
-  '*.tsx': '$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx, $(capture).less, $(capture).module.less, $(capture).scss, $(capture).module.scss',
-  '*.vue': '$(capture).*.ts, $(capture).*.js, $(capture).story.vue',
-  'shims.d.ts': '*.d.ts',
-  '*.cpp': '$(capture).hpp, $(capture).h, $(capture).hxx',
-  '*.cxx': '$(capture).hpp, $(capture).h, $(capture).hxx',
-  '*.cc': '$(capture).hpp, $(capture).h, $(capture).hxx',
-  '*.c': '$(capture).h',
-  '*.go': '$(capture)_test.go',
-  'go.mod': 'go.sum',
-  'go.work': 'go.work.sum',
-  'default.nix': 'shell.nix',
-  'flake.nix': 'flake.lock',
-  'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE',
-  'CMakeLists.txt': '*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json, CMakeCache.txt',
   '.clang-tidy': '.clang-format, .clangd, compile_commands.json',
-  '*.pubxml': '$(capture).pubxml.user',
+  '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*',
+  '.project': '.classpath',
   '*.asax': '$(capture).*.cs, $(capture).*.vb',
   '*.ascx': '$(capture).*.cs, $(capture).*.vb',
   '*.ashx': '$(capture).*.cs, $(capture).*.vb',
   '*.aspx': '$(capture).*.cs, $(capture).*.vb',
   '*.axaml': '$(capture).axaml.cs',
-  '*.master': '$(capture).*.cs, $(capture).*.vb',
-  '*.xaml': '$(capture).xaml.cs',
-  '*.cshtml': '$(capture).cshtml.cs',
-  '*.cs': '$(capture).*.cs',
-  'I*.cs': '$(capture).cs',
-  '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
-  '*.dart': '$(capture).freezed.dart, $(capture).g.dart',
   '*.bloc.dart': '$(capture).event.dart, $(capture).state.dart',
-  '*.module.ts': '$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts',
-  '*.java': '$(capture).class',
-  '.project': '.classpath',
+  '*.c': '$(capture).h',
+  '*.cc': '$(capture).hpp, $(capture).h, $(capture).hxx, $(capture).hh',
+  '*.cjs': '$(capture).cjs.map, $(capture).*.cjs, $(capture)_*.cjs',
+  '*.component.ts': '$(capture).component.html, $(capture).component.spec.ts, $(capture).component.css, $(capture).component.scss, $(capture).component.sass, $(capture).component.less',
+  '*.cpp': '$(capture).hpp, $(capture).h, $(capture).hxx, $(capture).hh',
+  '*.cs': '$(capture).*.cs',
+  '*.cshtml': '$(capture).cshtml.cs',
+  '*.css': '$(capture).css.map, $(capture).*.css',
+  '*.cxx': '$(capture).hpp, $(capture).h, $(capture).hxx, $(capture).hh',
+  '*.dart': '$(capture).freezed.dart, $(capture).g.dart',
   '*.fs': '$(capture).fs.js, $(capture).fs.js.map, $(capture).fs.jsx, $(capture).fs.ts, $(capture).fs.tsx, $(capture).fs.rs, $(capture).fs.php, $(capture).fs.dart',
+  '*.go': '$(capture)_test.go',
+  '*.java': '$(capture).class',
+  '*.js': '$(capture).js.map, $(capture).*.js, $(capture)_*.js',
+  '*.jsx': '$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx, $(capture).less, $(capture).module.less, $(capture).module.less.d.ts,  $(capture).scss, $(capture).module.scss, $(capture).module.scss.d.ts',
+  '*.master': '$(capture).*.cs, $(capture).*.vb',
+  '*.md': '$(capture).*',
+  '*.mjs': '$(capture).mjs.map, $(capture).*.mjs, $(capture)_*.mjs',
+  '*.module.ts': '$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts',
+  '*.mts': '$(capture).mts.map, $(capture).*.mts, $(capture)_*.mts',
+  '*.pubxml': '$(capture).pubxml.user',
+  '*.py': '$(capture).pyi',
+  '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
+  '*.ts': '$(capture).js, $(capture).d.ts.map, $(capture).*.ts, $(capture)_*.js, $(capture)_*.ts',
+  '*.tsx': '$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx, $(capture).less, $(capture).module.less, $(capture).module.less.d.ts, $(capture).scss, $(capture).module.scss, $(capture).module.scss.d.ts, $(capture).css.ts',
+  '*.vue': '$(capture).*.ts, $(capture).*.js, $(capture).story.vue',
+  '*.w': '$(capture).*.w, I$(capture).w',
+  '*.xaml': '$(capture).xaml.cs',
+  'ansible.cfg': 'ansible.cfg, .ansible-lint, requirements.yml',
+  'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE',
+  'CMakeLists.txt': '*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json, CMakeCache.txt',
+  'default.nix': 'shell.nix',
+  'flake.nix': 'flake.lock',
+  'go.mod': 'go.sum',
+  'go.work': 'go.work.sum',
+  'I*.cs': '$(capture).cs',
+  'Makefile': '*.mk',
+  'shims.d.ts': '*.d.ts',
 }
 // Based on the new SvelteKit's routing system https://kit.svelte.dev/docs/routing
 const svelteKitRouting = {
@@ -429,11 +478,13 @@ function stringify(items) {
   return Array.from(new Set(items)).sort().join(', ')
 }
 
-function sortObject(obj) {
-  return Object.keys(obj).sort().reduce((acc, key) => {
-    acc[key] = obj[key]
-    return acc
-  }, {})
+function sortObject(obj, fn = (a, b) => a.localeCompare(b)) {
+  return Object.keys(obj)
+    .sort(fn)
+    .reduce((acc, key) => {
+      acc[key] = obj[key]
+      return acc
+    }, {})
 }
 
 /**
@@ -487,14 +538,23 @@ const full = sortObject({
   '*.ex': stringify(phoenixLiveView),
   '*.tex': stringify(tex),
   'deno.json*': stringify(denoRuntime),
+  '*.db': stringify(sqlite),
+  '*.razor': stringify(razor),
+  'sanity.config.*': stringify(sanity),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
   ...svelteKitRouting,
+}, (a, b) => {
+  if (a.startsWith('*') && !b.startsWith('*'))
+    return 1
+  if (!a.startsWith('*') && b.startsWith('*'))
+    return -1
+  return a.localeCompare(b)
 })
 
 const today = new Date().toISOString().slice(0, 16).replace('T', ' ')
 
 fs.writeFileSync('README.md', fs.readFileSync('README.md', 'utf-8')
-  .replace(/```json([\s\S]*?)```/m, () => {
+  .replace(/```json([\s\S]*?)```/, () => {
     const body = JSON.stringify(full, null, 2).split('\n').map(l => `  ${l}`).join('\n')
     return `
 \`\`\`jsonc
