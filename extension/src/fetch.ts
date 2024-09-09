@@ -1,8 +1,8 @@
 import { fetch } from 'ofetch'
 import type { ExtensionContext } from 'vscode'
-import { window, workspace } from 'vscode'
+import { window } from 'vscode'
 import { FILE, MSG_PREFIX, URL_PREFIX } from './constants'
-import { getConfig } from './config'
+import Config, { getConfig } from './config'
 
 export async function fetchLatest() {
   const repo = getConfig<string>('fileNestingUpdater.upstreamRepo')
@@ -24,16 +24,28 @@ export async function fetchLatest() {
   return config['explorer.fileNesting.patterns']
 }
 
-export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
-  const config = workspace.getConfiguration()
+interface Options {
+  // Whether to prompt the user
+  prompt?: boolean
+  /** Everything up-to-date notification */
+  anyUpdate?: boolean
+}
+
+export async function fetchAndUpdate(ctx: ExtensionContext, opt: Options) {
+  const { prompt = true, anyUpdate } = opt || {}
+  const fileNestingConfig = new Config()
   const patterns = await fetchLatest()
   let shouldUpdate = true
 
-  const oringalPatterns = { ...(config.get<object>('explorer.fileNesting.patterns') || {}) }
-  delete oringalPatterns['//']
+  const originalPatterns = { ...(fileNestingConfig.get<object>('patterns') || {}) }
+  delete originalPatterns['//']
   // no change
-  if (Object.keys(oringalPatterns).length > 0 && JSON.stringify(patterns) === JSON.stringify(oringalPatterns))
+  if (Object.keys(originalPatterns).length > 0 && JSON.stringify(patterns) === JSON.stringify(originalPatterns)) {
+    if (anyUpdate)
+      window.showInformationMessage(`${MSG_PREFIX} Everything up-to-date`)
+
     return false
+  }
 
   if (prompt) {
     const buttonUpdate = 'Update'
@@ -47,16 +59,12 @@ export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
   }
 
   if (shouldUpdate) {
-    if (config.inspect('explorer.fileNesting.enabled')?.globalValue == null)
-      config.update('explorer.fileNesting.enabled', true, true)
-
-    if (config.inspect('explorer.fileNesting.expand')?.globalValue == null)
-      config.update('explorer.fileNesting.expand', false, true)
-
-    config.update('explorer.fileNesting.patterns', {
+    fileNestingConfig.set('enabled', true)
+    fileNestingConfig.set('expand', false)
+    fileNestingConfig.set('patterns', {
       '//': `Last update at ${new Date().toLocaleString()}`,
       ...patterns,
-    }, true)
+    })
 
     ctx.globalState.update('lastUpdate', Date.now())
 
