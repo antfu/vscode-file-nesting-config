@@ -1,8 +1,8 @@
 import { fetch } from 'ofetch'
-import type { ExtensionContext } from 'vscode'
 import { window, workspace } from 'vscode'
-import { FILE, MSG_PREFIX, URL_PREFIX } from './constants'
+import type { ExtensionContext } from 'vscode'
 import { getConfig } from './config'
+import { FILE, MSG_PREFIX, URL_PREFIX } from './constants'
 
 export async function fetchLatest() {
   const repo = getConfig<string>('fileNestingUpdater.upstreamRepo')

@@ -110,7 +110,6 @@ const env = [
 
 // @keep-sorted
 const workspaces = [
-  '*.code-workspace',
   '.gitmojirc.json',
   '.huskyrc*',
   '.node-version',
@@ -124,6 +123,7 @@ const workspaces = [
   '.tazerc*',
   '.tool-versions',
   '.yarnrc*',
+  '*.code-workspace',
   'bower.json',
   'bun.lockb',
   'bunfig.toml',

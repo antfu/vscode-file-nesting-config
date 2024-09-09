@@ -17,12 +17,11 @@
     "ext:pack": "nr ext:build && cd extension && vsce package --no-dependencies"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.2.0",
+    "@antfu/eslint-config": "^3.4.1",
     "@antfu/ni": "^0.23.0",
-    "@types/eslint": "^9.6.1",
-    "@types/vscode": "^1.92.0",
-    "eslint": "^9.9.1",
-    "eslint-factory": "^0.0.2",
+    "@types/vscode": "^1.93.0",
+    "eslint": "^9.10.0",
+    "eslint-factory": "^0.1.1",
     "ofetch": "^1.3.4",
     "tsup": "^8.2.4",
     "typescript": "^5.5.4"
