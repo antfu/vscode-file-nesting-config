@@ -21,7 +21,10 @@ export async function fetchLatest() {
   }}`
 
   const config = JSON.parse(json) || {}
-  return config['explorer.fileNesting.patterns']
+  const patterns = config['explorer.fileNesting.patterns']
+  const whitelist = getConfig<string[]>('fileNestingUpdater.whitelist') || []
+
+  return whitelist.length > 0 ? whitelistFiler(whitelist, patterns) : patterns
 }
 
 export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
@@ -62,4 +65,23 @@ export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
 
     window.showInformationMessage(`${MSG_PREFIX} Config updated`)
   }
+}
+
+/**
+ * Filters the given patterns based on the provided whitelist.
+ *
+ * @param whitelist - An array of strings representing the keys to be whitelisted.
+ * @param patterns - A record of key-value pairs to be filtered.
+ * @returns A new record containing only the key-value pairs from the patterns that are in the whitelist.
+ */
+function whitelistFiler(whitelist: string[], patterns: Record<string, string>): Record<string, string> {
+  if (whitelist.length > 0) {
+    return Object.keys(patterns)
+      .filter(key => whitelist.includes(key))
+      .reduce((obj, key) => {
+        obj[key] = patterns[key]
+        return obj
+      }, {} as Record<string, string>)
+  }
+  return patterns
 }
