@@ -270,7 +270,7 @@ let readme = [
   'README_*',
   'README-*',
   'RELEASE_NOTES*',
-  'ROADMAP.MD',
+  'ROADMAP.md',
   'SECURITY.MD',
   'SPONSORS*',
 ]
