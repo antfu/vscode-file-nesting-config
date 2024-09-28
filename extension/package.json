@@ -59,6 +59,13 @@
           "type": "string",
           "description": "The branch name of upstream repo",
           "default": "main"
+        },
+        "fileNestingUpdater.whitelist": {
+          "description": "List of file nesting keys to include. Leave empty to include all",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     }

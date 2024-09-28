@@ -19,9 +19,32 @@ We now have a new VS Code extension to handle the updates automatically for you.
 
 [Check the readme for instructions](https://github.com/antfu/vscode-file-nesting-config/tree/main/extension).
 
+## Configuration
+
 ### Update Manually
 
 Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below, and you are good to go :)
+
+### Whitelist
+
+You can specify a whitelist of file nesting keys to include in the configuration. If the whitelist is empty, all keys will be included.
+
+Example configuration in `settings.json`:
+
+```json
+{
+  "fileNestingUpdater.whitelist": [
+    "README*",
+    "Dockerfile",
+    ".gitignore",
+    ".env",
+    "package.json",
+    "*.module.ts",
+    "*.mjs",
+    "*.ts",
+    "*.mts"
+  ]
+}
 
 <!-- eslint-skip -->
 
