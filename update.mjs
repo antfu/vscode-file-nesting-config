@@ -101,6 +101,11 @@ const linters = [
 ]
 
 // @keep-sorted
+const logs = [
+  '*.log'
+]
+
+// @keep-sorted
 const env = [
   '.env.*',
   '.envrc',
@@ -128,6 +133,8 @@ const workspaces = [
   'bun.lockb',
   'bunfig.toml',
   'firebase.json',
+  'firestore.rules',
+  'firestore.indexes.json',
   'lerna*',
   'npm-shrinkwrap.json',
   'nx.*',
