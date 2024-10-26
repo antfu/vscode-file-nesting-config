@@ -440,7 +440,7 @@ const base = {
   '*.fs': '$(capture).fs.js, $(capture).fs.js.map, $(capture).fs.jsx, $(capture).fs.ts, $(capture).fs.tsx, $(capture).fs.rs, $(capture).fs.php, $(capture).fs.dart',
   '*.go': '$(capture)_test.go',
   '*.java': '$(capture).class',
-  '*.js': '$(capture).js.map, $(capture).*.js, $(capture)_*.js',
+  '*.js': '$(capture).js.map, $(capture).*.js, $(capture)_*.js, $(capture).d.ts',
   '*.jsx': '$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx, $(capture).less, $(capture).module.less, $(capture).module.less.d.ts,  $(capture).scss, $(capture).module.scss, $(capture).module.scss.d.ts',
   '*.master': '$(capture).*.cs, $(capture).*.vb',
   '*.md': '$(capture).*',
