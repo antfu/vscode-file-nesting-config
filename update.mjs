@@ -57,6 +57,7 @@ const services = [
   'crowdin*',
   'jenkins*',
   'netlify*',
+  'nixpacks*',
   'Procfile',
   'pullapprove*',
   'release-tasks.sh',
