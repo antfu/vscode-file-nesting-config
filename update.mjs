@@ -49,6 +49,7 @@ const services = [
   '.gitlab*',
   '.gitpod*',
   '.sentry*',
+  'sentry.*.config.*',
   '.stackblitz*',
   '.styleci*',
   '.travis*',
@@ -216,7 +217,6 @@ const libraries = [
   'panda.config.*',
   'postcss.config.*',
   'rspack.config.*',
-  'sentry.*.config.*
   'sst.config.*',
   'svgo.config.*',
   'tailwind.config.*',
