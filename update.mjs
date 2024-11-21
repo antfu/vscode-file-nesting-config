@@ -44,6 +44,7 @@ const tsconfig = [
 // @keep-sorted
 const services = [
   '.circleci*',
+  '.cursorrules',
   '.firebase*',
   '.github*',
   '.gitlab*',
