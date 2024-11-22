@@ -50,7 +50,6 @@ const services = [
   '.gitlab*',
   '.gitpod*',
   '.sentry*',
-  'sentry.*.config.ts',
   '.stackblitz*',
   '.styleci*',
   '.travis*',
@@ -64,6 +63,7 @@ const services = [
   'pullapprove*',
   'release-tasks.sh',
   'renovate*',
+  'sentry.*.config.ts',
   'sonar-project.properties',
   'unlighthouse*',
   'vercel*',
@@ -552,6 +552,18 @@ const full = sortObject({
   if (!a.startsWith('*') && b.startsWith('*'))
     return -1
   return a.localeCompare(b)
+})
+
+/**
+ * Throw an error if any of the values contain multiple wildcards.
+ *
+ * See: [feat: throw if contains multiple wildcards #245](https://github.com/antfu/vscode-file-nesting-config/pull/245)
+ */
+Object.entries(full).forEach(([key, value]) => {
+  const items = value.split(',').map(i => i.trim())
+  const itemWithMultipleWildcards = items.find(i => i.split('*').length > 2)
+  if (itemWithMultipleWildcards)
+    throw new Error(`Multiple wildcards are not allowed, found in ${key}: ${itemWithMultipleWildcards}`)
 })
 
 const today = new Date().toISOString().slice(0, 16).replace('T', ' ')
