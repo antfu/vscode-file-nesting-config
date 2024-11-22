@@ -50,7 +50,7 @@ const services = [
   '.gitlab*',
   '.gitpod*',
   '.sentry*',
-  'sentry.*.config.*',
+  'sentry.*.config.ts',
   '.stackblitz*',
   '.styleci*',
   '.travis*',
