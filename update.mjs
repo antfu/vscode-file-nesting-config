@@ -557,7 +557,7 @@ const full = sortObject({
 /**
  * Throw an error if any of the values contain multiple wildcards.
  *
- * See: [feat: throw if contains multiple wildcards #245](https://github.com/antfu/vscode-file-nesting-config/pull/245)
+ * @see https://github.com/antfu/vscode-file-nesting-config/pull/245
  */
 Object.entries(full).forEach(([key, value]) => {
   const items = value.split(',').map(i => i.trim())
