@@ -180,6 +180,11 @@ const tex = [
   '$(capture).synctex.gz',
   '$(capture).toc',
   '$(capture).xdv',
+  '$(capture).snm',
+  '$(capture).nav',
+  '$(capture).bcf',
+  '$(capture).run.xml',
+  '$(capture).bbl-SAVE-ERROR',
 ]
 
 // frameworks and their specific files
