@@ -56,6 +56,7 @@ const services = [
   'appveyor*',
   'azure-pipelines*',
   'crowdin*',
+  'colada.options.ts',
   'jenkins*',
   'netlify*',
   'nixpacks*',
