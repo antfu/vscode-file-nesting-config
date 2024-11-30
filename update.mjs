@@ -180,7 +180,6 @@ const tex = [
   '$(capture).lot',
   '$(capture).nav',
   '$(capture).out',
-  '$(capture).pdf',
   '$(capture).run.xml',
   '$(capture).snm',
   '$(capture).synctex.gz',
