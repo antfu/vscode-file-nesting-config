@@ -474,6 +474,7 @@ const base = {
   'I*.cs': '$(capture).cs',
   'Makefile': '*.mk',
   'shims.d.ts': '*.d.ts',
+  '*.wat': '$(capture).wasm',
 }
 // Based on the new SvelteKit's routing system https://kit.svelte.dev/docs/routing
 const svelteKitRouting = {
