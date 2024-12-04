@@ -222,6 +222,7 @@ const libraries = [
   'ionic.config.*',
   'panda.config.*',
   'postcss.config.*',
+  'react-router.config.*',
   'rspack.config.*',
   'sst.config.*',
   'svgo.config.*',
