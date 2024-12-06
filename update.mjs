@@ -16,6 +16,10 @@ const dependencyAnalysis = [
   '.knip.*',
 ]
 
+const syntaxHighlighting = [
+  'ec.config.*',
+]
+
 // @keep-sorted
 const testingTools = [
   '.codecov',
@@ -258,6 +262,7 @@ const packageJSON = [
   ...services,
   ...linters,
   ...dependencyAnalysis,
+  ...syntaxHighlighting,
 ]
 
 // @keep-sorted
