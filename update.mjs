@@ -129,6 +129,7 @@ const workspaces = [
   '.yarnrc*',
   '*.code-workspace',
   'bower.json',
+  'bun.lock',
   'bun.lockb',
   'bunfig.toml',
   'firebase.json',
