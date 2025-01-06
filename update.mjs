@@ -5,6 +5,7 @@ const buildTools = [
   'electron-builder.*',
   'grunt*',
   'gulp*',
+  'rolldown.config.*',
   'rollup.config.*',
   'tsup.config.*',
   'webpack*',
