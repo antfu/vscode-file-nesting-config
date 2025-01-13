@@ -71,6 +71,7 @@ const services = [
   'vercel*',
   'wrangler.toml',
 ]
+
 // @keep-sorted
 const linters = [
   '.commitlint*',
