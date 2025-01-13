@@ -81,6 +81,7 @@ const linters = [
   '.flowconfig',
   '.jslint*',
   '.lintstagedrc*',
+  '.ls-lint.yml',
   '.markdownlint*',
   '.prettier*',
   '.pylintrc',
