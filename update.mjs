@@ -71,6 +71,7 @@ const services = [
   'vercel*',
   'wrangler.toml',
 ]
+
 // @keep-sorted
 const linters = [
   '.commitlint*',
@@ -81,6 +82,7 @@ const linters = [
   '.flowconfig',
   '.jslint*',
   '.lintstagedrc*',
+  '.ls-lint.yml',
   '.markdownlint*',
   '.prettier*',
   '.pylintrc',
