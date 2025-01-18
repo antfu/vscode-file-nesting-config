@@ -75,6 +75,7 @@ const services = [
 // @keep-sorted
 const linters = [
   '.commitlint*',
+  '.cspell*',
   '.dlint.json',
   '.dprint.json*',
   '.editorconfig',
@@ -93,6 +94,7 @@ const linters = [
   '.yamllint*',
   'biome.json*',
   'commitlint*',
+  'cspell*',
   'dangerfile*',
   'dlint.json',
   'dprint.json*',
