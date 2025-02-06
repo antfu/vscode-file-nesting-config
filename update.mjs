@@ -5,6 +5,7 @@ const buildTools = [
   'electron-builder.*',
   'grunt*',
   'gulp*',
+  'rolldown.config.*',
   'rollup.config.*',
   'tsup.config.*',
   'webpack*',
@@ -48,6 +49,7 @@ const tsconfig = [
 // @keep-sorted
 const services = [
   '.circleci*',
+  '.cursorrules',
   '.firebase*',
   '.github*',
   '.gitlab*',
@@ -58,21 +60,26 @@ const services = [
   '.travis*',
   'appveyor*',
   'azure-pipelines*',
+  'colada.options.ts',
   'crowdin*',
   'jenkins*',
   'netlify*',
+  'nixpacks*',
   'Procfile',
   'pullapprove*',
   'release-tasks.sh',
   'renovate*',
+  'sentry.*.config.ts',
   'sonar-project.properties',
   'unlighthouse*',
   'vercel*',
   'wrangler.toml',
 ]
+
 // @keep-sorted
 const linters = [
   '.commitlint*',
+  '.cspell*',
   '.dlint.json',
   '.dprint.json*',
   '.editorconfig',
@@ -80,6 +87,7 @@ const linters = [
   '.flowconfig',
   '.jslint*',
   '.lintstagedrc*',
+  '.ls-lint.yml',
   '.markdownlint*',
   '.prettier*',
   '.pylintrc',
@@ -90,6 +98,7 @@ const linters = [
   '.yamllint*',
   'biome.json*',
   'commitlint*',
+  'cspell*',
   'dangerfile*',
   'dlint.json',
   'dprint.json*',
@@ -114,7 +123,6 @@ const env = [
 
 // @keep-sorted
 const workspaces = [
-  '*.code-workspace',
   '.gitmojirc.json',
   '.huskyrc*',
   '.node-version',
@@ -128,7 +136,9 @@ const workspaces = [
   '.tazerc*',
   '.tool-versions',
   '.yarnrc*',
+  '*.code-workspace',
   'bower.json',
+  'bun.lock',
   'bun.lockb',
   'bunfig.toml',
   'firebase.json',
@@ -163,7 +173,9 @@ const tex = [
   '$(capture).acr',
   '$(capture).alg',
   '$(capture).aux',
+  '$(capture).bbl-SAVE-ERROR',
   '$(capture).bbl',
+  '$(capture).bcf',
   '$(capture).blg',
   '$(capture).fdb_latexmk',
   '$(capture).fls',
@@ -176,8 +188,10 @@ const tex = [
   '$(capture).lof',
   '$(capture).log',
   '$(capture).lot',
+  '$(capture).nav',
   '$(capture).out',
-  '$(capture).pdf',
+  '$(capture).run.xml',
+  '$(capture).snm',
   '$(capture).synctex.gz',
   '$(capture).toc',
   '$(capture).xdv',
@@ -209,6 +223,7 @@ const libraries = [
   '.terserrc*',
   'babel.config.*',
   'capacitor.config.*',
+  'content.config.*',
   'contentlayer.config.*',
   'cssnano.config.*',
   'formkit.config.*',
@@ -218,6 +233,7 @@ const libraries = [
   'ionic.config.*',
   'panda.config.*',
   'postcss.config.*',
+  'react-router.config.*',
   'rspack.config.*',
   'sst.config.*',
   'svgo.config.*',
@@ -275,6 +291,7 @@ let readme = [
   'README_*',
   'README-*',
   'RELEASE_NOTES*',
+  'ROADMAP.MD',
   'SECURITY.MD',
   'SPONSORS*',
 ]
@@ -381,6 +398,8 @@ const pyprojecttoml = [
   '.pdm-python',
   'poetry.lock',
   'poetry.toml',
+  'uv.lock',
+  'uv.toml',
   ...setuppy,
   ...pipfile,
   ...hatchtoml,
@@ -442,8 +461,8 @@ const base = {
   '*.fs': '$(capture).fs.js, $(capture).fs.js.map, $(capture).fs.jsx, $(capture).fs.ts, $(capture).fs.tsx, $(capture).fs.rs, $(capture).fs.php, $(capture).fs.dart',
   '*.go': '$(capture)_test.go',
   '*.java': '$(capture).class',
-  '*.js': '$(capture).js.map, $(capture).*.js, $(capture)_*.js',
-  '*.jsx': '$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx, $(capture).less, $(capture).module.less, $(capture).module.less.d.ts,  $(capture).scss, $(capture).module.scss, $(capture).module.scss.d.ts',
+  '*.js': '$(capture).js.map, $(capture).*.js, $(capture)_*.js, $(capture).d.ts, $(capture).js.flow',
+  '*.jsx': '$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx, $(capture).css, $(capture).module.css, $(capture).less, $(capture).module.less, $(capture).module.less.d.ts, $(capture).scss, $(capture).module.scss, $(capture).module.scss.d.ts',
   '*.master': '$(capture).*.cs, $(capture).*.vb',
   '*.md': '$(capture).*',
   '*.mjs': '$(capture).mjs.map, $(capture).*.mjs, $(capture)_*.mjs',
@@ -453,11 +472,13 @@ const base = {
   '*.py': '$(capture).pyi',
   '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
   '*.ts': '$(capture).js, $(capture).d.ts.map, $(capture).*.ts, $(capture)_*.js, $(capture)_*.ts',
-  '*.tsx': '$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx, $(capture).less, $(capture).module.less, $(capture).module.less.d.ts, $(capture).scss, $(capture).module.scss, $(capture).module.scss.d.ts, $(capture).css.ts',
+  '*.tsx': '$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx, $(capture).css, $(capture).module.css, $(capture).less, $(capture).module.less, $(capture).module.less.d.ts, $(capture).scss, $(capture).module.scss, $(capture).module.scss.d.ts, $(capture).css.ts',
   '*.vue': '$(capture).*.ts, $(capture).*.js, $(capture).story.vue',
   '*.w': '$(capture).*.w, I$(capture).w',
+  '*.wat': '$(capture).wasm',
   '*.xaml': '$(capture).xaml.cs',
   'ansible.cfg': 'ansible.cfg, .ansible-lint, requirements.yml',
+  'build-wrapper.log': 'build-wrapper*.log, build-wrapper-dump*.json, build-wrapper-win*.exe, build-wrapper-linux*, build-wrapper-macosx*',
   'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE',
   'CMakeLists.txt': '*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json, CMakeCache.txt',
   'default.nix': 'shell.nix',
@@ -479,7 +500,8 @@ function stringify(items) {
 }
 
 function sortObject(obj, fn = (a, b) => a.localeCompare(b)) {
-  return Object.keys(obj)
+  return Object
+    .keys(obj)
     .sort(fn)
     .reduce((acc, key) => {
       acc[key] = obj[key]
@@ -549,6 +571,18 @@ const full = sortObject({
   if (!a.startsWith('*') && b.startsWith('*'))
     return -1
   return a.localeCompare(b)
+})
+
+/**
+ * Throw an error if any of the values contain multiple wildcards.
+ *
+ * @see https://github.com/antfu/vscode-file-nesting-config/pull/245
+ */
+Object.entries(full).forEach(([key, value]) => {
+  const items = value.split(',').map(i => i.trim())
+  const itemWithMultipleWildcards = items.find(i => i.split('*').length > 2)
+  if (itemWithMultipleWildcards)
+    throw new Error(`Multiple wildcards are not allowed, found in ${key}: ${itemWithMultipleWildcards}`)
 })
 
 const today = new Date().toISOString().slice(0, 16).replace('T', ' ')
