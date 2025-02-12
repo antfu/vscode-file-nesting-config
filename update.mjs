@@ -8,6 +8,7 @@ const buildTools = [
   'rolldown.config.*',
   'rollup.config.*',
   'tsup.config.*',
+  'tsdown.config.*',
   'webpack*',
   'rspack*',
 ]
