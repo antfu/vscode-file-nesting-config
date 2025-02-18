@@ -70,7 +70,7 @@ const services = [
   'sonar-project.properties',
   'unlighthouse*',
   'vercel*',
-  'wrangler.toml',
+  'wrangler.*',
 ]
 
 // @keep-sorted
