@@ -304,9 +304,10 @@ readme = addLowerCaseVariants(readme)
 const cargo = [
   '.clippy.toml',
   '.rustfmt.toml',
-  'cargo.lock',
+  'Cargo.lock',
   'clippy.toml',
   'cross.toml',
+  'insta.yaml',
   'rust-toolchain.toml',
   'rustfmt.toml',
 ]
