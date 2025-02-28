@@ -93,6 +93,7 @@ const linters = [
   '.prettier*',
   '.pylintrc',
   '.ruff.toml',
+  '.shellcheckrc',
   '.stylelint*',
   '.textlint*',
   '.xo-config*',
