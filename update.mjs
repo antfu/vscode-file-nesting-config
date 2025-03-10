@@ -59,6 +59,7 @@ const services = [
   '.stackblitz*',
   '.styleci*',
   '.travis*',
+  '.windsurfrules',
   'appveyor*',
   'azure-pipelines*',
   'colada.options.ts',
