@@ -473,6 +473,7 @@ const base = {
   '*.mjs': '$(capture).mjs.map, $(capture).*.mjs, $(capture)_*.mjs',
   '*.module.ts': '$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts',
   '*.mts': '$(capture).mts.map, $(capture).*.mts, $(capture)_*.mts',
+  '*.proto': '$(capture).pb.go, $(capture).pb.micro.go',
   '*.pubxml': '$(capture).pubxml.user',
   '*.py': '$(capture).pyi',
   '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
