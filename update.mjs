@@ -484,6 +484,7 @@ const base = {
   '*.wat': '$(capture).wasm',
   '*.xaml': '$(capture).xaml.cs',
   'ansible.cfg': 'ansible.cfg, .ansible-lint, requirements.yml',
+  'application.properties': '*.properties',
   'build-wrapper.log': 'build-wrapper*.log, build-wrapper-dump*.json, build-wrapper-win*.exe, build-wrapper-linux*, build-wrapper-macosx*',
   'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, .bazelversion, MODULE.bazel.lock, WORKSPACE',
   'CMakeLists.txt': '*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json, CMakeCache.txt',
@@ -493,9 +494,8 @@ const base = {
   'go.work': 'go.work.sum',
   'I*.cs': '$(capture).cs',
   'Makefile': '*.mk',
-  'shims.d.ts': '*.d.ts',
   'pom.xml': 'mvnw*',
-  'application.properties': '*.properties',
+  'shims.d.ts': '*.d.ts',
 }
 // Based on the new SvelteKit's routing system https://kit.svelte.dev/docs/routing
 const svelteKitRouting = {
