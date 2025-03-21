@@ -1,5 +1,5 @@
-import { commands } from 'vscode'
 import type { ExtensionContext } from 'vscode'
+import { commands } from 'vscode'
 import { getConfig } from './config'
 import { fetchAndUpdate } from './fetch'
 

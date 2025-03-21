@@ -1,2 +1,4 @@
 packages:
   - extension
+onlyBuiltDependencies:
+  - esbuild
