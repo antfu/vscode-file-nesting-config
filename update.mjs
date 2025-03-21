@@ -50,7 +50,7 @@ const tsconfig = [
 // @keep-sorted
 const services = [
   '.circleci*',
-  '.cursorrules',
+  '.cursor*',
   '.firebase*',
   '.github*',
   '.gitlab*',
@@ -445,7 +445,7 @@ const sanity = [
 // @keep-sorted
 const base = {
   '.clang-tidy': '.clang-format, .clangd, compile_commands.json',
-  '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .lfsconfig, .mailmap, .git-blame*, .cursor*ignore',
+  '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .lfsconfig, .mailmap, .git-blame*',
   '.project': '.classpath',
   '*.asax': '$(capture).*.cs, $(capture).*.vb',
   '*.ascx': '$(capture).*.cs, $(capture).*.vb',
