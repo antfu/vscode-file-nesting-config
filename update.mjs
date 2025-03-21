@@ -494,6 +494,8 @@ const base = {
   'I*.cs': '$(capture).cs',
   'Makefile': '*.mk',
   'shims.d.ts': '*.d.ts',
+  'pom.xml': 'mvnw*',
+  'application.properties': '*.properties',
 }
 // Based on the new SvelteKit's routing system https://kit.svelte.dev/docs/routing
 const svelteKitRouting = {
