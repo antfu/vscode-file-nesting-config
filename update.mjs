@@ -5,8 +5,10 @@ const buildTools = [
   'electron-builder.*',
   'grunt*',
   'gulp*',
+  'rolldown.config.*',
   'rollup.config.*',
   'tsup.config.*',
+  'tsdown.config.*',
   'webpack*',
   'rspack*',
 ]
@@ -14,6 +16,10 @@ const buildTools = [
 const dependencyAnalysis = [
   'knip.*',
   '.knip.*',
+]
+
+const syntaxHighlighting = [
+  'ec.config.*',
 ]
 
 // @keep-sorted
@@ -44,6 +50,7 @@ const tsconfig = [
 // @keep-sorted
 const services = [
   '.circleci*',
+  '.cursor*',
   '.firebase*',
   '.github*',
   '.gitlab*',
@@ -52,22 +59,29 @@ const services = [
   '.stackblitz*',
   '.styleci*',
   '.travis*',
+  '.windsurfrules',
   'appveyor*',
   'azure-pipelines*',
+  'colada.options.ts',
   'crowdin*',
   'jenkins*',
   'netlify*',
+  'nixpacks*',
   'Procfile',
   'pullapprove*',
   'release-tasks.sh',
   'renovate*',
+  'sentry.*.config.ts',
   'sonar-project.properties',
   'unlighthouse*',
   'vercel*',
+  'wrangler.*',
 ]
+
 // @keep-sorted
 const linters = [
   '.commitlint*',
+  '.cspell*',
   '.dlint.json',
   '.dprint.json*',
   '.editorconfig',
@@ -75,16 +89,19 @@ const linters = [
   '.flowconfig',
   '.jslint*',
   '.lintstagedrc*',
+  '.ls-lint.yml',
   '.markdownlint*',
   '.prettier*',
   '.pylintrc',
   '.ruff.toml',
+  '.shellcheckrc',
   '.stylelint*',
   '.textlint*',
   '.xo-config*',
   '.yamllint*',
-  'biome.json',
+  'biome.json*',
   'commitlint*',
+  'cspell*',
   'dangerfile*',
   'dlint.json',
   'dprint.json*',
@@ -122,8 +139,11 @@ const workspaces = [
   '.tazerc*',
   '.tool-versions',
   '.yarnrc*',
+  '*.code-workspace',
   'bower.json',
+  'bun.lock',
   'bun.lockb',
+  'bunfig.toml',
   'firebase.json',
   'lerna*',
   'npm-shrinkwrap.json',
@@ -146,6 +166,7 @@ const docker = [
   'docker-compose.*',
   'compose.*',
   '.devcontainer.*',
+  'captain-definition',
 ]
 
 // latex
@@ -155,7 +176,9 @@ const tex = [
   '$(capture).acr',
   '$(capture).alg',
   '$(capture).aux',
+  '$(capture).bbl-SAVE-ERROR',
   '$(capture).bbl',
+  '$(capture).bcf',
   '$(capture).blg',
   '$(capture).fdb_latexmk',
   '$(capture).fls',
@@ -168,8 +191,10 @@ const tex = [
   '$(capture).lof',
   '$(capture).log',
   '$(capture).lot',
+  '$(capture).nav',
   '$(capture).out',
-  '$(capture).pdf',
+  '$(capture).run.xml',
+  '$(capture).snm',
   '$(capture).synctex.gz',
   '$(capture).toc',
   '$(capture).xdv',
@@ -178,6 +203,7 @@ const tex = [
 // frameworks and their specific files
 // @keep-sorted
 const frameworks = {
+  'app.config.*': [],
   'artisan': ['server.php', 'webpack.mix.js'],
   'astro.config.*': [],
   'gatsby-config.*': ['gatsby-browser.*', 'gatsby-node.*', 'gatsby-ssr.*', 'gatsby-transformer.*'],
@@ -200,6 +226,7 @@ const libraries = [
   '.terserrc*',
   'babel.config.*',
   'capacitor.config.*',
+  'content.config.*',
   'contentlayer.config.*',
   'cssnano.config.*',
   'formkit.config.*',
@@ -209,7 +236,9 @@ const libraries = [
   'ionic.config.*',
   'panda.config.*',
   'postcss.config.*',
+  'react-router.config.*',
   'rspack.config.*',
+  'sst.config.*',
   'svgo.config.*',
   'tailwind.config.*',
   'uno.config.*',
@@ -243,6 +272,7 @@ const packageJSON = [
   ...services,
   ...linters,
   ...dependencyAnalysis,
+  ...syntaxHighlighting,
 ]
 
 // @keep-sorted
@@ -261,6 +291,10 @@ let readme = [
   'HISTORY.MD',
   'LICENSE*',
   'MAINTAINERS',
+  'README_*',
+  'README-*',
+  'RELEASE_NOTES*',
+  'ROADMAP.MD',
   'SECURITY.MD',
   'SPONSORS*',
 ]
@@ -272,9 +306,11 @@ readme = addLowerCaseVariants(readme)
 const cargo = [
   '.clippy.toml',
   '.rustfmt.toml',
-  'cargo.lock',
+  'Cargo.Bazel.lock',
+  'Cargo.lock',
   'clippy.toml',
   'cross.toml',
+  'insta.yaml',
   'rust-toolchain.toml',
   'rustfmt.toml',
 ]
@@ -367,6 +403,8 @@ const pyprojecttoml = [
   '.pdm-python',
   'poetry.lock',
   'poetry.toml',
+  'uv.lock',
+  'uv.toml',
   ...setuppy,
   ...pipfile,
   ...hatchtoml,
@@ -387,16 +425,27 @@ const denoRuntime = [
   ...env,
 ]
 
+const sqlite = [
+  '*.db-shm',
+  '*.db-wal',
+]
+
 const razor = [
   '$(capture).razor.css',
   '$(capture).razor.scss',
   '$(capture).razor.cs',
 ]
 
+const sanity = [
+  'sanity.cli.*',
+  'sanity.types.ts',
+  'schema.json',
+]
+
 // @keep-sorted
 const base = {
   '.clang-tidy': '.clang-format, .clangd, compile_commands.json',
-  '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*',
+  '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .lfsconfig, .mailmap, .git-blame*',
   '.project': '.classpath',
   '*.asax': '$(capture).*.cs, $(capture).*.vb',
   '*.ascx': '$(capture).*.cs, $(capture).*.vb',
@@ -417,20 +466,26 @@ const base = {
   '*.fs': '$(capture).fs.js, $(capture).fs.js.map, $(capture).fs.jsx, $(capture).fs.ts, $(capture).fs.tsx, $(capture).fs.rs, $(capture).fs.php, $(capture).fs.dart',
   '*.go': '$(capture)_test.go',
   '*.java': '$(capture).class',
-  '*.js': '$(capture).js.map, $(capture).*.js, $(capture)_*.js',
-  '*.jsx': '$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx, $(capture).less, $(capture).module.less',
+  '*.js': '$(capture).js.map, $(capture).*.js, $(capture)_*.js, $(capture).d.ts, $(capture).d.ts.map, $(capture).js.flow',
+  '*.jsx': '$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx, $(capture).css, $(capture).module.css, $(capture).less, $(capture).module.less, $(capture).module.less.d.ts, $(capture).scss, $(capture).module.scss, $(capture).module.scss.d.ts',
   '*.master': '$(capture).*.cs, $(capture).*.vb',
   '*.md': '$(capture).*',
   '*.mjs': '$(capture).mjs.map, $(capture).*.mjs, $(capture)_*.mjs',
   '*.module.ts': '$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts',
   '*.mts': '$(capture).mts.map, $(capture).*.mts, $(capture)_*.mts',
+  '*.proto': '$(capture).pb.go, $(capture).pb.micro.go',
   '*.pubxml': '$(capture).pubxml.user',
+  '*.py': '$(capture).pyi',
   '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
   '*.ts': '$(capture).js, $(capture).d.ts.map, $(capture).*.ts, $(capture)_*.js, $(capture)_*.ts',
-  '*.tsx': '$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx, $(capture).less, $(capture).module.less, $(capture).scss, $(capture).module.scss',
+  '*.tsx': '$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx, $(capture).css, $(capture).module.css, $(capture).less, $(capture).module.less, $(capture).module.less.d.ts, $(capture).scss, $(capture).module.scss, $(capture).module.scss.d.ts, $(capture).css.ts',
   '*.vue': '$(capture).*.ts, $(capture).*.js, $(capture).story.vue',
+  '*.w': '$(capture).*.w, I$(capture).w',
+  '*.wat': '$(capture).wasm',
   '*.xaml': '$(capture).xaml.cs',
-  'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE',
+  'ansible.cfg': 'ansible.cfg, .ansible-lint, requirements.yml',
+  'build-wrapper.log': 'build-wrapper*.log, build-wrapper-dump*.json, build-wrapper-win*.exe, build-wrapper-linux*, build-wrapper-macosx*',
+  'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, .bazelversion, MODULE.bazel.lock, WORKSPACE',
   'CMakeLists.txt': '*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json, CMakeCache.txt',
   'default.nix': 'shell.nix',
   'flake.nix': 'flake.lock',
@@ -453,7 +508,8 @@ function stringify(items) {
 }
 
 function sortObject(obj, fn = (a, b) => a.localeCompare(b)) {
-  return Object.keys(obj)
+  return Object
+    .keys(obj)
     .sort(fn)
     .reduce((acc, key) => {
       acc[key] = obj[key]
@@ -512,7 +568,9 @@ const full = sortObject({
   '*.ex': stringify(phoenixLiveView),
   '*.tex': stringify(tex),
   'deno.json*': stringify(denoRuntime),
+  '*.db': stringify(sqlite),
   '*.razor': stringify(razor),
+  'sanity.config.*': stringify(sanity),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
   ...svelteKitRouting,
 }, (a, b) => {
@@ -523,10 +581,22 @@ const full = sortObject({
   return a.localeCompare(b)
 })
 
+/**
+ * Throw an error if any of the values contain multiple wildcards.
+ *
+ * @see https://github.com/antfu/vscode-file-nesting-config/pull/245
+ */
+Object.entries(full).forEach(([key, value]) => {
+  const items = value.split(',').map(i => i.trim())
+  const itemWithMultipleWildcards = items.find(i => i.split('*').length > 2)
+  if (itemWithMultipleWildcards)
+    throw new Error(`Multiple wildcards are not allowed, found in ${key}: ${itemWithMultipleWildcards}`)
+})
+
 const today = new Date().toISOString().slice(0, 16).replace('T', ' ')
 
 fs.writeFileSync('README.md', fs.readFileSync('README.md', 'utf-8')
-  .replace(/```json([\s\S]*?)```/m, () => {
+  .replace(/```json([\s\S]*?)```/, () => {
     const body = JSON.stringify(full, null, 2).split('\n').map(l => `  ${l}`).join('\n')
     return `
 \`\`\`jsonc

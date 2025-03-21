@@ -1,5 +1,5 @@
-import type { ExtensionContext } from 'vscode'
 import { commands } from 'vscode'
+import type { ExtensionContext } from 'vscode'
 import { getConfig } from './config'
 import { fetchAndUpdate } from './fetch'
 
@@ -8,7 +8,7 @@ export async function activate(ctx: ExtensionContext) {
 
   const lastUpdate = ctx.globalState.get('lastUpdate', 0)
   const initialized = ctx.globalState.get('init', false)
-  const autoUpdateInterval = getConfig<number>('fileNestingUpdater.autoUpdateInterval')
+  const autoUpdateInterval = getConfig<number>('fileNestingUpdater.autoUpdateInterval')!
 
   if (!initialized) {
     ctx.globalState.update('init', true)
