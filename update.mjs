@@ -50,7 +50,7 @@ const tsconfig = [
 // @keep-sorted
 const services = [
   '.circleci*',
-  '.cursorrules',
+  '.cursor*',
   '.firebase*',
   '.github*',
   '.gitlab*',
