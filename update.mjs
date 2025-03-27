@@ -60,6 +60,7 @@ const services = [
   '.styleci*',
   '.travis*',
   '.windsurfrules',
+  '.codeiumignore',
   'appveyor*',
   'azure-pipelines*',
   'colada.options.ts',
