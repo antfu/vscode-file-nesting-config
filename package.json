@@ -11,7 +11,7 @@
   "scripts": {
     "update": "node update.mjs",
     "lint": "eslint .",
-    "ext:build": "cd extension && tsup src/index.ts --external vscode",
+    "ext:build": "cd extension && tsdown src/index.ts --external vscode --format cjs --clean",
     "ext:dev": "nr ext:build --watch src",
     "ext:publish": "nr ext:build && cd extension && vsce publish --no-dependencies",
     "ext:pack": "nr ext:build && cd extension && vsce package --no-dependencies"
@@ -23,7 +23,7 @@
     "eslint": "^9.22.0",
     "eslint-factory": "^0.1.2",
     "ofetch": "^1.4.1",
-    "tsup": "^8.4.0",
+    "tsdown": "^0.9.6",
     "typescript": "^5.8.2"
   }
 }
