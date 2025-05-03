@@ -320,6 +320,10 @@ const gofile = [
   '.air*',
 ]
 
+const godot = [
+  '$(capture).gd.uid',
+]
+
 const gemfile = [
   'gemfile.lock',
   '.ruby-version',
@@ -571,6 +575,7 @@ const full = sortObject({
   '*.db': stringify(sqlite),
   '*.razor': stringify(razor),
   'sanity.config.*': stringify(sanity),
+  '*.gd': stringify(godot),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
   ...svelteKitRouting,
 }, (a, b) => {
