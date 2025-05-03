@@ -179,6 +179,7 @@ const tex = [
   '$(capture).bbl-SAVE-ERROR',
   '$(capture).bbl',
   '$(capture).bcf',
+  '$(capture).bib',
   '$(capture).blg',
   '$(capture).fdb_latexmk',
   '$(capture).fls',
