@@ -23,7 +23,7 @@
     "eslint": "^9.26.0",
     "eslint-factory": "^0.1.2",
     "ofetch": "^1.4.1",
-    "tsdown": "^0.11.1",
+    "tsdown": "^0.11.5",
     "typescript": "^5.8.3"
   }
 }
