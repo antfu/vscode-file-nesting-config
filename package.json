@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.10.0",
+  "packageManager": "pnpm@10.11.0",
   "workspaces": [
     "extension"
   ],
@@ -17,13 +17,13 @@
     "ext:pack": "nr ext:build && cd extension && vsce package --no-dependencies"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.12.0",
-    "@antfu/ni": "^24.3.0",
-    "@types/vscode": "^1.99.1",
-    "eslint": "^9.26.0",
+    "@antfu/eslint-config": "^4.13.1",
+    "@antfu/ni": "^24.4.0",
+    "@types/vscode": "^1.100.0",
+    "eslint": "^9.27.0",
     "eslint-factory": "^0.1.2",
     "ofetch": "^1.4.1",
-    "tsdown": "^0.11.5",
+    "tsdown": "^0.11.13",
     "typescript": "^5.8.3"
   }
 }
