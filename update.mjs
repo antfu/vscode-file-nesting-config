@@ -156,6 +156,7 @@ const workspaces = [
   'release-please*.json',
   'release.config.*',
   'simple-git-hooks*',
+  'taze.config.*',
   'turbo*',
   'workspace.json',
   'yarn*',
