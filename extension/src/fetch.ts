@@ -1,6 +1,6 @@
+import type { ExtensionContext } from 'vscode'
 import { fetch } from 'ofetch'
 import { window, workspace } from 'vscode'
-import type { ExtensionContext } from 'vscode'
 import { getConfig } from './config'
 import { FILE, MSG_PREFIX, URL_PREFIX } from './constants'
 

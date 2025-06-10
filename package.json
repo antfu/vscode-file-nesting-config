@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.9.0",
+  "packageManager": "pnpm@10.11.0",
   "workspaces": [
     "extension"
   ],
@@ -11,19 +11,19 @@
   "scripts": {
     "update": "node update.mjs",
     "lint": "eslint .",
-    "ext:build": "cd extension && tsup src/index.ts --external vscode",
+    "ext:build": "cd extension && tsdown src/index.ts --external vscode",
     "ext:dev": "nr ext:build --watch src",
-    "ext:publish": "nr ext:build && cd extension && vsce publish --no-dependencies",
+    "ext:publish": "nr ext:build && cd extension && vsce publish --no-dependencies && ovsx publish --no-dependencies",
     "ext:pack": "nr ext:build && cd extension && vsce package --no-dependencies"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.4.1",
-    "@antfu/ni": "^0.23.0",
-    "@types/vscode": "^1.93.0",
-    "eslint": "^9.10.0",
-    "eslint-factory": "^0.1.1",
-    "ofetch": "^1.3.4",
-    "tsup": "^8.2.4",
-    "typescript": "^5.5.4"
+    "@antfu/eslint-config": "^4.13.1",
+    "@antfu/ni": "^24.4.0",
+    "@types/vscode": "^1.100.0",
+    "eslint": "^9.27.0",
+    "eslint-factory": "^0.1.2",
+    "ofetch": "^1.4.1",
+    "tsdown": "^0.11.13",
+    "typescript": "^5.8.3"
   }
 }

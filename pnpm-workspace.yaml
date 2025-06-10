@@ -1,2 +1,6 @@
 packages:
   - extension
+onlyBuiltDependencies:
+  - esbuild
+  - rolldown
+  - unrs-resolver

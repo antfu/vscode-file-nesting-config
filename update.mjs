@@ -8,6 +8,7 @@ const buildTools = [
   'rolldown.config.*',
   'rollup.config.*',
   'tsup.config.*',
+  'tsdown.config.*',
   'webpack*',
   'rspack*',
 ]
@@ -15,6 +16,10 @@ const buildTools = [
 const dependencyAnalysis = [
   'knip.*',
   '.knip.*',
+]
+
+const syntaxHighlighting = [
+  'ec.config.*',
 ]
 
 // @keep-sorted
@@ -45,7 +50,7 @@ const tsconfig = [
 // @keep-sorted
 const services = [
   '.circleci*',
-  '.cursorrules',
+  '.cursor*',
   '.firebase*',
   '.github*',
   '.gitlab*',
@@ -54,6 +59,7 @@ const services = [
   '.stackblitz*',
   '.styleci*',
   '.travis*',
+  '.windsurfrules',
   'appveyor*',
   'azure-pipelines*',
   'colada.options.ts',
@@ -69,11 +75,13 @@ const services = [
   'sonar-project.properties',
   'unlighthouse*',
   'vercel*',
-  'wrangler.toml',
+  'wrangler.*',
 ]
+
 // @keep-sorted
 const linters = [
   '.commitlint*',
+  '.cspell*',
   '.dlint.json',
   '.dprint.json*',
   '.editorconfig',
@@ -81,16 +89,21 @@ const linters = [
   '.flowconfig',
   '.jslint*',
   '.lintstagedrc*',
+  '.ls-lint.yml',
   '.markdownlint*',
+  '.oxlintrc.json.bak',
+  '.oxlintrc.json',
   '.prettier*',
   '.pylintrc',
   '.ruff.toml',
+  '.shellcheckrc',
   '.stylelint*',
   '.textlint*',
   '.xo-config*',
   '.yamllint*',
   'biome.json*',
   'commitlint*',
+  'cspell*',
   'dangerfile*',
   'dlint.json',
   'dprint.json*',
@@ -143,6 +156,7 @@ const workspaces = [
   'release-please*.json',
   'release.config.*',
   'simple-git-hooks*',
+  'taze.config.*',
   'turbo*',
   'workspace.json',
   'yarn*',
@@ -168,6 +182,7 @@ const tex = [
   '$(capture).bbl-SAVE-ERROR',
   '$(capture).bbl',
   '$(capture).bcf',
+  '$(capture).bib',
   '$(capture).blg',
   '$(capture).fdb_latexmk',
   '$(capture).fls',
@@ -215,6 +230,7 @@ const libraries = [
   '.terserrc*',
   'babel.config.*',
   'capacitor.config.*',
+  'content.config.*',
   'contentlayer.config.*',
   'cssnano.config.*',
   'formkit.config.*',
@@ -260,6 +276,7 @@ const packageJSON = [
   ...services,
   ...linters,
   ...dependencyAnalysis,
+  ...syntaxHighlighting,
 ]
 
 // @keep-sorted
@@ -293,9 +310,11 @@ readme = addLowerCaseVariants(readme)
 const cargo = [
   '.clippy.toml',
   '.rustfmt.toml',
-  'cargo.lock',
+  'Cargo.Bazel.lock',
+  'Cargo.lock',
   'clippy.toml',
   'cross.toml',
+  'insta.yaml',
   'rust-toolchain.toml',
   'rustfmt.toml',
 ]
@@ -303,6 +322,10 @@ const cargo = [
 const gofile = [
   'go.sum',
   '.air*',
+]
+
+const godot = [
+  '$(capture).gd.uid',
 ]
 
 const gemfile = [
@@ -430,7 +453,7 @@ const sanity = [
 // @keep-sorted
 const base = {
   '.clang-tidy': '.clang-format, .clangd, compile_commands.json',
-  '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*',
+  '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .lfsconfig, .mailmap, .git-blame*',
   '.project': '.classpath',
   '*.asax': '$(capture).*.cs, $(capture).*.vb',
   '*.ascx': '$(capture).*.cs, $(capture).*.vb',
@@ -444,32 +467,34 @@ const base = {
   '*.component.ts': '$(capture).component.html, $(capture).component.spec.ts, $(capture).component.css, $(capture).component.scss, $(capture).component.sass, $(capture).component.less',
   '*.cpp': '$(capture).hpp, $(capture).h, $(capture).hxx, $(capture).hh',
   '*.cs': '$(capture).*.cs',
-  '*.cshtml': '$(capture).cshtml.cs',
+  '*.cshtml': '$(capture).cshtml.cs, $(capture).cshtml.css',
   '*.css': '$(capture).css.map, $(capture).*.css',
   '*.cxx': '$(capture).hpp, $(capture).h, $(capture).hxx, $(capture).hh',
   '*.dart': '$(capture).freezed.dart, $(capture).g.dart',
   '*.fs': '$(capture).fs.js, $(capture).fs.js.map, $(capture).fs.jsx, $(capture).fs.ts, $(capture).fs.tsx, $(capture).fs.rs, $(capture).fs.php, $(capture).fs.dart',
   '*.go': '$(capture)_test.go',
   '*.java': '$(capture).class',
-  '*.js': '$(capture).js.map, $(capture).*.js, $(capture)_*.js, $(capture).d.ts, $(capture).js.flow',
-  '*.jsx': '$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx, $(capture).module.css, $(capture).less, $(capture).module.less, $(capture).module.less.d.ts, $(capture).scss, $(capture).module.scss, $(capture).module.scss.d.ts',
+  '*.js': '$(capture).js.map, $(capture).*.js, $(capture)_*.js, $(capture).d.ts, $(capture).d.ts.map, $(capture).js.flow',
+  '*.jsx': '$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx, $(capture).css, $(capture).module.css, $(capture).less, $(capture).module.less, $(capture).module.less.d.ts, $(capture).scss, $(capture).module.scss, $(capture).module.scss.d.ts',
   '*.master': '$(capture).*.cs, $(capture).*.vb',
   '*.md': '$(capture).*',
   '*.mjs': '$(capture).mjs.map, $(capture).*.mjs, $(capture)_*.mjs',
   '*.module.ts': '$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts',
   '*.mts': '$(capture).mts.map, $(capture).*.mts, $(capture)_*.mts',
+  '*.proto': '$(capture).pb.go, $(capture).pb.micro.go',
   '*.pubxml': '$(capture).pubxml.user',
   '*.py': '$(capture).pyi',
   '*.resx': '$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb',
   '*.ts': '$(capture).js, $(capture).d.ts.map, $(capture).*.ts, $(capture)_*.js, $(capture)_*.ts',
-  '*.tsx': '$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx, $(capture).module.css, $(capture).less, $(capture).module.less, $(capture).module.less.d.ts, $(capture).scss, $(capture).module.scss, $(capture).module.scss.d.ts, $(capture).css.ts',
+  '*.tsx': '$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx, $(capture).css, $(capture).module.css, $(capture).less, $(capture).module.less, $(capture).module.less.d.ts, $(capture).scss, $(capture).module.scss, $(capture).module.scss.d.ts, $(capture).css.ts',
   '*.vue': '$(capture).*.ts, $(capture).*.js, $(capture).story.vue',
   '*.w': '$(capture).*.w, I$(capture).w',
   '*.wat': '$(capture).wasm',
   '*.xaml': '$(capture).xaml.cs',
   'ansible.cfg': 'ansible.cfg, .ansible-lint, requirements.yml',
+  'application.properties': '*.properties',
   'build-wrapper.log': 'build-wrapper*.log, build-wrapper-dump*.json, build-wrapper-win*.exe, build-wrapper-linux*, build-wrapper-macosx*',
-  'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE',
+  'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, .bazelversion, MODULE.bazel.lock, WORKSPACE',
   'CMakeLists.txt': '*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json, CMakeCache.txt',
   'default.nix': 'shell.nix',
   'flake.nix': 'flake.lock',
@@ -477,6 +502,7 @@ const base = {
   'go.work': 'go.work.sum',
   'I*.cs': '$(capture).cs',
   'Makefile': '*.mk',
+  'pom.xml': 'mvnw*',
   'shims.d.ts': '*.d.ts',
 }
 // Based on the new SvelteKit's routing system https://kit.svelte.dev/docs/routing
@@ -553,6 +579,7 @@ const full = sortObject({
   '*.db': stringify(sqlite),
   '*.razor': stringify(razor),
   'sanity.config.*': stringify(sanity),
+  '*.gd': stringify(godot),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
   ...svelteKitRouting,
 }, (a, b) => {
