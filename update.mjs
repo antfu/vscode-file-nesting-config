@@ -324,10 +324,6 @@ const gofile = [
   '.air*',
 ]
 
-const godot = [
-  '$(capture).gd.uid',
-]
-
 const gemfile = [
   'gemfile.lock',
   '.ruby-version',
@@ -504,6 +500,9 @@ const base = {
   'Makefile': '*.mk',
   'pom.xml': 'mvnw*',
   'shims.d.ts': '*.d.ts',
+  '*.gd': '$(capture).gd.uid',
+  '*.gdshader': '$(capture).gdshader.uid',
+  '*.gdshaderinc': '$(capture).gdshaderinc.uid'
 }
 // Based on the new SvelteKit's routing system https://kit.svelte.dev/docs/routing
 const svelteKitRouting = {
@@ -579,7 +578,6 @@ const full = sortObject({
   '*.db': stringify(sqlite),
   '*.razor': stringify(razor),
   'sanity.config.*': stringify(sanity),
-  '*.gd': stringify(godot),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
   ...svelteKitRouting,
 }, (a, b) => {
