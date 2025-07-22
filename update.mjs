@@ -462,7 +462,7 @@ const base = {
   '*.cjs': '$(capture).cjs.map, $(capture).*.cjs, $(capture)_*.cjs',
   '*.component.ts': '$(capture).component.html, $(capture).component.spec.ts, $(capture).component.css, $(capture).component.scss, $(capture).component.sass, $(capture).component.less',
   '*.cpp': '$(capture).hpp, $(capture).h, $(capture).hxx, $(capture).hh',
-  '*.cs': '$(capture).*.cs',
+  '*.cs': '$(capture).*.cs, $(capture).cs.uid',
   '*.cshtml': '$(capture).cshtml.cs, $(capture).cshtml.css',
   '*.css': '$(capture).css.map, $(capture).*.css',
   '*.cxx': '$(capture).hpp, $(capture).h, $(capture).hxx, $(capture).hh',
