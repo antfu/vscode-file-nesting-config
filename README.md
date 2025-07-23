@@ -26,7 +26,7 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
 <!-- eslint-skip -->
 
 ```jsonc
-  // updated 2025-06-04 06:14
+  // updated 2025-07-23 01:04
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
@@ -91,7 +91,7 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
     "*.cjs": "$(capture).cjs.map, $(capture).*.cjs, $(capture)_*.cjs",
     "*.component.ts": "$(capture).component.html, $(capture).component.spec.ts, $(capture).component.css, $(capture).component.scss, $(capture).component.sass, $(capture).component.less",
     "*.cpp": "$(capture).hpp, $(capture).h, $(capture).hxx, $(capture).hh",
-    "*.cs": "$(capture).*.cs",
+    "*.cs": "$(capture).*.cs, $(capture).cs.uid",
     "*.cshtml": "$(capture).cshtml.cs, $(capture).cshtml.css",
     "*.csproj": "*.config, *proj.user, appsettings.*, bundleconfig.json",
     "*.css": "$(capture).css.map, $(capture).*.css",
@@ -101,6 +101,8 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
     "*.ex": "$(capture).html.eex, $(capture).html.heex, $(capture).html.leex",
     "*.fs": "$(capture).fs.js, $(capture).fs.js.map, $(capture).fs.jsx, $(capture).fs.ts, $(capture).fs.tsx, $(capture).fs.rs, $(capture).fs.php, $(capture).fs.dart",
     "*.gd": "$(capture).gd.uid",
+    "*.gdshader": "$(capture).gdshader.uid",
+    "*.gdshaderinc": "$(capture).gdshaderinc.uid",
     "*.go": "$(capture)_test.go",
     "*.java": "$(capture).class",
     "*.js": "$(capture).js.map, $(capture).*.js, $(capture)_*.js, $(capture).d.ts, $(capture).d.ts.map, $(capture).js.flow",
