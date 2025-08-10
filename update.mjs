@@ -265,8 +265,8 @@ const packageJSON = [
   '.versionrc*',
   '.vscode*',
   '.watchman*',
-  'lefthook.*',
   'apollo.config.*',
+  'lefthook.*',
   'nest-cli.*',
   'nodemon*',
   'pm2.*',
@@ -469,6 +469,9 @@ const base = {
   '*.cxx': '$(capture).hpp, $(capture).h, $(capture).hxx, $(capture).hh',
   '*.dart': '$(capture).freezed.dart, $(capture).g.dart',
   '*.fs': '$(capture).fs.js, $(capture).fs.js.map, $(capture).fs.jsx, $(capture).fs.ts, $(capture).fs.tsx, $(capture).fs.rs, $(capture).fs.php, $(capture).fs.dart',
+  '*.gd': '$(capture).gd.uid',
+  '*.gdshader': '$(capture).gdshader.uid',
+  '*.gdshaderinc': '$(capture).gdshaderinc.uid',
   '*.go': '$(capture)_test.go',
   '*.java': '$(capture).class',
   '*.js': '$(capture).js.map, $(capture).*.js, $(capture)_*.js, $(capture).d.ts, $(capture).d.ts.map, $(capture).js.flow',
@@ -501,9 +504,6 @@ const base = {
   'Makefile': '*.mk',
   'pom.xml': 'mvnw*',
   'shims.d.ts': '*.d.ts',
-  '*.gd': '$(capture).gd.uid',
-  '*.gdshader': '$(capture).gdshader.uid',
-  '*.gdshaderinc': '$(capture).gdshaderinc.uid'
 }
 // Based on the new SvelteKit's routing system https://kit.svelte.dev/docs/routing
 const svelteKitRouting = {
