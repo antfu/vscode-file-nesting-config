@@ -265,6 +265,7 @@ const packageJSON = [
   '.versionrc*',
   '.vscode*',
   '.watchman*',
+  'lefthook.*',
   'apollo.config.*',
   'nest-cli.*',
   'nodemon*',
