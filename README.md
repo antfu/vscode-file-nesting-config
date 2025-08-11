@@ -26,7 +26,7 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
 <!-- eslint-skip -->
 
 ```jsonc
-  // updated 2025-08-11 00:49
+  // updated 2025-08-11 06:54
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
@@ -96,7 +96,7 @@ Open your VS Code, bring up your `settings.json`, copy-n-paste the snippet below
     "*.csproj": "*.config, *proj.user, appsettings.*, bundleconfig.json",
     "*.css": "$(capture).css.map, $(capture).*.css",
     "*.cxx": "$(capture).hpp, $(capture).h, $(capture).hxx, $(capture).hh",
-    "*.dart": "$(capture).freezed.dart, $(capture).g.dart",
+    "*.dart": "$(capture).freezed.dart, $(capture).g.dart, $(capture).mapper.dart",
     "*.db": "*.db-shm, *.db-wal",
     "*.ex": "$(capture).html.eex, $(capture).html.heex, $(capture).html.leex",
     "*.fs": "$(capture).fs.js, $(capture).fs.js.map, $(capture).fs.jsx, $(capture).fs.ts, $(capture).fs.tsx, $(capture).fs.rs, $(capture).fs.php, $(capture).fs.dart",
