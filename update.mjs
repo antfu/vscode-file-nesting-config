@@ -466,7 +466,7 @@ const base = {
   '*.cshtml': '$(capture).cshtml.cs, $(capture).cshtml.css',
   '*.css': '$(capture).css.map, $(capture).*.css',
   '*.cxx': '$(capture).hpp, $(capture).h, $(capture).hxx, $(capture).hh',
-  '*.dart': '$(capture).freezed.dart, $(capture).g.dart',
+  '*.dart': '$(capture).freezed.dart, $(capture).g.dart, $(capture).mapper.dart',
   '*.fs': '$(capture).fs.js, $(capture).fs.js.map, $(capture).fs.jsx, $(capture).fs.ts, $(capture).fs.tsx, $(capture).fs.rs, $(capture).fs.php, $(capture).fs.dart',
   '*.go': '$(capture)_test.go',
   '*.java': '$(capture).class',
