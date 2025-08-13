@@ -448,6 +448,17 @@ const sanity = [
 ]
 
 // @keep-sorted
+const agent = [
+  '.clinerules',
+  '.cursorrules',
+  '.replit.md',
+  '.windsurfrules',
+  'AGENTS.md',
+  'CLAUDE.md',
+  'GEMINI.md',
+]
+
+// @keep-sorted
 const base = {
   '.clang-tidy': '.clang-format, .clangd, compile_commands.json',
   '.gitignore': '.gitattributes, .gitmodules, .gitmessage, .lfsconfig, .mailmap, .git-blame*',
@@ -579,6 +590,7 @@ const full = sortObject({
   '*.db': stringify(sqlite),
   '*.razor': stringify(razor),
   'sanity.config.*': stringify(sanity),
+  'AGENT.md': stringify(agent),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
   ...svelteKitRouting,
 }, (a, b) => {
