@@ -448,12 +448,12 @@ const sanity = [
 ]
 
 // @keep-sorted
-const agent = [
+const agents = [
   '.clinerules',
   '.cursorrules',
   '.replit.md',
   '.windsurfrules',
-  'AGENTS.md',
+  'AGENT.md',
   'CLAUDE.md',
   'GEMINI.md',
 ]
@@ -590,7 +590,7 @@ const full = sortObject({
   '*.db': stringify(sqlite),
   '*.razor': stringify(razor),
   'sanity.config.*': stringify(sanity),
-  'AGENT.md': stringify(agent),
+  'AGENTS.md': stringify(agents),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
   ...svelteKitRouting,
 }, (a, b) => {
