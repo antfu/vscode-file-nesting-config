@@ -11,19 +11,25 @@
   "scripts": {
     "update": "node update.mjs",
     "lint": "eslint .",
+    "release": "cd extension && bumpp",
     "ext:build": "cd extension && tsdown src/index.ts --external vscode",
     "ext:dev": "nr ext:build --watch src",
-    "ext:publish": "nr ext:build && cd extension && vsce publish --no-dependencies && ovsx publish --no-dependencies",
-    "ext:pack": "nr ext:build && cd extension && vsce package --no-dependencies"
+    "ext:publish": "nr ext:build && cd extension && vsxpub --no-dependencies",
+    "ext:pack": "nr ext:build && cd extension && vsce package --no-dependencies",
+    "vscode:prepublish": "nr ext:build"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.13.1",
     "@antfu/ni": "^24.4.0",
     "@types/vscode": "^1.100.0",
+    "@vscode/vsce": "^3.6.0",
+    "bumpp": "^10.2.3",
     "eslint": "^9.27.0",
     "eslint-factory": "^0.1.2",
     "ofetch": "^1.4.1",
+    "ovsx": "^0.10.5",
     "tsdown": "^0.11.13",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vsxpub": "^0.1.0"
   }
 }
