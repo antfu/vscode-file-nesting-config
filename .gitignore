@@ -6,3 +6,4 @@ dist
 *.log
 *.vsix
 .idea
+.env

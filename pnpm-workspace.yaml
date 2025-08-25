@@ -4,3 +4,4 @@ onlyBuiltDependencies:
   - esbuild
   - rolldown
   - unrs-resolver
+  - vsxpub
