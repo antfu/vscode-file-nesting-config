@@ -1,7 +1,10 @@
 packages:
   - extension
+
 onlyBuiltDependencies:
+  - '@vscode/vsce-sign'
   - esbuild
+  - keytar
   - rolldown
   - unrs-resolver
   - vsxpub
