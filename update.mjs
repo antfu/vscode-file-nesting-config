@@ -508,7 +508,7 @@ const base = {
   'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, .bazelversion, MODULE.bazel.lock, WORKSPACE',
   'CMakeLists.txt': '*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json, CMakeCache.txt',
   'default.nix': 'shell.nix',
-  'flake.nix': 'flake.lock',
+  'flake.nix': 'default.nix, shell.nix, flake.lock',
   'go.mod': 'go.sum',
   'go.work': 'go.work.sum',
   'I*.cs': '$(capture).cs',
