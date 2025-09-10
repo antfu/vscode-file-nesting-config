@@ -101,6 +101,7 @@ const linters = [
   '.textlint*',
   '.xo-config*',
   '.yamllint*',
+  'alejandra.toml',
   'biome.json*',
   'commitlint*',
   'cspell*',
