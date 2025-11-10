@@ -456,6 +456,7 @@ const agents = [
   '.windsurfrules',
   'AGENT.md',
   'CLAUDE.md',
+  'CLAUDE.local.md',
   'GEMINI.md',
 ]
 
