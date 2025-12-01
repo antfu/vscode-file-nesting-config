@@ -456,8 +456,8 @@ const agents = [
   '.replit.md',
   '.windsurfrules',
   'AGENT.md',
-  'CLAUDE.md',
   'CLAUDE.local.md',
+  'CLAUDE.md',
   'GEMINI.md',
 ]
 
