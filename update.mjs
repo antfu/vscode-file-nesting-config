@@ -590,6 +590,7 @@ const full = sortObject({
   '*.ex': stringify(phoenixLiveView),
   '*.tex': stringify(tex),
   'deno.json*': stringify(denoRuntime),
+  'tsconfig.json': stringify(['tsconfig.*.json', 'tsconfig*.tsbuildinfo']),
   '*.db': stringify(sqlite),
   '*.razor': stringify(razor),
   'sanity.config.*': stringify(sanity),
