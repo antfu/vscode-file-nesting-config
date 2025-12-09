@@ -529,6 +529,12 @@ const svelteKitRouting = {
   '+layout.svelte': '+layout.ts,+layout.ts,+layout.js,+layout.server.ts,+layout.server.js,+layout.gql',
 }
 
+const tauri = {
+  'tauri.conf.json': 'tauri.*.conf.json',
+  'tauri.conf.json5': 'tauri.*.conf.json5',
+  'Tauri.toml': 'Tauri.*.toml',
+}
+
 function stringify(items) {
   return Array.from(new Set(items)).sort().join(', ')
 }
@@ -601,6 +607,7 @@ const full = sortObject({
   'AGENTS.md': stringify(agents),
   ...Object.fromEntries(Object.entries(frameworks).map(([n, i]) => [n, stringify([...i, ...libraries])])),
   ...svelteKitRouting,
+  ...tauri,
 }, (a, b) => {
   if (a.startsWith('*') && !b.startsWith('*'))
     return 1
