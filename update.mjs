@@ -251,6 +251,7 @@ const libraries = [
   'vuetify.config.*',
   'webpack.config.*',
   'windi.config.*',
+  'wuchale.config.*',
   ...env,
   ...testingTools,
   ...tsconfig,
