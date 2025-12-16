@@ -91,6 +91,8 @@ const linters = [
   '.lintstagedrc*',
   '.ls-lint.yml',
   '.markdownlint*',
+  '.oxfmtrc.json.bak',
+  '.oxfmtrc.json',
   '.oxlintrc.json.bak',
   '.oxlintrc.json',
   '.prettier*',
