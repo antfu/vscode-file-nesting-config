@@ -93,6 +93,7 @@ const linters = [
   '.markdownlint*',
   '.oxfmtrc.json.bak',
   '.oxfmtrc.json',
+  '.oxfmtrc.jsonc',
   '.oxlintrc.json.bak',
   '.oxlintrc.json',
   '.prettier*',
