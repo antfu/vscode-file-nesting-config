@@ -96,6 +96,7 @@ const linters = [
   '.oxfmtrc.jsonc',
   '.oxlintrc.json.bak',
   '.oxlintrc.json',
+  '.oxlintrc.jsonc',
   '.prettier*',
   '.pylintrc',
   '.ruff.toml',
