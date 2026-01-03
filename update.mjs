@@ -114,6 +114,7 @@ const linters = [
   'dprint.json*',
   'eslint*',
   'lint-staged*',
+  'oxlint.config.*',
   'phpcs.xml',
   'prettier*',
   'pyrightconfig.json',
