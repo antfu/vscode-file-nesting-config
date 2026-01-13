@@ -531,7 +531,7 @@ const base = {
 // Based on the new SvelteKit's routing system https://kit.svelte.dev/docs/routing
 const svelteKitRouting = {
   '+page.svelte': '+page.server.ts,+page.server.js,+page.ts,+page.js,+page.gql',
-  '+layout.svelte': '+layout.ts,+layout.ts,+layout.js,+layout.server.ts,+layout.server.js,+layout.gql',
+  '+layout.svelte': '+layout.ts,+layout.js,+layout.server.ts,+layout.server.js,+layout.gql',
 }
 
 const tauri = {
