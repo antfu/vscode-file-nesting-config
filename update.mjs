@@ -219,7 +219,7 @@ const frameworks = {
   'gatsby-config.*': ['gatsby-browser.*', 'gatsby-node.*', 'gatsby-ssr.*', 'gatsby-transformer.*'],
   'next.config.*': ['next-env.d.ts', 'next-i18next.config.*'],
   'nuxt.config.*': ['.nuxtignore', '.nuxtrc'],
-  'quasar.conf{ig}.{js,ts}': ['quasar.extensions.json'],
+  'quasar.conf*': ['quasar.extensions.json'],
   'remix.config.*': ['remix.*'],
   'svelte.config.*': ['mdsvex.config.js', 'vite.config.*', 'houdini.config.*'],
   'vite.config.*': [],
