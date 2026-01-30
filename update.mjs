@@ -168,6 +168,38 @@ const workspaces = [
   'yarn*',
 ]
 
+const agentsConfigs = [
+  '.agent',
+  '.claude',
+  '.cline',
+  '.codebuddy',
+  '.codex',
+  '.commandcode',
+  '.continue',
+  '.crush',
+  '.cursor',
+  '.factory',
+  '.gemini',
+  '.goose',
+  '.junie',
+  '.kilocode',
+  '.kiro',
+  '.kode',
+  '.mcpjam',
+  '.mux',
+  '.neovate',
+  '.opencode',
+  '.openhands',
+  '.pi',
+  '.pochi',
+  '.qoder',
+  '.qwen',
+  '.roo',
+  '.trae',
+  '.windsurf',
+  '.zencoder',
+]
+
 const docker = [
   'dockerfile*',
   '*.dockerfile',
@@ -581,6 +613,7 @@ function addLowerCaseVariants(arr) {
 
 const full = sortObject({
   ...base,
+  '.agent': stringify(agentsConfigs),
   '.env': stringify(env),
   'Dockerfile': stringify(docker),
   'package.json': stringify(packageJSON),
