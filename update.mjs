@@ -202,6 +202,7 @@ const agentsConfigs = [
 
 const docker = [
   'dockerfile*',
+  'Dockerfile*',
   '*.dockerfile',
   '.dockerignore',
   'docker-compose.*',
