@@ -203,6 +203,7 @@ const agentsConfigs = [
 
 const docker = [
   'dockerfile*',
+  'Dockerfile*',
   '*.dockerfile',
   '.dockerignore',
   'docker-compose.*',
@@ -556,6 +557,8 @@ const base = {
   'flake.nix': 'default.nix, shell.nix, flake.lock',
   'go.mod': 'go.sum',
   'go.work': 'go.work.sum',
+  'build.gradle': 'settings.gradle, gradlew, gradlew.bat, gradle.properties, gradle.lockfile',
+'build.gradle.kts': 'settings.gradle.kts, gradlew, gradlew.bat, gradle.properties, gradle.lockfile',
   'I*.cs': '$(capture).cs',
   'Makefile': '*.mk',
   'pom.xml': 'mvnw*',
