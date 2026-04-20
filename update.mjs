@@ -551,6 +551,7 @@ const base = {
   'application.properties': '*.properties',
   'build-wrapper.log': 'build-wrapper*.log, build-wrapper-dump*.json, build-wrapper-win*.exe, build-wrapper-linux*, build-wrapper-macosx*',
   'BUILD.bazel': '*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, .bazelversion, MODULE.bazel.lock, WORKSPACE',
+   'Chart.yaml': 'Chart.lock, values.yaml, values-*.yaml, .helmignore',
   'CMakeLists.txt': '*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json, CMakeCache.txt',
   'default.nix': 'shell.nix',
   'flake.nix': 'default.nix, shell.nix, flake.lock',
@@ -558,6 +559,7 @@ const base = {
   'go.work': 'go.work.sum',
   'I*.cs': '$(capture).cs',
   'Makefile': '*.mk',
+  'main.tf': '*.tf, .terraform.lock.hcl, terraform.tfstate, terraform.tfstate.backup, terraform.tfvars, *.tfvars, .terraformrc',
   'pom.xml': 'mvnw*',
   'shims.d.ts': '*.d.ts',
 }
