@@ -147,6 +147,7 @@ const workspaces = [
   '.simple-git-hooks*',
   '.tazerc*',
   '.tool-versions',
+  '.vsls.json',
   '.yarnrc*',
   '*.code-workspace',
   'bower.json',
@@ -252,7 +253,7 @@ const frameworks = {
   'astro.config.*': [],
   'gatsby-config.*': ['gatsby-browser.*', 'gatsby-node.*', 'gatsby-ssr.*', 'gatsby-transformer.*'],
   'next.config.*': ['next-env.d.ts', 'next-i18next.config.*'],
-  'nuxt.config.*': ['.nuxtignore', '.nuxtrc'],
+  'nuxt.config.*': ['.nuxtignore', '.nuxtrc', 'nuxt.schema.*'],
   'quasar.conf*': ['quasar.extensions.json'],
   'remix.config.*': ['remix.*'],
   'svelte.config.*': ['mdsvex.config.js', 'vite.config.*', 'houdini.config.*'],
@@ -387,6 +388,7 @@ const dotnetProject = [
   '*.config',
   'appsettings.*',
   'bundleconfig.json',
+  'packages.lock.json',
 ]
 
 const pubspecYAML = [
@@ -406,6 +408,7 @@ const elixir = [
   '.dialyzer_ignore.exs',
   '.iex.exs',
   '.tool-versions',
+
 ]
 
 const pythonConfigs = [
@@ -560,6 +563,7 @@ const base = {
   'go.mod': 'go.sum',
   'go.work': 'go.work.sum',
   'I*.cs': '$(capture).cs',
+  'justfile': '*.just, .justfile',
   'Makefile': '*.mk',
   'pom.xml': 'mvnw*',
   'shims.d.ts': '*.d.ts',
@@ -631,6 +635,7 @@ const full = sortObject({
   'go.mod': stringify(gofile),
   'composer.json': stringify(composer),
   '*.csproj': stringify(dotnetProject),
+  '*.fsproj': stringify(dotnetProject),
   '*.vbproj': stringify(dotnetProject),
   'mix.exs': stringify(elixir),
   'pyproject.toml': stringify(pyprojecttoml),
