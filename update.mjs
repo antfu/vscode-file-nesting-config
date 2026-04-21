@@ -387,6 +387,7 @@ const dotnetProject = [
   '*.config',
   'appsettings.*',
   'bundleconfig.json',
+  'packages.lock.json',
 ]
 
 const pubspecYAML = [
@@ -631,6 +632,7 @@ const full = sortObject({
   'go.mod': stringify(gofile),
   'composer.json': stringify(composer),
   '*.csproj': stringify(dotnetProject),
+  '*.fsproj': stringify(dotnetProject),
   '*.vbproj': stringify(dotnetProject),
   'mix.exs': stringify(elixir),
   'pyproject.toml': stringify(pyprojecttoml),
