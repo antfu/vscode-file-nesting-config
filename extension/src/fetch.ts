@@ -61,7 +61,7 @@ export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
 
     config.update('explorer.fileNesting.patterns', {
       '//': updated
-        ? `Last update from upstream at ${updated} UTC`
+        ? `Last update at ${updated} UTC`
         : UPDATE_MARKER_FALLBACK,
       ...patterns,
     }, true)
