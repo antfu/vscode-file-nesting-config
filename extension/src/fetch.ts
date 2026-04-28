@@ -4,12 +4,15 @@ import { window, workspace } from 'vscode'
 import { getConfig } from './config'
 import { FILE, MSG_PREFIX, URL_PREFIX } from './constants'
 
+const UPDATE_MARKER_FALLBACK = 'Last update from upstream'
+
 export async function fetchLatest() {
   const repo = getConfig<string>('fileNestingUpdater.upstreamRepo')
   const branch = getConfig<string>('fileNestingUpdater.upstreamBranch')
   const url = `${URL_PREFIX}/${repo}@${branch}/${FILE}`
   const md = await fetch(url).then(r => r.text())
   const content = (md.match(/```jsonc([\s\S]*?)```/) || [])[1] || ''
+  const updated = content.match(/^\s*\/\/ updated (.+)$/m)?.[1]?.trim()
 
   const json = `{${
     content
@@ -21,12 +24,15 @@ export async function fetchLatest() {
   }}`
 
   const config = JSON.parse(json) || {}
-  return config['explorer.fileNesting.patterns']
+  return {
+    patterns: config['explorer.fileNesting.patterns'],
+    updated,
+  }
 }
 
 export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
   const config = workspace.getConfiguration()
-  const patterns = await fetchLatest()
+  const { patterns, updated } = await fetchLatest()
   let shouldUpdate = true
 
   const oringalPatterns = { ...(config.get<object>('explorer.fileNesting.patterns') || {}) }
@@ -54,7 +60,9 @@ export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
       config.update('explorer.fileNesting.expand', false, true)
 
     config.update('explorer.fileNesting.patterns', {
-      '//': `Last update at ${new Date().toLocaleString()}`,
+      '//': updated
+        ? `Last update from upstream at ${updated} UTC`
+        : UPDATE_MARKER_FALLBACK,
       ...patterns,
     }, true)
 
