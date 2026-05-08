@@ -80,6 +80,8 @@ const services = [
 
 // @keep-sorted
 const linters = [
+  '.autocorrectignore',
+  '.autocorrectrc',
   '.commitlint*',
   '.cspell*',
   '.dlint.json',
