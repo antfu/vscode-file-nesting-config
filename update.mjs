@@ -564,6 +564,7 @@ const base = {
   'go.mod': 'go.sum',
   'go.work': 'go.work.sum',
   'I*.cs': '$(capture).cs',
+  'justfile': '*.just, .justfile',
   'Makefile': '*.mk',
   'pom.xml': 'mvnw*',
   'shims.d.ts': '*.d.ts',
