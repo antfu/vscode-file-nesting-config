@@ -150,6 +150,7 @@ const workspaces = [
   '.simple-git-hooks*',
   '.tazerc*',
   '.tool-versions',
+  '.vsls.json',
   '.yarnrc*',
   '*.code-workspace',
   'bower.json',
@@ -410,6 +411,7 @@ const elixir = [
   '.dialyzer_ignore.exs',
   '.iex.exs',
   '.tool-versions',
+
 ]
 
 const pythonConfigs = [
