@@ -1,7 +1,7 @@
 <br>
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/antfu/vscode-file-nesting-config/main/extension/res/logo.png" style="width:100px;" />
+<img src="https://raw.githubusercontent.com/antfu/vscode-file-nesting-config/main/extension/res/logo.png" alt="Logo" style="width:100px;" />
 </p>
 
 <h1 align="center">File Nesting Updater</h1>
@@ -15,7 +15,7 @@ A config to make your file tree cleaner with the <a href="https://code.visualstu
 <a href="https://marketplace.visualstudio.com/items?itemName=antfu.file-nesting" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/antfu.file-nesting.svg?color=blue&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
 </p>
 
-![](https://user-images.githubusercontent.com/11247099/157142238-b00deecb-8d56-424f-9b20-ef6a6f5ddf99.png)
+![Example](https://user-images.githubusercontent.com/11247099/157142238-b00deecb-8d56-424f-9b20-ef6a6f5ddf99.png)
 
 ## Configurations
 

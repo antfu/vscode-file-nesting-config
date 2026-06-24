@@ -11,7 +11,7 @@ const buildTools = [
   'tsdown.config.*',
   'webpack*',
   'rspack*',
-  '.swcrc'
+  '.swcrc',
 ]
 
 const dependencyAnalysis = [

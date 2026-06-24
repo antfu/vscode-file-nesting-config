@@ -1,5 +1,21 @@
+minimumReleaseAgeExclude:
+  - '@antfu/eslint-config@9.1.0'
+  - eslint-plugin-yml@3.5.0
+  - ovsx@1.0.2
+
+shellEmulator: true
+
+trustPolicy: no-downgrade
+
 packages:
   - extension
+
+allowBuilds:
+  '@vscode/vsce-sign': true
+  keytar: true
+
+overrides:
+  semver: '^7.8.5'
 
 onlyBuiltDependencies:
   - '@vscode/vsce-sign'

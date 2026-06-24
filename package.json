@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@11.9.0",
   "workspaces": [
     "extension"
   ],
@@ -19,17 +19,17 @@
     "vscode:prepublish": "nr ext:build"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^6.2.0",
-    "@antfu/ni": "^27.0.1",
-    "@types/vscode": "^1.106.1",
-    "@vscode/vsce": "^3.7.1",
-    "bumpp": "^10.3.2",
-    "eslint": "^9.39.1",
+    "@antfu/eslint-config": "^9.1.0",
+    "@antfu/ni": "^30.1.0",
+    "@types/vscode": "^1.125.0",
+    "@vscode/vsce": "^3.9.2",
+    "bumpp": "^11.1.0",
+    "eslint": "^10.5.0",
     "eslint-factory": "^0.1.2",
     "ofetch": "^1.5.1",
-    "ovsx": "^0.10.7",
-    "tsdown": "^0.16.8",
-    "typescript": "^5.9.3",
-    "vsxpub": "^0.1.2"
+    "ovsx": "^1.0.2",
+    "tsdown": "^0.22.3",
+    "typescript": "^6.0.3",
+    "vsxpub": "^0.1.4"
   }
 }
