@@ -535,7 +535,7 @@ const base = {
   '*.gd': '$(capture).gd.uid',
   '*.gdshader': '$(capture).gdshader.uid',
   '*.gdshaderinc': '$(capture).gdshaderinc.uid',
-  '*.go': '$(capture)_test.go',
+  '*.go': '$(capture)_test.go,$(capture)_bench_test.go',
   '*.java': '$(capture).class',
   '*.js': '$(capture).js.map, $(capture).*.js, $(capture)_*.js, $(capture).d.ts, $(capture).d.ts.map, $(capture).js.flow',
   '*.jsx': '$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx, $(capture).css, $(capture).module.css, $(capture).less, $(capture).module.less, $(capture).module.less.d.ts, $(capture).scss, $(capture).module.scss, $(capture).module.scss.d.ts',
