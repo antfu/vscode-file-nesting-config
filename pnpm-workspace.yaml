@@ -15,7 +15,7 @@ allowBuilds:
   keytar: true
 
 overrides:
-  semver: '^7.8.5'
+  semver: ^7.8.5
 
 onlyBuiltDependencies:
   - '@vscode/vsce-sign'
