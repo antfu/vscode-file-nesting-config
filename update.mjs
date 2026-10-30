@@ -119,6 +119,7 @@ const linters = [
   'lint-staged*',
   'oxfmt.config.*',
   'oxlint.config.*',
+  'oxlint-suppressions.json',
   'phpcs.xml',
   'prettier*',
   'pyrightconfig.json',
