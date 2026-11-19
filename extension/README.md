@@ -25,11 +25,26 @@ A config to make your file tree cleaner with the <a href="https://code.visualstu
   "fileNestingUpdater.autoUpdateInterval": 720,
   "fileNestingUpdater.promptOnAutoUpdate": true,
   "fileNestingUpdater.upstreamRepo": "antfu/vscode-file-nesting-config",
-  "fileNestingUpdater.upstreamBranch": "main"
+  "fileNestingUpdater.upstreamBranch": "main",
+  "fileNestingUpdater.customPatterns": {}
 }
 ```
 
 It will check for update every 12 hours by default. You can also do it manually by executing command `File Nesting Updater: Update config now`.
+
+### Custom patterns
+
+The updater replaces `explorer.fileNesting.patterns` on every update. To add your own patterns, put them in `fileNestingUpdater.customPatterns` in your user settings. They are added to the upstream patterns. If a key is also upstream, the upstream value is kept.
+
+```json
+{
+  "fileNestingUpdater.customPatterns": {
+    "*.foo": "$(capture).foo.map, $(capture).foo.lock"
+  }
+}
+```
+
+Run `File Nesting Updater: Update config now` to apply a change at once.
 
 ## License
 

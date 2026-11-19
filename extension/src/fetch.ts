@@ -1,8 +1,10 @@
 import type { ExtensionContext } from 'vscode'
+import type { Patterns } from './patterns'
 import { fetch } from 'ofetch'
 import { window, workspace } from 'vscode'
 import { getConfig } from './config'
 import { FILE, MSG_PREFIX, URL_PREFIX } from './constants'
+import { mergePatterns } from './patterns'
 
 const UPDATE_MARKER_FALLBACK = 'Last update from upstream'
 
@@ -32,13 +34,15 @@ export async function fetchLatest() {
 
 export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
   const config = workspace.getConfiguration()
-  const { patterns, updated } = await fetchLatest()
+  const { patterns: upstreamPatterns, updated } = await fetchLatest()
+  const customPatterns = config.inspect<Patterns>('fileNestingUpdater.customPatterns')?.globalValue
+  const mergedPatterns = mergePatterns(upstreamPatterns, customPatterns)
   let shouldUpdate = true
 
   const oringalPatterns = { ...(config.get<object>('explorer.fileNesting.patterns') || {}) }
   delete oringalPatterns['//']
   // no change
-  if (Object.keys(oringalPatterns).length > 0 && JSON.stringify(patterns) === JSON.stringify(oringalPatterns))
+  if (Object.keys(oringalPatterns).length > 0 && JSON.stringify(mergedPatterns) === JSON.stringify(oringalPatterns))
     return false
 
   if (prompt) {
@@ -63,7 +67,7 @@ export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
       '//': updated
         ? `Last update at ${updated} UTC`
         : UPDATE_MARKER_FALLBACK,
-      ...patterns,
+      ...mergedPatterns,
     }, true)
 
     ctx.globalState.update('lastUpdate', Date.now())

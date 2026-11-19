@@ -60,6 +60,14 @@
           "type": "string",
           "description": "The branch name of upstream repo",
           "default": "main"
+        },
+        "fileNestingUpdater.customPatterns": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Extra patterns added to the upstream patterns on every update. Upstream patterns win on key collision. Set in user settings. Run \"Update config now\" to apply a change at once",
+          "default": {}
         }
       }
     }
