@@ -3,6 +3,7 @@ import { fetch } from 'ofetch'
 import { window, workspace } from 'vscode'
 import { getConfig } from './config'
 import { FILE, MSG_PREFIX, URL_PREFIX } from './constants'
+import { mergePatterns } from './patterns'
 
 const UPDATE_MARKER_FALLBACK = 'Last update from upstream'
 
@@ -32,7 +33,8 @@ export async function fetchLatest() {
 
 export async function fetchAndUpdate(ctx: ExtensionContext, prompt = true) {
   const config = workspace.getConfiguration()
-  const { patterns, updated } = await fetchLatest()
+  const { patterns: upstreamPatterns, updated } = await fetchLatest()
+  const patterns = mergePatterns(upstreamPatterns, getConfig('fileNestingUpdater.customPatterns'))
   let shouldUpdate = true
 
   const oringalPatterns = { ...(config.get<object>('explorer.fileNesting.patterns') || {}) }

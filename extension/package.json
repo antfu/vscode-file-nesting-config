@@ -60,6 +60,14 @@
           "type": "string",
           "description": "The branch name of upstream repo",
           "default": "main"
+        },
+        "fileNestingUpdater.customPatterns": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Custom file nesting patterns. They are merged on top of the upstream patterns on every update. A key that is also upstream replaces the upstream value. Run \"File Nesting Updater: Update config now\" to apply a change at once.",
+          "default": {}
         }
       }
     }

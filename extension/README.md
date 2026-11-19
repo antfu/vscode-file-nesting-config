@@ -31,6 +31,20 @@ A config to make your file tree cleaner with the <a href="https://code.visualstu
 
 It will check for update every 12 hours by default. You can also do it manually by executing command `File Nesting Updater: Update config now`.
 
+### Custom patterns
+
+The updater replaces `explorer.fileNesting.patterns` on every update. Put your own patterns in `fileNestingUpdater.customPatterns` instead. They are merged on top of the upstream patterns, and a key that is also upstream replaces the upstream value.
+
+```json
+{
+  "fileNestingUpdater.customPatterns": {
+    "*.ts": "${capture}.test.ts, ${capture}.spec.ts"
+  }
+}
+```
+
+Run `File Nesting Updater: Update config now` to apply a change at once.
+
 ## License
 
 MIT
